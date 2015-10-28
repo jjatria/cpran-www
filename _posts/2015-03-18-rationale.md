@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-![CPrAN](/assets/images/text_logo-small.png)
+![CPrAN]({{ BASE_PATH }}/assets/images/text_logo-small.png)
 
 A plugin manager for Praat
 --------------------------
