@@ -5,26 +5,36 @@ tagline: The Praat plugin manager
 ---
 {% include JB/setup %}
 
-![CPrAN]({% BASE_PATH %}/assets/images/text_logo-small.png)
+![CPrAN]({{ BASE_PATH }}/assets/images/text_logo-small.png)
 
 A plugin manager for Praat
 --------------------------
 
-CPrAN allows you to [browse](search), [install](install) and [remove](remove)
-Praat plugins of all kinds. With it, you can also [keep up to date](upgrade)
-with the latest releases of those plugins, and make sure that the plugins you
-install are [always in working order](test).
+CPrAN allows you to [browse][search], [install][] and [remove][] Praat plugins
+of all kinds. With it, you can also [keep up to date][upgrade] with the latest
+releases of those plugins, and make sure that the plugins you install are
+[always in working order][test].
+
+[search]:  docs/commands#search
+[install]: docs/commands#install
+[remove]:  docs/commands#remove
+[upgrade]: docs/commands#upgrade
+[test]:    docs/commands#test
 
 To use CPrAN, you'll have to install it as you would normally with any other
-Praat plugin. The current version is [written in Perl](perl), so you'll
+Praat plugin. The current version is [written in Perl][perl client], so you'll
 probably also need to install some other modules before you can use it.
+
+[perl client]: clients/perl
 
 All you need to get up and running is explained in the [installation
 instructions](perl#installation).
 
 Once you are done, take a look at the documentation for [how to use the current
 client](cpran), or read below for a quick overview. You can also take a look
-at the [currently registered plugins](plugin_list) to whet your appetite.
+at the [currently registered plugins][plugin list] to whet your appetite.
+
+[plugin list]: plugins
 
 And if you are interested in what motivated the project, you can read about it
 [here](rationale).
@@ -36,7 +46,8 @@ of CPrAN, you'll have to use the command line. You can get to a command line
 with one of the many terminal emulators in Linux, the Terminal app in Mac, or
 by running `cmd` in Windows.
 
-The text in the boxes below written with a `monospaced font` is text that you should write into the command line.
+The text in the boxes below written with a `monospaced font` is text that you
+should write into the command line.
 
 #### First step
 
@@ -69,8 +80,8 @@ You can also search for specific terms with `search`:
 
 All terms will be interpreted as regular expressions (so you might have to
 escape some special characters, or quote them). If you type in more than one
-term, you can refine the search.    
-    
+term, you can refine the search.
+
 Once you've found a plugin that you are interested in, you can get more
 information with the `show` command.
 
