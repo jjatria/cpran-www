@@ -1,46 +1,107 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: CPrAN
+tagline: The Praat plugin manager
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+![CPrAN](images/text_logo-small.png)
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+A plugin manager for Praat
+--------------------------
 
-## Update Author Attributes
+CPrAN allows you to [browse](search), [install](install) and [remove](remove)
+Praat plugins of all kinds. With it, you can also [keep up to date](upgrade)
+with the latest releases of those plugins, and make sure that the plugins you
+install are [always in working order](test).
 
-In `_config.yml` remember to specify your own data:
+To use CPrAN, you'll have to install it as you would normally with any other
+Praat plugin. The current version is [written in Perl](perl), so you'll
+probably also need to install some other modules before you can use it.
+
+All you need to get up and running is explained in the [installation
+instructions](perl#installation).
+
+Once you are done, take a look at the documentation for [how to use the current
+client](cpran), or read below for a quick overview. You can also take a look
+at the [currently registered plugins](plugin_list) to whet your appetite.
+
+And if you are interested in what motivated the project, you can read about it
+[here](rationale).
+
+### A quick sampler
+
+Although future versions will probably have a GUI, to use the current version
+of CPrAN, you'll have to use the command line. You can get to a command line
+with one of the many terminal emulators in Linux, the Terminal app in Mac, or
+by running `cmd` in Windows.
+
+The text in the boxes below written with a `monospaced font` is text that you should write into the command line.
+
+#### First step
+
+CPrAN connects to an online database of plugins, and stores a local copy of
+that listing in your computer. That way it knows what the latest versions of
+the different plugins are.
+
+To refresh your local database, use the `update` command:
+
+    cpran update
+
+#### Explore the library
+
+You can then get a listing of all the plugins with the `list` command:
+
+    cpran list
+
+You'll get a list of all the available plugins, with its name, version, and
+a short description. The "local" column shows the version that you have
+installed (or nothing, if it's not installed), and the "remote" column shows the
+latest version since the last time you ran `update`.
+
+Plugins that yuo have installed that are _not_ on CPrAN will also be listed, and
+marked as such.
+
+You can also search for specific terms with `search`:
+
+    cpran search split
+    cpran search utils sound
+
+All terms will be interpreted as regular expressions (so you might have to
+escape some special characters, or quote them). If you type in more than one
+term, you can refine the search.    
     
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+Once you've found a plugin that you are interested in, you can get more
+information with the `show` command.
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+    cpran show utils
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+This'll show you much more deatailed information on the plugin, including its
+name, version, maintainer, any requirements it might have, and a longer
+description (if available).
 
-    $ rm -rf _posts/core-samples
+#### Install new plugins
 
-Here's a sample "posts list".
+If you like what you see, you can install it with `install`:
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+    cpran install utils
 
-## To-Do
+When a plugin gets installed, it is automatically tested using Praat to make
+sure that it works as expected in your own setup.
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+#### Manage installed plugins
 
+If a new version of, say, "utils" is released, you can use `upgrade` to bring
+your local copy up to speed:
 
+    cpran upgrade
+
+CPrAN will check all installed plugins for any that need upgrading, and ask
+for you to confirm. If you'd like to upgrade a specific plugin, you can also
+mention it specifically, like `cpran upgrade utils`.
+
+When you are finished with a plugin, you can uninstall it with `remove`:
+
+    cpran remove utils
+
+That's it!
