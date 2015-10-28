@@ -1,0 +1,40 @@
+{
+	"type": "FeatureCollection",
+	"properties": {
+		"name": "Seoul"
+	},
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [126.9989131708335,37.58795326708167]
+			},
+			"properties": {
+				"name": "Seoul",
+				"description": "Friends House - 프렌즈하우스"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [126.6937682822894,37.78832949701059]
+			},
+			"properties": {
+				"name": "Heyri Artvalley"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [[126.7926513085048,37.55874214197927], [140.3840804854309,35.76472012663263]]
+			},
+			"properties": {
+				"name": "Plane",
+				"vehicle": "plane"
+			}
+		}
+	]
+}

@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>JJA | Highlighting Praat Code in HTML</title>
+  <meta name="description" content="">
+  <meta name="author" content="José Joaquín Atria">
+
+  <!-- Enable responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/assets/themes/rodriguez/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/themes/rodriguez/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/assets/themes/rodriguez/css/style.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/assets/themes/rodriguez/css/linkbar.css" rel="stylesheet" type="text/css" media="all">
+  
+
+  <style>
+    .fleuron {
+      min-height: 50px;
+      background: #fff url(/assets/themes/rodriguez/images/fleuron.svg) no-repeat scroll center;
+      border: none;
+      display: block;
+    }
+    .fleuron hr {
+      display: none;
+    }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="/assets/themes/rodriguez/images/favicon.ico">
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+  <!-- atom & rss feed -->
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+  <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+</head>
+
+<body>
+<div id="wrap">
+<div id="banner"><a href="/">JJA</a></div>
+
+
+<link href="/assets/themes/rodriguez/css/post.css" rel="stylesheet" type="text/css" media="all">
+
+<nav id="linkbar">
+  <div id="topbar">
+  <ul>
+      
+      
+      
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          <li><a href="/blog/index.html">Blog</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/scripts/index.html">Scripts</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/tutorials/index.html">Tutorials</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/research/index.html">Research</a></li>
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+
+  </ul>
+  </div>
+</nav>
+
+<div class="content h-entry">
+
+<ul class="pagination inline-list">
+
+  <li class="prev"><a href="/2013/06/20/continuum-synthesis-with-tandemstraight" title="Continuum synthesis with TandemSTRAIGHT">&laquo; Previous</a></li>
+
+  <li><a href="/archive.html">Archive</a></li>
+
+  <li class="next"><a href="/2015/09/11/smarter-looping-in-praat" title="Smarter looping in Praat">Next &raquo;</a></li>
+
+</ul>
+
+<div class="page-header">
+  <h1 class="p-name">Highlighting Praat Code in HTML</h1> 
+</div>
+
+<div class="date">
+  Posted by <a href="http://pinguinorodriguez.cl" class="p-author h-card">JJA</a> on <time class="dt-published" datetime="2015-02-24 00:00:00 +0000">24 February 2015</time>
+</div>
+<div class="content e-content">
+  
+<p>This page uses <a href="http://ace.c9.io/">ace</a> to dynamically highlight Praat code. All highlighting is
+done through the ace editor, which means that the source of this page just
+contains pure Praat code.</p>
+
+<p>Here’s a snippet:</p>
+
+<pre class="ace praat editable"><code>form Highlighter test
+  sentence My_sentence This should all be a string
+  text My_text This should also all be a string
+  word My_word Only the first word is a string, the rest is invalid
+  boolean Binary 1
+  boolean Quoted "yes"
+  comment This should be a string
+  real left_Range -123.6
+  positive right_Range_max 3.3
+  integer Int 4
+  natural Nat 4
+endform
+</code></pre>
+
+<p>This paragraph is between the code, to maybe illustrate a specific part of the
+script. The code can then resume from where we left off by specifying the start
+line number, in this case using the <code>data-start</code> attribute.</p>
+
+<pre class="ace praat editable" data-start="14"><code># External scripts
+include /path/to/file
+runScript: "/path/to/file"
+execute /path/to/file
+
+stopwatch
+
+# old-style procedure call
+call oldStyle "quoted" 2 unquoted string
+assert oldStyle.local = 1
+</code></pre>
+
+<p>And here is a much longer snippet of code, to show automatic scrolling.</p>
+
+<pre class="ace praat editable" data-start="25"><code># New-style procedure call with parens
+@newStyle("quoted", 2, "quoted string")
+if praatVersion &gt;= 5364
+  # New-style procedure call with colon
+  @newStyle: "quoted", 2, "quoted string"
+endif
+
+# if-block with built-in variables
+if windows
+  # We are on Windows
+elsif unix = 1 or !macintosh
+  exitScript: "We are on Linux"
+else
+  # macintosh == 1
+  exit We are on Mac
+endif
+
+# inline if with inline comment
+var = if macintosh = 1 then 0 else 1 fi ; This is an inline comment
+
+# for-loop with explicit from using local variable
+# and paren-style function calls and variable interpolation
+n = numberOfSelected("Sound")
+for i from newStyle.local to n
+  sound'i' = selected("Sound", i)
+  sound[i] = sound'i'
+endfor
+
+for i from 1 to n
+  # Different styles of object selection
+  select sound'i'
+  sound = selected()
+  sound$ = selected$("Sound")
+  select Sound 'sound$'
+  selectObject(sound[i])
+  selectObject: sound
+
+  # New-style standalone command call
+  Rename: "SomeName"
+
+  # Command call with assignment
+  duration = Get total duration
+
+  # Multi-line command with modifier
+  pitch = noprogress To Pitch (ac): 0, 75, 15, "no",
+    ...0.03, 0.45, 0.01, 0.35, 0.14, 600
+
+  # do-style command with assignment
+  minimum = do("Get minimum...", 0, 0, "Hertz", "Parabolic")
+
+  # New-style multi-line command call with broken strings
+  table = Create Table with column names: "table", 0,
+    ..."file subject speaker
+    ...f0 f1 f2 f3 " +
+    ..."duration response"
+
+  removeObject: pitch, table
+
+  # Picture window commands
+  selectObject: sound
+  # do-style command
+  do("Select inner viewport...", 1, 6, 0.5, 1.5)
+  Black
+  Draw... 0 0 0 0 "no" Curve
+  Draw inner box
+  Text bottom: "yes", sound$
+  Erase all
+
+  # Demo window commands
+  demo Erase all
+  demo Select inner viewport... 0 100 0 100
+  demo Axes... 0 100 0 100
+  demo Paint rectangle... white 0 100 0 100
+  demo Text... 50 centre 50 half Click to finish
+  demoWaitForInput ( )
+  demo Erase all
+  demo Text: 50, "centre", 50, "half", "Finished"
+endfor
+
+# An old-style sendpraat block
+sendpraat Praat
+  ...'newline$' Create Sound as pure tone... "tone" 1 0 0.4 44100 440 0.2 0.01 0.01
+  ...'newline$' Play
+  ...'newline$' Remove
+
+# A new-style sendpraat block
+beginSendPraat: "Praat"
+  Create Sound as pure tone: "tone", 1, 0, 0.4, 44100, 440, 0.2, 0.01, 0.01
+  duration = Get total duration
+  Remove
+endSendPraat: "duration"
+appendInfoLine: "The generated sound lasted for ", duration, "seconds"
+
+time = stopwatch
+clearinfo
+echo This script took
+print 'time' seconds to
+printline execute.
+
+# Old-style procedure declaration
+procedure oldStyle .str1$ .num .str2$
+  .local = 1
+endproc
+
+# New-style procedure declaration
+procedure newStyle (.str1$, .num, .str2$)
+  .local = 1
+endproc
+</code></pre>
+
+<p>By the way: <a href="http://ace.c9.io/">ace</a> is a text <em>editor</em>, and all the highlighted snippets are
+instances of that editor. This means that all those fields are
+<a href="images/mind_blown.gif"><em>editable</em></a>. Go on. Try.</p>
+
+<p>Praat is available as an ace language mode starting from ace 1.1.6. Other
+available editor highlighters are listed below:</p>
+
+<ul>
+  <li><a href="https://github.com/jjatria/praatKateSyntax">Kate</a></li>
+  <li><a href="http://sadowsky.cl/praat.html#syntax">Notepad++</a></li>
+  <li><a href="https://github.com/mauriciofigueroa/praatSublimeSyntax">SublimeText</a></li>
+  <li><a href="https://github.com/dopefishh/vim-praat">vim</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+<ul class="tag_box inline-list">
+  
+  
+
+
+  
+     
+    	<li class="tag"><a href="/tags.html#praat" rel="tag">praat <span>3</span></a></li>
+     
+    	<li class="tag"><a href="/tags.html#syntax highlighting" rel="tag">syntax highlighting <span>1</span></a></li>
+    
+  
+
+
+
+</ul>
+
+
+<ul class="pagination inline-list">
+
+  <li class="prev"><a href="/2013/06/20/continuum-synthesis-with-tandemstraight" title="Continuum synthesis with TandemSTRAIGHT">&laquo; Previous</a></li>
+
+  <li><a href="/archive.html">Archive</a></li>
+
+  <li class="next"><a href="/2015/09/11/smarter-looping-in-praat" title="Smarter looping in Praat">Next &raquo;</a></li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class='fleuron'><hr /></div>
+
+</div>
+
+  <div id="footer">
+    <div class="container">
+      <p>&copy; 2015 JJA |
+        Built with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+      </p>
+    </div>
+  </div>
+
+  
+
+
+
+
+  <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/assets/themes/rodriguez/bootstrap/js/bootstrap.min.js"></script>
+  
+    
+  <script src="/assets/themes/rodriguez/../../lib/ace/ace.js"></script>
+  <script src="/assets/themes/rodriguez/../../lib/ace/mode-praat.js"></script>
+  <script src="/assets/themes/rodriguez/../../lib/ace/theme-solarized_light.js"></script>
+  <script>
+      function qsa(sel) {
+          return Array.apply(null, document.querySelectorAll(sel));
+      }
+
+      qsa(".ace").forEach(function (codeEl) {
+          var classes = codeEl.className;
+          classes = classes.split(" ");
+          var mode = "praat";
+          var readonly = true;
+          classes.forEach(function (e, i, a) {
+            if (e == "praat" ||
+                e == "javascript" ||
+                e == "yaml" ||
+                e == "latex" ||
+                e == "tex" ||
+                e == "html" ||
+                e == "css" ||
+                e == "perl") { mode = e };
+            if (e == "editable") { readonly = false };
+          });
+
+          ace.edit(codeEl).setOptions({
+              maxLines: 20,
+              readOnly: readonly,
+              autoScrollEditorIntoView: true,
+              mode:  "ace/mode/" + mode,
+              theme: "ace/theme/solarized_light",
+              firstLineNumber: parseInt(codeEl.getAttribute("data-start") || 1),
+              showGutter: true,
+          });
+      });
+  </script>
+    
+  
+</body>
+</html>
+

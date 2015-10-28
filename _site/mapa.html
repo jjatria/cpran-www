@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Mapa Prosódico (Prueba)</title>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+	<link rel="stylesheet" href="/assets/lib/leaflet/plugins/Label/leaflet.label.css" />
+	<script src="/assets/lib/jquery.js"></script>
+
+<!-- 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" /> -->
+	<!--[if lte IE 8]>
+			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css" />
+	<![endif]-->
+<!-- 	<script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script> -->
+
+	<link rel="stylesheet" href="/assets/lib/leaflet/leaflet.css" />
+	<script src="/assets/lib/leaflet/leaflet-src.js"></script>
+
+	<script src="/assets/lib/leaflet/plugins/Label/leaflet.label.js"></script>
+	<style>
+		html, body, #main { width: 100%; height: 100%; margin: 0; padding: 0; }
+		#main {
+			display: table;
+			font-family: sans-serif;
+		}
+		.row { display: table-row; }
+		.minrow { height: 0; }
+		#map {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border: solid #666 1px;
+			display: table-cell;
+		}
+		#popup {
+			color: #666;
+			display: none;
+			background: #ffffff;
+			height: 40%;
+			min-height: 10em;
+			border: 1px solid #abbcc9;
+			padding: 0.5em;
+		}
+		#popup #close, #popup #prosody {
+			width: 100%;
+			position: relative;
+		}
+		#popup #close button {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.topnav { text-align: center; }
+		.topnav ul { margin: 0.5em 0 0.5em; }
+		.topnav li {
+			display: inline-block;
+			padding: 0 0.5em;
+		}
+
+	</style>
+</head>
+
+<body>
+
+<div id="main">
+	<nav id="topnav" class="topnav row minrow">
+		<ul>
+			<li><button>Zona 1</button></li>
+			<li><button>Zona 2</button></li>
+			<li><button>Zona 3</button></li>
+			<li><button>Zona 4</button></li>
+			<li><button>Zona 5</button></li>
+			<li><button>Zona 6</button></li>
+			<li><button>Zona 7</button></li>
+			<li><button>Zona 8</button></li>
+		</ul>
+	</nav>
+	<div class="row">
+		<div id="map"></div>
+	</div>
+	<div class="row minrow">
+		<div id="popup">
+			<div id="close" ><button onclick='$(this).parent().parent().css("display", "none"); map.invalidateSize()'>X</div>
+			<div id="prosody"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/assets/lib/sm2/soundmanager2-jsmin.js"></script>
+<script>
+	soundManager.url = '/assets/lib/sm2/swf';
+</script>
+
+<script type="text/javascript">
+	// These styles are for regions
+	// Just for demo purposes; these will eventually
+	// be replaced for isogloss styles
+	var styles = {
+		ap: {
+			color: "#dc322f",
+			opacity: 1,
+			weight: 1,
+		},
+		ta: {
+			color: "#cb4b16",
+			opacity: 1,
+			weight: 1,
+		},
+		an: {
+			color: "#dc322f",
+			opacity: 1,
+			weight: 1,
+		},
+		at: {
+			color: "#cb4b16",
+			opacity: 1,
+			weight: 1,
+		},
+		co: {
+			color: "#b58900",
+			opacity: 1,
+			weight: 1,
+		},
+		vs: {
+			color: "#859900",
+			opacity: 1,
+			weight: 1,
+		},
+		rm: {
+			color: "#b58900",
+			opacity: 1,
+			weight: 1,
+		},
+		li: {
+			color: "#859900",
+			opacity: 1,
+			weight: 1,
+		},
+		ml: {
+			color: "#b58900",
+			opacity: 1,
+			weight: 1,
+		},
+		bi: {
+			color: "#859900",
+			opacity: 1,
+			weight: 1,
+		},
+		ar: {
+			color: "#b58900",
+			opacity: 1,
+			weight: 1,
+		},
+		lr: {
+			color: "#6c71c4",
+			opacity: 1,
+			weight: 1,
+		},
+		ll: {
+			color: "#268bd2",
+			opacity: 1,
+			weight: 1,
+		},
+		ai: {
+			color: "#6c71c4",
+			opacity: 1,
+			weight: 1,
+		},
+		ma: {
+			color: "#268bd2",
+			opacity: 1,
+			weight: 1,
+		},
+	};
+
+	// Read parameters from URL (at this point only center and zoom)
+	var params = {};
+	window.location.href.replace(
+		/[?&]+([^=&]+)=([^&]*)/gi,
+		function(m, key, value) {
+			params[key] = value;
+		}
+	);
+
+	// Initialize map with URL parameters or default values
+	var map = L.map('map',{
+				center: [params.lat || -33.45665, params.lng || -70.66956],
+				zoom: params.zoom || 4,
+				minZoom: 4,
+			}
+		)
+		.on('click', onMapClick);
+
+	// Layer control. Currently disabled.
+	var markers = new L.LayerGroup([]);
+	var overlays = {
+		"Markers": markers,
+	};
+// 	L.control.layers({}, overlays).addTo(map);
+
+	// Scale control
+	L.control.scale().addTo(map);
+
+// Read region polygons (eventually isoglosses)
+// On success read zone markers, to ensure they are on top
+	loadPolygons("assets/maprosodico/regiones.json");
+
+	// Read tiles
+	// Currently using CloudMade, but maybe a different
+	// tile provider would be better
+	L.tileLayer('http://tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: 'Mapa de <a href="http://openstreetmap.org">OpenStreetMap</a> (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>)',
+		maxZoom: 18
+	}).addTo(map);
+
+	// Read polygons from GeoJSON file
+	function loadPolygons(url) {
+		jQuery.ajax({
+			type: "GET",
+			url: url,
+			dataType: "json",
+			success: function(data) {
+				L.geoJson(data, {
+					style: styleFeature,
+					onEachFeature: function(feature, layer) {
+						layer.bindLabel(feature.properties.name);
+						layer.on('click', function (e) {
+							onMapClick(e);
+						});
+					},
+					filter: function(feature, layer) {
+						return (
+							feature.geometry.type == "Polygon" ||
+							feature.geometry.type == "MultiPolygon"
+						);
+					}
+				}).addTo(map);
+				// Load zone markers, which will be on top
+				loadMarkers("assets/maprosodico/zonas.json");
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert("Error processing GeoJSON data: " + errorThrown);
+			}
+		});
+	}
+
+	// Read zone markers from GeoJSON file
+	function loadMarkers(url) {
+		$.getJSON(url, function(data) {
+			$.each(data.zones, function(index, zone) {
+				var g = L.geoJson(zone.json, {
+					style: styleFeature,
+					onEachFeature: function(feature, layer) {
+						layer.bindLabel(feature.properties.name + " (zona " + (index+1) + ")");
+						// Set onclick listener for zone markers
+						layer.on('click', function (e) {
+							openPopup(zone);
+						});
+
+					},
+					pointToLayer: function (feature, latlng) {
+						return L.circleMarker(latlng, {
+							radius: 8,
+							fillColor: "#fff",
+							color: "#666",
+							weight: 2,
+							opacity: 1,
+							fillOpacity: 0.8,
+						});
+					},
+					filter: function(feature, layer) {
+						return (feature.geometry.type == "Point");
+					}
+				});
+
+				//Add zone navigation links
+				var btn = document.getElementById('topnav')
+					.getElementsByTagName('ul')[0]
+					.getElementsByTagName('li')[index]
+					.getElementsByTagName('button')[0];
+				btn.onclick = function () {
+					map.fitBounds(zone.bounds);
+					openPopup(zone);
+				}
+				btn.title = zone.name;
+
+				// Add support for marker layer
+				markers.addLayer(g);
+				g.addTo(map);
+			});
+		});
+	}
+
+	function prepareSounds(zone) {
+		var snds = new Array();
+		$.each(zone.samples, function(index, sample) {
+			var sid = "zone"+zone.index+"_"+sample.id;
+			var snd = soundManager.getSoundById(sid);
+			if (snd) {
+				// Reuse existing sound
+				snds.push(snd);
+			} else {
+				// Create new sound
+				snds.push(soundManager.createSound({
+					id: sid,
+					url: sample.url
+				}));
+			}
+		});
+		return snds;
+	}
+
+	function openPopup(zone) {
+		// Show popup
+		var popup = $("#popup");
+		popup.css('display', 'table-cell');
+		// Update map size
+		map.invalidateSize();
+
+		// Prepare popup html
+		var title = document.createElement('h2');
+		title.innerHTML = "Zona " + zone.index + ": " + zone.name;
+		var ul = document.createElement('ul');
+		prepareSounds(zone);
+		$.each(zone.samples, function(index, sample) {
+			var sid = "zone"+zone.index+"_"+sample.id;
+			var li = document.createElement('li');
+			var btn = document.createElement('button');
+			btn.onclick = function () {
+				soundManager.stopAll();
+				soundManager.play(sid);
+			}
+			btn.innerHTML = sample.label;
+			li.appendChild(btn);
+			ul.appendChild(li);
+		});
+		var div = document.getElementById('prosody');
+		div.innerHTML = '';
+		div.appendChild(title).appendChild(ul);
+	}
+
+	// Temporary function to style features
+	// As more features are added, maybe type-specific
+	// functions are more efficient
+	function styleFeature(feature) {
+		if (feature.properties && feature.properties.iso3166) {
+			return styles[feature.properties.iso3166.substr(3,2).toLowerCase()];
+		}
+	}
+
+	// Map onclick function
+	// So far mostly a placeholder function useful for debug
+	function onMapClick(e) {
+		console.log("You clicked the map at " + e.latlng);
+		var popup = $("#popup");
+		popup.css('display', 'none');
+		map.invalidateSize();
+	}
+</script>
+</body>
+</html>

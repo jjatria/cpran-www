@@ -1,0 +1,39 @@
+/* Inline link bars for navigational header
+   Based on examples from http://www.alistapart.com/articles/taminglists/
+   and http://www.kriesi.at/archives/create-a-multilevel-dropdown-menu-with-css-and-improve-it-via-jquery */
+
+nav#linkbar {
+  width: 100%;
+  height: 5em;
+  text-align: center;
+  position: relative;
+/*   text-space-collapse: collapse; */
+}
+#linkbar div#topbar {
+  background: #000000;
+}
+#linkbar ul {
+  margin: 0;
+  padding: 0;
+}
+#linkbar li {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 2.5em;
+  padding: 0 1em;
+}
+#linkbar div#lowbar {
+  background: #636363;
+  position: absolute;
+  width: 100%; left: 50%; margin-left: -50%; /* center */
+  height: 2.5em;
+  bottom: 0;
+}
+#linkbar a:link              { text-decoration: none; color: #ffffff }
+#linkbar a:visited           { text-decoration: none; color: #ffffff }
+#linkbar a:hover             { color: #40b3dd }
+#linkbar li.active           { background: #ffffff }
+#linkbar li.active a:link    { text-decoration: none; color: #000000 }
+#linkbar li.active a:visited { text-decoration: none; color: #000000 }
+#linkbar li.active a:hover   { color: #40b3dd }
+

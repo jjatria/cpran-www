@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>JJA | Continuum synthesis with TandemSTRAIGHT</title>
+  <meta name="description" content="">
+  <meta name="author" content="José Joaquín Atria">
+
+  <!-- Enable responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/assets/themes/rodriguez/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/themes/rodriguez/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/assets/themes/rodriguez/css/style.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/assets/themes/rodriguez/css/linkbar.css" rel="stylesheet" type="text/css" media="all">
+  
+    
+      <link href="/assets/themes/rodriguez/css/accent.css" rel="stylesheet" type="text/css" media="all">
+    
+  
+
+  <style>
+    .fleuron {
+      min-height: 50px;
+      background: #fff url(/assets/themes/rodriguez/images/fleuron.svg) no-repeat scroll center;
+      border: none;
+      display: block;
+    }
+    .fleuron hr {
+      display: none;
+    }
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="/assets/themes/rodriguez/images/favicon.ico">
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+  <!-- atom & rss feed -->
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+  <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+</head>
+
+<body>
+<div id="wrap">
+<div id="banner"><a href="/">JJA</a></div>
+
+
+<link href="/assets/themes/rodriguez/css/post.css" rel="stylesheet" type="text/css" media="all">
+
+<nav id="linkbar">
+  <div id="topbar">
+  <ul>
+      
+      
+      
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          <li><a href="/blog/index.html">Blog</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/scripts/index.html">Scripts</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/tutorials/index.html">Tutorials</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li><a href="/research/index.html">Research</a></li>
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+
+  </ul>
+  </div>
+</nav>
+
+<div class="content h-entry">
+
+<ul class="pagination inline-list">
+
+  <li class="prev"><a href="/2012/01/15/pitch-in-praat" title="Pitch in Praat">&laquo; Previous</a></li>
+
+  <li><a href="/archive.html">Archive</a></li>
+
+  <li class="next"><a href="/2015/02/24/highlighting-praat-code-in-html" title="Highlighting Praat Code in HTML">Next &raquo;</a></li>
+
+</ul>
+
+<div class="page-header">
+  <h1 class="p-name">Continuum synthesis with TandemSTRAIGHT</h1> 
+</div>
+
+<div class="date">
+  Posted by <a href="http://pinguinorodriguez.cl" class="p-author h-card">JJA</a> on <time class="dt-published" datetime="2013-06-20 00:00:00 +0100">20 June 2013</time>
+</div>
+<div class="content e-content">
+  
+<style>
+  #ui { text-align:center; display: table; width: 100%; }
+  #row { display: table-row; }
+  #ui input[type="checkbox"]:checked + label { font-weight: bold; }
+  #row div { display: table-cell; }
+  #buttons { text-align: left; }
+  #row #buttons div { display: inline-block; width: 4em; }
+  #dropdown { text-align: right; }
+  #spectrogram {
+    width: 100%;
+    border: 2px black solid;
+  }
+  #straight h2 {
+    text-align: center;
+    padding: 0;
+    line-height: 1.5em;
+  }
+  #straight { padding-bottom: 3em; }
+</style>
+
+<p>TandemSTRAIGHT is a set of Matlab scripts for analysis and manipulation of
+speech, and you can read more about it
+on <a href="http://www.wakayama-u.ac.jp/~kawahara/STRAIGHTadv/index_e.html">the TandemSTRAIGHT website</a>. These are the results of some
+basic tests I’ve made for myself, using two different sounds and transplanting
+the different acoustic parameters in STRAIGHT from one to the other.</p>
+
+<p>You can choose the base and target sounds from the drop-down menu (although so
+far there’s only two sound pairs) and select the features you want copied to see
+the spectrogram of the synthesised sound. If you click on the spectrogram, you
+can also hear how it sounds.</p>
+
+<noscript>
+  <aside class="rem">
+
+    <p>The demo widget on this page requires JavaScript to work, and your browser
+does not seem to be able to run JavaScript right now. Until I come up with a
+solution, this sadly means you won’t be able to use the demo.</p>
+
+  </aside>
+</noscript>
+
+<div id="straight">
+
+<h2 id="straight-header"></h2>
+
+<div id="basediv"></div>
+<div id="synthdiv">
+  <a id="synthlink" class="inline-playable">
+    <img id="spectrogram" />
+  </a>
+</div>
+<div id="targetdiv"></div>
+
+<div id="ui">
+  <div id="row">
+  <div id="buttons">
+  <div>
+    <input id="freq" name="freq" type="checkbox" value="16" onchange="getFlags(this)" />
+    <label for="freq" title="Frequency level?">Freq</label>
+  </div>
+  <div>
+    <input id="spec" name="spec" type="checkbox" value="8" onchange="getFlags(this)" />
+    <label for="spec" title="Not sure...">Spec</label>
+  </div>
+  <div>
+    <input id="ap" name="ap" type="checkbox" value="4" onchange="getFlags(this)" />
+    <label for="ap" title="Aperiodicity">AP</label>
+  </div>
+  <div>
+    <input id="f0" name="f0" type="checkbox" value="2" onchange="getFlags(this)" />
+    <label for="f0" title="Fundamental frequency">F0</label>
+  </div>
+  <div>
+    <input id="time" name="time" type="checkbox" value="1" onchange="getFlags(this)" />
+    <label for="time">Time</label>
+  </div>
+  </div>
+  <div id="dropdown">
+  <select onchange="getRoot(this)">
+    <option value="l1-l2">Spanish; first to second</option>
+    <option value="km1-km2">Japanese; first to second</option>
+  </select>
+  </div>
+  </div>
+</div>
+
+<script>
+  var flag = 0;
+  var root = 'l1-l2';
+  window.onload = function() { update(root, flag) };
+  function getFlags(btn) {
+    flag = flag ^ btn.value;
+    update(root, flag);
+  }
+  function getRoot(sel) {
+    root = sel.options[sel.selectedIndex].value;
+    update(root, flag);
+  }
+  function update(r, f) {
+    // Takes the file root and set of flags and sets properties
+    // in the appropriate image and link
+    i = document.getElementById('spectrogram');
+    a = document.getElementById('synthlink');
+    var n = ("0000" + f.toString(2)).substr(-5);
+    i.setAttribute('src', '/assets/tutorials/straight_continuum/figures/'+r+'.'+n+'.png');
+    a.setAttribute('href', '/assets/tutorials/straight_continuum/audio/'+r+'.'+n+'.mp3');
+    setTitle(root);
+  }
+  function setTitle(r) {
+    var h = document.getElementById('straight-header');
+    switch (r) {
+    case 'l1-l2':
+      h.innerHTML = "límite ~ limíte";
+      break;
+    case 'km1-km2':
+      h.innerHTML = "<div class='jaccent'><span class='F'>ka</span><span class='L'>mimo</span> ~ <span class='R'>ka</span><span class='F'>mi</span><span class='L'>mo</span></div>";
+      break;
+    }
+  }
+</script>
+</div>
+
+</div>
+
+
+
+
+<ul class="tag_box inline-list">
+  
+  
+
+
+  
+     
+    	<li class="tag"><a href="/tags.html#tutorial" rel="tag">tutorial <span>3</span></a></li>
+     
+    	<li class="tag"><a href="/tags.html#straight" rel="tag">straight <span>1</span></a></li>
+     
+    	<li class="tag"><a href="/tags.html#spanish" rel="tag">spanish <span>1</span></a></li>
+     
+    	<li class="tag"><a href="/tags.html#japanese" rel="tag">japanese <span>1</span></a></li>
+    
+  
+
+
+
+</ul>
+
+
+<ul class="pagination inline-list">
+
+  <li class="prev"><a href="/2012/01/15/pitch-in-praat" title="Pitch in Praat">&laquo; Previous</a></li>
+
+  <li><a href="/archive.html">Archive</a></li>
+
+  <li class="next"><a href="/2015/02/24/highlighting-praat-code-in-html" title="Highlighting Praat Code in HTML">Next &raquo;</a></li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class='fleuron'><hr /></div>
+
+</div>
+
+  <div id="footer">
+    <div class="container">
+      <p>&copy; 2015 JJA |
+        Built with <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+      </p>
+    </div>
+  </div>
+
+  
+
+
+
+
+  <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/assets/themes/rodriguez/bootstrap/js/bootstrap.min.js"></script>
+  
+    
+  <script type="text/javascript" src="/assets/themes/rodriguez/../../lib/sm2/script/soundmanager2-jsmin.js"></script>
+    
+  
+    
+  <script type="text/javascript" src="/assets/themes/rodriguez/../../lib/sm2/script/inlineplayer.js"></script>
+    
+  
+</body>
+</html>
+

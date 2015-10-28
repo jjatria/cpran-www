@@ -1,0 +1,170 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.29739, -18.4744]
+			},
+			"properties": {
+				"name": "Arica",
+				"area": 1
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.14221, -20.22]
+			},
+			"properties": {
+				"name": "Iquique",
+				"area": 1
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.39078, -23.62817]
+			},
+			"properties": {
+				"name": "Antofagasta",
+				"area": 2
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-71.25114, -29.91209]
+			},
+			"properties": {
+				"name": "La Serena",
+				"area": 3
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-71.34109, -29.97278]
+			},
+			"properties": {
+				"name": "Coquimbo",
+				"area": 3
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.65033, -33.45665]
+			},
+			"properties": {
+				"name": "Santiago",
+				"area": 4
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-71.62949, -33.04148]
+			},
+			"properties": {
+				"name": "Valparaíso",
+				"area": 4
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-72.11151, -36.60891]
+			},
+			"properties": {
+				"name": "Chillán",
+				"area": 5
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.06114, -36.80599]
+			},
+			"properties": {
+				"name": "Concepción",
+				"area": 5
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-72.35081, -37.47104]
+			},
+			"properties": {
+				"name": "Los Ángeles",
+				"area": 5
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-72.60349, -38.7415]
+			},
+			"properties": {
+				"name": "Temuco",
+				"area": 6
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.23074, -39.82489]
+			},
+			"properties": {
+				"name": "Valdivia",
+				"area": 6
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.76598, -42.47855]
+			},
+			"properties": {
+				"name": "Castro",
+				"area": 7
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-73.81645, -41.87007]
+			},
+			"properties": {
+				"name": "Ancud",
+				"area": 7
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-70.90611, -53.15109]
+			},
+			"properties": {
+				"name": "Punta Arenas",
+				"area": 8
+			}
+		}
+	]
+}

@@ -1,0 +1,500 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -71.103878,
+        42.3847949,
+        0
+    ]
+   },
+   "properties": {
+    "name": "Somervile",
+    "category": "city",
+    "description": "<p>This is a <em>test</em>.</p><p>This is a test to see if long descriptions work.</p><p>45 Laurel St., Somervile, MA 02143</p>"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -70.89671550000003,
+        42.51954,
+        0
+    ]
+   },
+   "properties": {
+    "name": "Salem",
+    "category": "city",
+    "description": "The first stop: the old witch town"
+   }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.89312,
+              42.52057,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Red House",
+          "category": "food",
+          "description": "<a href='http://www.redssandwichshop.com/'>http://www.redssandwichshop.com/</a><p>15 Central Street, Salem, MA 01970</p>"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.66198880000002,
+              42.6159285,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Gloucester",
+          "category": "city",
+          "description": "First stop in Cape Ann"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.620363,
+              42.6556505,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Rockport",
+          "category": "city",
+          "description": "The tip of Cape Ann, and our first night"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.6184,
+              42.6571,
+              0
+          ]
+      },
+      "properties": {
+          "name": "The Lantana House",
+          "category": "hotel",
+          "description": "http://www.thelantanahouse.com"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.84115580000002,
+              42.679183200000004,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Ipswich",
+          "category": "city",
+          "description": "Last town in Cape Ann"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.59916699999997,
+              43.248889,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Ogunquit",
+          "category": "city",
+          "description": "Old and traditional summer resort"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.5948704,
+              43.2368996,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Yardarm Village Inn",
+          "category": "hotel",
+          "description": "http://www.yardarmvillageinn.com/"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.2553259,
+              43.66147100000001,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Portland",
+          "category": "city",
+          "description": "The big city"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.279,
+              43.65372,
+              0
+          ]
+      },
+      "properties": {
+          "name": "The Inn at St. John",
+          "category": "hotel",
+          "description": "http://innatstjohn.com/"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -69.1089293,
+              44.1036914,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Rockland",
+          "category": "city",
+          "description": "The "
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -69.0896 , 44.14002, 0 ]
+      },
+      "properties": {
+          "name": "The Ledges by the Bay",
+          "category": "hotel",
+          "description": "http://www.ledgesbythebay.com"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -71.21382, 43.58424, 0 ]
+      },
+      "properties": {
+          "name": "Kelly's Yum Yum Shop",
+          "category": "food",
+          "description": ""
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.321855, 42.184458, 0 ]
+      },
+      "properties": {
+          "name": "Whales",
+          "category": "poi",
+          "description": "<p>We saw Pele, Storm and Eruption as well as Nile and her calf.</p>"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -71.12879, 42.38014, 0 ]
+      },
+      "properties": {
+          "name": "Cambridge",
+          "category": "city",
+          "description": "<p>Home.</p><p>17 Healey St., Cambridge, MA</p>"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -71.57376, 43.55161, 0 ]
+      },
+      "properties": {
+          "name": "Steele Hill Restorts",
+          "category": "food",
+          "description": ""
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -71.21114, 43.5851, 0 ]
+      },
+      "properties": {
+          "name": "Hunter IGA",
+          "category": "food",
+          "description": ""
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -71.21355, 43.58424, 0 ]
+      },
+      "properties": {
+          "name": "Garwoods",
+          "category": "food",
+          "description": "http://www.ledgesbythebay.com"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -69.27179, 43.98117, 0 ]
+      },
+      "properties": {
+          "name": "Graveyard",
+          "category": "poi",
+          "description": ""
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.25071, 43.65691, 0 ]
+      },
+      "properties": {
+          "name": "Curly's Cones of Maine",
+          "category": "food"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.760445,
+              42.684567,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Crane Beach",
+          "category": "poi"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.79986600000001,
+              42.664953,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Russell Orchards",
+          "category": "poi"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.65654, 42.60723, 0 ]
+      },
+      "properties": {
+          "name": "The Studio",
+          "category": "whale"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.652791,
+              42.616998,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Cape Ann Whale Watch",
+          "category": "whale"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.6925,
+              42.585299000000006,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Hammond Castle Museum",
+          "category": "museum"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.591146,
+              43.165275,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Cape Neddick Nubble Lighthouse",
+          "category": "poi"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.58981, 43.23652, 0 ]
+      },
+      "properties": {
+          "name": "Lobster Shack",
+          "category": "food",
+          "description": "Need to locate!"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.26714, 43.65295, 0 ]
+      },
+      "properties": {
+          "name": "Petite Jacqueline",
+          "category": "food"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -70.20818300000002,
+              43.623038,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Portland Head Light",
+          "category": "poi"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -69.109884,
+              44.103542,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Farnsworth Museum",
+          "category": "museum"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -69.26861100000002,
+              43.981758,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Olson House",
+          "category": "museum"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -71.20947990000002,
+              43.5852069,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Wolfeboro",
+          "category": "city"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [ -69.10875, 44.10201, 0 ]
+      },
+      "properties": {
+          "name": "Park Street Grille",
+          "category": "food"
+      }
+  },
+  {
+      "type": "Feature",
+      "geometry": {
+          "type": "Point",
+          "coordinates": [
+              -71.11468,
+              43.59916,
+              0
+          ]
+      },
+      "properties": {
+          "name": "Lake View Inn B&B",
+          "category": "hotel",
+          "description": "http://www.lakeview-inn.com/"
+      }
+  }
+ ]
+}
