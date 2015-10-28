@@ -5,7 +5,7 @@ tagline: The Praat plugin manager
 ---
 {% include JB/setup %}
 
-![CPrAN](images/text_logo-small.png)
+![CPrAN]({% BASE_PATH %}/assets/images/text_logo-small.png)
 
 A plugin manager for Praat
 --------------------------
