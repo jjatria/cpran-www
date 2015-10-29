@@ -25,23 +25,23 @@ To use CPrAN, you'll have to install it as you would normally with any other
 Praat plugin. The current version is [written in Perl][perl client], so you'll
 probably also need to install some other modules before you can use it.
 
-[perl client]: clients/cpran
+[perl client]: /clients/cpran
 
 All you need to get up and running is explained in the [installation
 instructions][install client].
 
-[install client]: clients/cpran#installation
+[install client]: /clients/cpran#installation
 
 Once you are done, take a look at the documentation for [how to use the current
 client][cpran], or read below for a quick overview. You can also take a look
 at the [currently registered plugins][plugin list] to whet your appetite.
 
-[cpran]: docs/cpran
-[plugin list]: plugins
+[cpran]: /docs/cpran
+[plugin list]: /plugins
 
 And if you are interested, you can read about the [rationale][] of the project.
 
-[rationale]: 2015/03/18/rationale
+[rationale]: /2015/03/18/rationale
 
 ### A quick sampler
 

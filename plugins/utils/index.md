@@ -33,7 +33,7 @@ plugin][plugins].
 
 [plugins]: http://www.fon.hum.uva.nl/praat/manual/plug-ins.html
 [archive]: https://gitlab.com/cpran/plugin_utils/repository/archive.zip
-[cpran]:   https://cpran.net
+[cpran]:   http://cpran.net
 
 Requirements
 ------------
