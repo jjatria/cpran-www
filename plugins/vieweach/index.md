@@ -74,10 +74,8 @@ objects.
 As an example, if told to iterate over the selected objects, and given a script
 with the instructions
 
-```praat
-name$ = extractWord$(selected$(), " ")
-Copy: name$
-```
+    name$ = extractWord$(selected$(), " ")
+    Copy: name$
 
 then the resulting selection after completion would be a copy of all the
 initially selected objects.
