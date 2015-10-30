@@ -9,9 +9,9 @@ description:
 ---
 {% include JB/setup %}
 
-**See [the wiki][] for the complete documentation**
+**For more information see the [documentation][]**
 
-[the wiki]: https://gitlab.com/cpran/plugin_vieweach/wikis/home
+[documentation]: {{ BASE_PATH }}/docs/plugins/vieweach
 
 This plugin provides features for iterating through an arbitrarily complex
 sets of objects. They are provided both as procedures, to make it easier to
@@ -45,17 +45,20 @@ incredibly versatile.
 
 ## Procedures
 
-The first set of procedures ([`for_each.proc`][]) defines the core iterative
-features, which uses [`Table`][] and `Strings` objects to represent sets of objects
-to iterate over. This makes it possible to seamlessly iterate over objects that
-reside in the Object list, on disk, or in a combination of both.
+The [first set of procedures][for_each procedure] ([`for_each.proc`][]) defines
+the core iterative features, which uses [`Table`][] and `Strings` objects to
+represent sets of objects to iterate over. This makes it possible to seamlessly
+iterate over objects that reside in the Object list, on disk, or in a
+combination of both.
 
-The second set of procedures ([`view_each.proc`][]) demonstrates one possible
-application of `for_each` to allow for easy navigation both back and forth over
-the specified (sets of) objects, opening the appropriate editor window for each
-when available.
+The [second set of procedures][view_each procedure] ([`view_each.proc`][])
+demonstrates one possible application of `for_each` to allow for easy navigation
+both back and forth over the specified (sets of) objects, opening the
+appropriate editor window for each when available.
 
-[`table`]: https://gitlab.com/cpran/plugin_selection#overview
+[`table`]: {{ BASE_PATH }}/plugins/selection#overview
+[for_each procedure]: {{ BASE_PATH }}/docs/plugins/vieweach/for-each-procedure
+[view_each procedure]: {{ BASE_PATH }}/docs/plugins/vieweach/view-each-procedure
 [`for_each.proc`]: http://gitlab.com/cpran/plugin_vieweach/blob/master/procedures/for_each.proc
 [`view_each.proc`]: http://gitlab.com/cpran/plugin_vieweach/blob/master/procedures/view_each.proc
 
@@ -64,12 +67,14 @@ when available.
 These two set of procedures are further packaged into two corresponding scripts:
 [`for_each.praat`][] and [`view_each.praat`][].
 
-The first one will execute a specified script during each iteration, and select
-all the objects created over those iterations at the end. The script also makes
-it possible to specify whether the iteration should be done directly over the
-selected objects, by selecting one object per type for each iteration, or by
-using the selected objects (either `Table` or `Strings` objects) as sets of
-objects.
+The [first one][for_each script] will execute a specified script during each
+iteration, and select all the objects created over those iterations at the end.
+The script also makes it possible to specify whether the iteration should be
+done directly over the selected objects, by selecting one object per type for
+each iteration, or by using the selected objects (either `Table` or `Strings`
+objects) as sets of objects.
+
+[for_each script]: {{ BASE_PATH }}/docs/plugins/vieweach/for-each-script
 
 As an example, if told to iterate over the selected objects, and given a script
 with the instructions
@@ -88,8 +93,9 @@ robust enough to support the deletion of objects with no ill effects.
 
 [`for_each.praat`]: http://gitlab.com/cpran/plugin_vieweach/blob/master/scripts/for_each.praat
 [`view_each.praat`]: http://gitlab.com/cpran/plugin_vieweach/blob/master/scripts/view_each.praat
-[object list]: http://gitlab.com/cpran/plugin_vieweach/blob/master/scripts/view_each.selected.praat
-[on disk]: http://gitlab.com/cpran/plugin_vieweach/blob/master/scripts/view_each.from_disk.praat
+
+[view_each selected]: {{ BASE_PATH }}/docs/plugins/vieweach/view-each-selected
+[view_each from_disk]: {{ BASE_PATH }}/docs/plugins/vieweach/view-each-from-disk
 
 ## Customization
 

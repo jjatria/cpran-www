@@ -7,15 +7,11 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**upgrade** - Upgrades installed CPrAN plugins to their latest versions
-
-# SYNOPSIS
+## SYNOPSIS
 
 cpran upgrade \[options\] \[arguments\]
 
-# DESCRIPTION
+## DESCRIPTION
 
 Upgrades the specified CPrAN plugins to their latest known versions.
 
@@ -24,29 +20,25 @@ those plugins will be upgraded. Otherwise, all installed plugins will be checked
 for updates and upgraded. This second case should be the recommended use, but it
 is not currently implemented.
 
-# EXAMPLES
+## EXAMPLES
 
     # Upgrades all installed plugins
     cpran upgrade
     # Upgrade specific plugins
     cpran upgrade oneplugin otherplugin
 
-# OPTIONS
+## OPTIONS
 
-# METHODS
+## METHODS
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
+## LICENSE
 
 Copyright 2015 José Joaquín Atria
 
 This program is free software; you may redistribute it and/or modify it under
 the same terms as Perl itself.
 
-# SEE ALSO
+## SEE ALSO
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)

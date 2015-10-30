@@ -11,10 +11,10 @@ highlighter: pygments
 title : CPrAN
 tagline: The Praat plugin manager
 author :
-  name : José Joaquín Atria
-  first_name : José Joaquín
-  last_name : Atria
-  initials : JJA
+  name : CPrAN Team
+  first_name : CPrAN Team
+  last_name : ~
+  initials : CPrAN
   url : http://cpran.net
   email : jjatria@gmail.com
   gitlab : cpran

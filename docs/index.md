@@ -55,7 +55,7 @@ tagline: ~
   {% assign my_description = items[3] %}
   {% assign my_pid         = items[4] %}
   {% if my_pid != NULL %}
-    <dt>{{ my_title }}</dt>
+    <dt><a href="{{ BASE_PATH }}/docs/plugins/{{ my_title }}">{{ my_title }}</a></dt>
     <dd>{{ my_description }}</dd>
   {% endif %}
 {% endfor %}
@@ -66,7 +66,7 @@ tagline: ~
   <dt><a href="clients/">Clients</a></dt>
   <dd>What is a CPrAN client? How do I make one?</dd>
   <dd><dl>
-    <dt>cpran</dt>
+    <dt><a href="clients/cpran">cpran</a></dt>
     <dd>The official client, written in Perl</dd>
   </dl></dd>
 </dl>
