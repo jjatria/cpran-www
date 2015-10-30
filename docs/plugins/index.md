@@ -112,8 +112,8 @@ run automatically by compliant [CPrAN clients][clients].
 
 These tests are nothing fancy: they are simply Praat scripts (with a different
 extension) that produce TAP output. In order to make it easier for you to write
-these tests you can use the [`testsimple`][testsimple] plugin, but you can also
-write it manually if you prefer.
+these tests you can use the [testsimple][] plugin, but you can also write it
+manually if you prefer.
 
 [testsimple]: {{ BASE_PATH }}/plugins/testsimple
 
