@@ -63,7 +63,7 @@ tagline: ~
 {% assign group = nil %}
   </dl>
   </dd>
-  <dt><a herf="clients/">Clients</a></dt>
+  <dt><a href="clients/">Clients</a></dt>
   <dd>What is a CPrAN client? How do I make one?</dd>
   <dd><dl>
     <dt>cpran</dt>
