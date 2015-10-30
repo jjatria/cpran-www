@@ -36,7 +36,7 @@ tagline: ~
 {% assign group = nil %}
   </dl>
   </dd>
-  <dt><a href="plugin/">Plugins</a></dt>
+  <dt><a href="plugins/">Plugins</a></dt>
   <dd>What is a CPrAN plugin? How is it different from a Praat plugin? How do I make a new plugin?</dd>
   <dd><dl>
 {% capture plugins %}
@@ -63,7 +63,7 @@ tagline: ~
 {% assign group = nil %}
   </dl>
   </dd>
-  <dt><a herf="client/">Clients</a></dt>
+  <dt><a herf="clients/">Clients</a></dt>
   <dd>What is a CPrAN client? How do I make one?</dd>
   <dd><dl>
     <dt>cpran</dt>

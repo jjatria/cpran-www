@@ -13,11 +13,11 @@ description:
 
 # SYNOPSIS
 
-my $plugin = CPrAN::Plugin->new( $name );
+    my $plugin = CPrAN::Plugin->new( $name );
 
-$plugin->is\_installed  ; checks for local copy
-$plugin->is\_cpran      ; checks for presence of descriptor
-$plugin->update        ; updates object's internal state
+    $plugin->is\_installed  ; checks for local copy
+    $plugin->is\_cpran      ; checks for presence of descriptor
+    $plugin->update         ; updates object's internal state
 
 # DESCRIPTION
 
@@ -40,11 +40,11 @@ plugins, regardless of whether they are on CPrAN or not.
     Updates the internal state of the plugin, to reflect any changes in disk that
     took place after the object's creation.
 
-- remote\_id()
+- **remote\_id()**
 
     Fetches the CPrAN remote id for the plugin.
 
-- is\_latest()
+- **is\_latest()**
 
     Compares the version on the locally installed copy of the plugin (if any) and
     the one reported by the remote descriptor on record by the client (if any).
@@ -53,11 +53,11 @@ plugins, regardless of whether they are on CPrAN or not.
     false if there is a newer version, and undefined if there is no remote version
     to query.
 
-- test()
+- **test()**
 
     Runs tests for the plugin (if any). Returns the result of those tests.
 
-- print(_FIELD_)
+- **print(_FIELD_)**
 
     Prints the contents of the plugin descriptors, either local or remote. These
     must be asked for by name. Any other names are an error.
