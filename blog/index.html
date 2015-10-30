@@ -1,0 +1,64 @@
+---
+layout: blog
+title: Blog
+group: main
+full_posts: 5
+post_list: 5
+extras: ["ace"]
+---
+{% include JB/setup %}
+
+<!-- <link href="{{ ASSET_PATH }}rodriguez/css/post.css" rel="stylesheet" type="text/css" media="all"> -->
+
+{% for post in site.posts %}
+  {% if forloop.index > 1 %}{% break %}{% endif %}
+<!-- <div class='post'> -->
+
+<ul class="pagination inline-list">
+{% if post.previous %}
+  <li class="prev"><a href="{{ BASE_PATH }}{{ post.previous.url }}" title="{{ post.previous.title }}">&laquo; Previous</a></li>
+{% else %}
+  <li class="prev disabled"><a>&larr; Previous</a></li>
+{% endif %}
+  <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+{% if post.next %}
+  <li class="next"><a href="{{ BASE_PATH }}{{ post.next.url }}" title="{{ post.next.title }}">Next &raquo;</a></li>
+{% else %}
+  <li class="next disabled"><a>Next &rarr;</a>
+{% endif %}
+</ul>
+
+<h1><a href='{{post.url}}'>{{post.title}}</a></h1>
+<div class="date">
+  Posted by <a href="{{ site.author.url }}" class="p-author h-card">{{ site.author.initials }}</a> on <time class="dt-published" datetime="{{ post.date }}">{{ post.date | date_to_long_string }}</time>
+</div>
+
+
+<div class='content e-content'>
+{{ post.content }}
+</div>
+
+{% unless post.tags == empty %}
+<ul class="tag_box inline-list">
+  {% assign tags_list = post.tags %}
+  {% include JB/tags_list %}
+</ul>
+{% endunless %}
+
+<ul class="pagination inline-list">
+{% if post.previous %}
+  <li class="prev"><a href="{{ BASE_PATH }}{{ post.previous.url }}" title="{{ post.previous.title }}">&laquo; Previous</a></li>
+{% else %}
+  <li class="prev disabled"><a>&larr; Previous</a></li>
+{% endif %}
+  <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+{% if post.next %}
+  <li class="next"><a href="{{ BASE_PATH }}{{ post.next.url }}" title="{{ post.next.title }}">Next &raquo;</a></li>
+{% else %}
+  <li class="next disabled"><a>Next &rarr;</a>
+{% endif %}
+</ul>
+
+<!-- </div> -->
+
+{% endfor %}

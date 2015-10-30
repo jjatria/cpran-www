@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  var _paq = _paq || [];
+  {% if page.type == '404' %}
+  _paq.push(['setDocumentTitle',  '404/URL = ' +  encodeURIComponent(document.location.pathname+document.location.search) + '/From = ' + encodeURIComponent(document.referrer)]);
+  {% endif %}
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u = (("https:" == document.location.protocol) ? "https://{{ site.JB.analytics.piwik.baseURL }}/" : "http://{{ site.JB.analytics.piwik.baseURL }}/");
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', {{ site.JB.analytics.piwik.idsite }}]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://{{ site.JB.analytics.piwik.baseURL }}/piwik.php?idsite={{ site.JB.analytics.piwik.idsite }}&rec=1" style="border:0;" alt="" /></p></noscript>
