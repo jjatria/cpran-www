@@ -7,15 +7,11 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**search** - Search CPrAN plugins
-
-# SYNOPSIS
+## Synopsis
 
 cpran search \[options\] \[arguments\]
 
-# DESCRIPTION
+## Description
 
 Searches both the local and remote catalogs of CPrAN plugins.
 
@@ -27,14 +23,14 @@ When executed directly, it will print information on the matched plugins,
 including their name, version, and a short description. If searching the locally
 installed plugins, both the local and the remote versions will be displayed.
 
-# EXAMPLES
+## Examples
 
     # Show all available plugins
     cpran search .*
     # Show installed plugins with the string "utils" in their name
     cpran search -i utils
 
-# OPTIONS
+## Options
 
 - **--installed**
 
@@ -44,7 +40,7 @@ installed plugins, both the local and the remote versions will be displayed.
 
     Print debug messages.
 
-# METHODS
+## Methods
 
 - **\_match()**
 
@@ -64,18 +60,7 @@ installed plugins, both the local and the remote versions will be displayed.
     The output depends on the current options: if **--installed** is enabled, the
     returned list will have both the local and the remote versions.
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)

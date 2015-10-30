@@ -7,15 +7,11 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**install** - Install new CPrAN plugins
-
-# SYNOPSIS
+## Synopsis
 
 cpran install \[options\] \[arguments\]
 
-# DESCRIPTION
+## Description
 
 Equivalent in spirit to apt-get install, this command checks the dependencies
 of the specified plugins, schedules the installation of plugins needed or
@@ -29,7 +25,7 @@ Plugin names can be appended with a specific version number to request for
 versioned installation, but this is not currently implemented. When it is, names
 will likely be of the form `name-1.0.0`.
 
-# EXAMPLES
+## Examples
 
     # Install some plugins
     cpran install myplugin someplugin
@@ -40,7 +36,7 @@ will likely be of the form `name-1.0.0`.
     # Do not ask for confirmation
     cpran install --force -y
 
-# OPTIONS
+## Options
 
 - **--yes, -y**
 
@@ -56,7 +52,7 @@ will likely be of the form `name-1.0.0`.
 
     Print debug messages.
 
-# METHODS
+## Methods
 
 - **rebuild\_list()**
 
@@ -84,18 +80,7 @@ will likely be of the form `name-1.0.0`.
     The method takes the reference to a list of plugin names, and returns a
     reference to the same list, without the prefix.
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)

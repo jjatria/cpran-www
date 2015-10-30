@@ -7,37 +7,22 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**list** - List all known CPrAN plugins
-
-# SYNOPSIS
+## Synopsis
 
 cpran list \[options\]
 
-# DESCRIPTION
+## Description
 
 List plugins available through the CPrAN catalog.
 
 **list** will show a list of all plugins available to CPrAN.
 
-# EXAMPLES
+## Examples
 
     # Show all available plugins
     cpran list
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)

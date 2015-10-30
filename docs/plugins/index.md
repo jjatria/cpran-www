@@ -129,16 +129,6 @@ There is currently no streamlined process for registering a plugin with CPrAN,
 but this does not mean that your plugin cannot be registered! Please
 [contact us](mailto:jjatria@gmail.com) and we can take it from there.
 
-## License
-
-Copyright 2015 CPrAN Team
-
-<span>Documentation</span>{: xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" }
-by [CPrAN Team](cpran.net){: xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName" rel="cc:attributionURL" }
-is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/){: rel="license" }
-
 ## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)

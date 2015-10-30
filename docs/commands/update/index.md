@@ -7,15 +7,11 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**update** - Update the catalog of CPrAN plugins
-
-# SYNOPSIS
+## Synopsis
 
 cpran update \[options\] \[arguments\]
 
-# DESCRIPTION
+## Description
 
 Updates the list of plugins known to CPrAN, and information about their latest
 versions.
@@ -24,14 +20,14 @@ versions.
 information about those plugins will be retrieved. Otherwise, a complete list
 will be downloaded. This second case is the recommended use.
 
-# EXAMPLES
+## Examples
 
     # Updates the entire catalog printing information as it goes
     cpran update -v
     # Update information about specific plugins
     cpran update oneplugin otherplugin
 
-# METHODS
+## Methods
 
 - **fetch\_descriptor()**
 
@@ -46,24 +42,13 @@ will be downloaded. This second case is the recommended use.
     plugin objects. If the provided list is empty, it returns all the plugins it
     can find in the CPrAN group.
 
-# OPTIONS
+## Options
 
 - **--verbose**
 
     Increase verbosity of output.
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)

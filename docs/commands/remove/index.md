@@ -7,30 +7,26 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**remove** - Remove installed CPrAN plugins
-
-# SYNOPSIS
+## Synopsis
 
 cpran remove \[options\] \[arguments\]
 
-# DESCRIPTION
+## Description
 
-Deletes a CPrAN plugin that has been installed.
+Deletes a cpran plugin that has been installed.
 
 Arguments to **remove** must be at least one and optionally more plugin names to
 remove. For each named passed as argument, all contents of the directory named
 "plugin\_<name>" will be removed from disk.
 
-# EXAMPLES
+## Examples
 
     # Remove some plugins
     cpran remove oneplugin otherplugin
     # Do not ask for confirmation
     cpran remove -y oneplugin
 
-# OPTIONS
+## Options
 
 - **--yes, -y**
 
@@ -48,20 +44,7 @@ remove. For each named passed as argument, all contents of the directory named
 - **--quiet**
 - **--cautious**
 
-# METHODS
-
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
 * [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)
