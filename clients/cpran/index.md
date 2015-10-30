@@ -156,7 +156,7 @@ Now, on to the installation.
 
     If you are on Windows and not using Cygwin, copy the following line:
 
-        perl -I perl -I C:\Users\yourname\Praat\plugin_cpran C:\Users\yourname\Praat\plugin_cpran\cpran.pl %*
+        perl -I C:\Users\yourname\Praat\plugin_cpran C:\Users\yourname\Praat\plugin_cpran\cpran.pl %*
 
     and save it as a file named `cpran.bat` somewhere in your `PATH`.
 
