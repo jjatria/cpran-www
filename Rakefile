@@ -73,6 +73,30 @@ task :post do
   end
 end # task :post
 
+# Usage: rake plugin yaml=path/to/plugin/cpran.yaml
+desc "Add a plugin page"
+task :plugin do
+  plugin = YAML.load_file( ENV['yaml'] )
+
+  plugin_path = "plugins/#{plugin['Plugin']}"
+  directory plugin_path
+  open("#{plugin_path}/index.md", 'w') do |out|
+    out.puts "---"
+    out.puts "layout: page"
+    out.puts "group: plugin"
+    out.puts "title: #{plugin['Plugin']}"
+    out.puts "project: #{plugin['Homepage']}"
+    out.puts "pid: ~"
+    out.puts "description:"
+    out.puts "  short: #{plugin['Description']['Short']}"
+    out.puts "---"
+    out.puts "{% include JB/setup %}"
+    out.puts ""
+    out.puts "#{plugin['Description']['Long']}"
+    out.puts ""
+  end
+end # task :plugin
+
 # Usage: rake page name="about.html"
 # You can also specify a sub-directory path.
 # If you don't specify a file extention we create an index.html at the path specified
