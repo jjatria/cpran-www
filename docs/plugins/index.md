@@ -115,6 +115,8 @@ extension) that produce TAP output. In order to make it easier for you to write
 these tests you can use the [`testsimple`][testsimple] plugin, but you can also
 write it manually if you prefer.
 
+[testsimple]: {{ BASE_PATH }}/plugins/testsimple
+
 If no `t` subdirectory is found, no tests will be run. CPrAN will make a note of
 this when your plugin is installed, but installation SHOULD proceed without
 problems (fingers crossed!).
