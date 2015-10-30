@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: remove
 description:
   short: Remove installed CPrAN plugins

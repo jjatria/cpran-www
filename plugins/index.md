@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Plugins
-group: main
+group: navigation
 tagline: ~
 ---
 {% include JB/setup %}

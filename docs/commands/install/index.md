@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: install
 description:
   short: Install new CPrAN plugins

@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: upgrade
 description:
   short: Upgrades installed CPrAN plugins to their latest versions

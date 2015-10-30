@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: update
 description:
   short: Update the catalog of CPrAN plugins

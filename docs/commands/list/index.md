@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: list
 description:
   short: List all known CPrAN plugins

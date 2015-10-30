@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: test
 description:
   short: Run tests for the specified plugin

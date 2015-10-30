@@ -1,6 +1,6 @@
 ---
 layout: page
-group: pod
+group: command
 title: search
 description:
   short: Search CPrAN plugins
