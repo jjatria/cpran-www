@@ -27,13 +27,6 @@ Until [a full spec][spec] is written, the implementation of the interface in
 [perl]: {{BASE_PATH}}/docs/cpran
 [spec]: {{BASE_PATH}}/docs/clients/cpran
 
-## License
-
-Copyright 2015 José Joaquín Atria
-
-This module is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
 ## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
