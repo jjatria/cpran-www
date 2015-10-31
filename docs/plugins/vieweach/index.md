@@ -13,9 +13,9 @@ title: vieweach
 
 ## Procedures
 
-* [`for-each`](for-each-procedure)
+* [`for_each`](for-each-procedure)
 
-* [`view-each`](view-each-procedure)
+* [`view_each`](view-each-procedure)
 
 ## Scripts
 
