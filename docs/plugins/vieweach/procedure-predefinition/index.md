@@ -104,5 +104,5 @@ See the full documentation of [`for_each`][for_each procedure] and
 [`view_each`][view_each procedure] for a full list of the available hooks and
 what they mean.
 
-[view_each procedure]: {{ BASE_PATH }}/docs/plugin/vieweach/view-each-procedure
-[for_each procedure]: {{ BASE_PATH }}/docs/plugin/vieweach/for-each-procedure
+[view_each procedure]: {{ BASE_PATH }}/docs/plugins/vieweach/view-each-procedure
+[for_each procedure]: {{ BASE_PATH }}/docs/plugins/vieweach/for-each-procedure
