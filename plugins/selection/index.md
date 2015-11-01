@@ -60,14 +60,14 @@ Almost every procedure here uses **selection tables** to manage the selection,
 with two exceptions: [saveSelection()][saveselection] and
 [restoreSelection()][restoreselection].
 
-[saveselection]: https://gitlab.com/cpran/plugin_selection/wikis/home#saveselection
-[restoreselection]: https://gitlab.com/cpran/plugin_selection/wikis/home#restoreselection
+[saveselection]: {{ BASE_PATH }}/docs/plugins/selection#saveselection
+[restoreselection]: {{ BASE_PATH }}/docs/plugins/selection#restoreselection
 
 Below, all procedures are explained in an order that will hopefully make it
 easier to learn how to use them.
 
-Please see [the documentation](https://gitlab.com/cpran/plugin_selection/wikis/home)
-for more detailed information on how to use these procedures.
+Please see [the documentation]({{ BASE_PATH }}/docs/plugins/selection) for more
+detailed information on how to use these procedures.
 
 ## Requirements:
 
