@@ -90,8 +90,6 @@ If there's any chance more than one selection will need to be saved, then prefer
 [saveSelectionTable()](#saveselectiontable) instead. Otherwise, this procedure
 is still useful for simple scripts.
 
-### Using selection tables
-
 #### restoreSelection()
 
 The companion procedure to [saveSelection()](#saveselection), it will read the
@@ -101,6 +99,8 @@ in it. Do not call this procedure before a call before
 
 The equivalent procedure to restore a selection table is
 [restoreSavedSelection(table)](#restoresavedselection).
+
+### Using selection tables
 
 #### saveSelectionTable()
 
