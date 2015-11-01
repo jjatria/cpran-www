@@ -11,7 +11,10 @@ objects that are selected at any one time
 
 However, despite selections being so important for the Praat workflow, there are
 few features geared specifically to complex selection management. The
-"selection" plugin aims to fill that void.
+"selection" plugin aims to fill that void by providing a number of
+[procedures](#procedures) to manipulate selections, and a set of
+[scripts](#scripts) that encapsulate some of the more common use cases, and
+showcase some possible applications of the plugin.
 
 ## Overview
 
@@ -34,23 +37,81 @@ A _selection table_ is nothing but a Table containing the following columns:
 `id`
   : the id number of the corresponding object
 
-The procedures provided by this plugin are designed to make it easier to
-generate these tables automatically from the existing selection or manually, and
-to manipulate and combine existing tables, and of course to use them to modify
-the current selection.
-
 **Any** Table object with _at least_ those columns can be considered a
-_selection table_, and can be processed with this plugin. Below, all procedures
-are explained in an order that will hopefully make it easier to learn how to use
-them.
+_selection table_, and can be processed with this plugin.
+
+## Scripts
+
+#### Copy selected
+
+Similar to the `Copy...` command of the standard toolkit, this command copies
+objects. But it can make copies of multiple objects at the same time. The new
+objects are selected at the end.
+
+No new selection tables remain in the object list.
+
+#### Invert selection
+
+Select all objects that were not selected when the command was called. Calling
+the command twice returns the selection back to its initial state.
+
+#### Save selection: name$
+
+The script version of [saveSelectionTable()](#saveselectiontable). Running this
+command will generate a new selection table containing the selection that was
+active when it was called.
+
+This command modifies the selection, since the new object is selected.
+
+#### Restore selection
+
+The script version of [restoreSavedSelection()](#restoresavedselection). This
+command requires the current selection to be a selection table. After calling
+it, the new selection will be the one that was saved in that table.
+
+This command modifies the selection, since the new object is selected.
+
+#### Select one type: type$, refine
+
+The script version of either [selectType(type$)](#selecttypetype) or
+[refineToType(type$)](#refinetotypetype), depending on the value of the `refine`
+boolean arcument. Calling this command will select objects of type `type$`,
+either from the entire objects list if `refine` is false, or from the current
+selection if `refine` is true.
+
+This command modifies the selection, since the new object is selected.
+
+#### Select selected type
+
+Another script version of [selectType(type$)](#selecttypetype), with the
+difference that the value of `type$` is taken from the object that is currently
+selected.
+
+This command modifies the selection, since the new object is selected.
+
+#### Sort objects: fields, options
+
+An experimetal command, `Sort objects...` rearranges the objects in the object
+list according to the fields specified. By default, it sorts objects by name
+and type, so that objects with the same name are placed next to each other
+(which is particularly useful for pairs of, for example, Sound and TextGrid
+objects).
+
+Parts of its interface might change in the future, but it is useful mainly as an
+illustration of the kinds of things that are possible with "selection".
+
+## Procedures
+
+Below, all procedures are explained in an order that will hopefully make it
+easier to learn how to use them. They are designed to make it easier to generate
+these tables automatically from the existing selection or manually, and to
+manipulate and combine existing tables, and of course to use them to modify the
+current selection.
 
 Since the plugin works with selections, and creating new objects modifies the
 selection, great care has been used to make sure that calling these procedures
 _does not modify the current selection_. When this cannot be done, or when it
 doesn't make sense to maintain it, a special note is made.
-
-
-## Procedures
 
 ### Basic usage
 
