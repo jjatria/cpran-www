@@ -69,7 +69,7 @@ The script version of [restoreSavedSelection()](#restoresavedselection). This
 command requires the current selection to be a selection table. After calling
 it, the new selection will be the one that was saved in that table.
 
-This command modifies the selection, since the new object is selected.
+This command modifies the selection.
 
 #### Select one type: type$, refine
 
@@ -79,7 +79,7 @@ boolean arcument. Calling this command will select objects of type `type$`,
 either from the entire objects list if `refine` is false, or from the current
 selection if `refine` is true.
 
-This command modifies the selection, since the new object is selected.
+This command modifies the selection.
 
 #### Select selected type
 
@@ -87,7 +87,7 @@ Another script version of [selectType(type$)](#selecttypetype), with the
 difference that the value of `type$` is taken from the object that is currently
 selected.
 
-This command modifies the selection, since the new object is selected.
+This command modifies the selection.
 
 #### Sort objects: fields, options
 
