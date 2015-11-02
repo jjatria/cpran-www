@@ -52,10 +52,12 @@ regular expression pattern. The command uses Praat's
     assert length(pwgen.return$) == 10
     # pwgen.return$ is a random alphanumeric string
 
-This procedure aims to provide similar functionality to the `pwgen(1)` UNIX
-command, which generates "pronounceable" random strings. The current version,
-however, simply acts as a simplified version of[@rndstr](#rndstr). In the
-future this will hopefully change.
+This procedure aims to provide similar functionality to the [`pwgen(1)`][pwgen]
+UNIX command, which generates "pronounceable" random strings. The current
+version, however, simply acts as a simplified version of[@rndstr](#rndstr). In
+the future this will hopefully change.
+
+[pwgen]: http://linux.die.net/man/1/pwgen
 
 The value in `length` specifies the number of characters in the resulting
 string, which is stored in `.return$`.
@@ -121,10 +123,12 @@ in `.return`.
     @mktemp: "somefolderXXXXXX"
     assert fileReadable: mktemp.return$
 
-Similar to the UNIX `mktemp(1)` command, this procedure creates a directory with
-a name that is guaranteed to not exist at the time the procedure was called.
-This procedure is not thread-safe, but is useful for storing temporary files.
-The directory will _not_ be automatically deleted.
+Similar to the UNIX [`mktemp(1)`][mktemp] command, this procedure creates a
+directory with a name that is guaranteed to not exist at the time the procedure
+was called. This procedure is not thread-safe, but is useful for storing
+temporary files. The directory will _not_ be automatically deleted.
+
+[mktemp]: http://linux.die.net/man/1/mktemp
 
 The name of the directory is generated based on the contents of `template$`,
 which needs to be of the form `baseXXXXX`, in which each `X` character will be
@@ -191,10 +195,12 @@ This procedure can detect which of this is the case. The value stored in
 #### normalPrefDir ()
 {: #normalprefdir }
 
-Praat stores the name of its preferences directory in the
+Praat stores the name of its [preferences directory][] in the
 `preferencesDirectory$` variable. However, the name of the preferences directory
 will depend on the name of the Praat executable, and will also have
 platform-dependent separators.
+
+[preferences directory]: http://www.fon.hum.uva.nl/praat/manual/preferences_directory.html
 
 Use of this procedure is not necessary in most cases, particularly after Praat
 5.4.15, which added the option to specify a preferences directory. But it might
@@ -227,8 +233,10 @@ is displayed to the user.
 Compares two version strings like those used by Praat, with three version
 numbers separated by periods. Although all versions of Praat (so far) are
 directly comparable using the numeric versions (stored in `praatVersion`), this
-procedure will work with any _semantic versioning_ version string
-(eg `10.2` is smaller than `10.3.192`).
+procedure will work with any [_semantic versioning_][semver] version string
+(eg `10.4` is greater than `10.3.192`).
+
+[semver]: http://semver.org/
 
 The comparison is made between the two versions identified by `a$` and `b$`. The
 result of the comparison is stored in `.return`, which will be 0 if the strings
