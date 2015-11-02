@@ -23,6 +23,11 @@ with the `Create Strings as file list (full path)...` command from the
 [selection]: {{ BASE_PATH }}/plugins/selection
 [strutils]: {{ BASE_PATH }}/plugins/strutils
 
+Strings objects can also be used to represent sets of _directories_ on disk. To
+distinguish paths to files from paths to directories, the latter need to end in
+a `"/"` character, and also have full paths. Once again, the [strutils][] plugin
+offers commands to do this.
+
 ## Looping
 
 During iteration, one object from each of the appropriate sets will be selected
@@ -36,3 +41,7 @@ Objects are taken sequentially from each set, so that the first time the
 iterator loops, the first object from each set is selected, and so on. If the
 sets are of unequal length, then the shorter set will loop over until all the
 elements of the longest set have been iterated over at least once.
+
+In the case of sets of directories, the object that will be selected with each
+iteration is a Strings object with the full path to the files in that directory,
+as returned by [strutils][].
