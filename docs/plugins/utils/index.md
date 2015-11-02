@@ -317,24 +317,34 @@ to provide a set of easily formattable chunks. These are:
 
 `.dw`
   : day of the week (1-7)
+
 `.dw$`
   : day of the week as string (`"Mon"`, ...)
+
 `.dm`
   : day of the month (1-31)
+
 `.mo`
   : month (1-12)
+
 `.mo$`
   : month as string (`"Jan"`, ...)
+
 `.yr`
   : year (Gregorian)
+
 `.tm$`
   : time as string (`"00:00:00"`)
+
 `.hr`
   : hours (0-24)
+
 `.mn`
   : minutes (0-60)
+
 `.sc`
   : seconds (0-60)
+
 `.date$`
   : the full standard Praat date, as returned by `date$()`
 
