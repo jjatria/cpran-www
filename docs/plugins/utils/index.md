@@ -207,13 +207,13 @@ Use of this procedure is not necessary in most cases, particularly after Praat
 still be useful in some cases.
 
 The procedure replaces the contents of `preferencesDirectory$`. Use
-[`@restorePrefDir`](#restoreprefdir) to restore the original value of this
+[@restorePrefDir](#restoreprefdir) to restore the original value of this
 variable.
 
 #### restorePrefDir ()
 {: #restoreprefdir }
 
-Undoes the changes made by [`@normalPrefDir`](#normalprefdir).
+Undoes the changes made by [@normalPrefDir](#normalprefdir).
 
 ### `require.proc`
 
@@ -271,7 +271,7 @@ This procedure calls `chooseReadFile$()` internally.
     @checkWriteFile: save$, "Select file to write..."
     assert checkWriteFile.name$ != ""
 
-Similar to [`@checkFilename`](#checkfilename), but using `chooseWriteFile$()`
+Similar to [@checkFilename](#checkfilename), but using `chooseWriteFile$()`
 internally instead.
 
 ### `check_directory.proc`
@@ -286,7 +286,7 @@ internally instead.
     @checkDirectory: directory$, "Select directory..."
     assert checkDirectory.name$ != ""
 
-Similar to [`@checkFilename`](#checkfilename), but using `chooseDirectory$()`
+Similar to [@checkFilename](#checkfilename), but using `chooseDirectory$()`
 internally instead.
 
 ### `time.proc`
@@ -302,7 +302,7 @@ internally instead.
     endif
 
 Praat uses the `date$()` function to return the date as a pre-formatted string.
-This procedure calls `date$()` and passes it to [`@parseTime`](#parsetime) to
+This procedure calls `date$()` and passes it to [@parseTime](#parsetime) to
 separate it into formattable chunks.
 
 #### parseTime: date$
