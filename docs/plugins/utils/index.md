@@ -11,7 +11,8 @@ regular users.
 
 ## Scripts
 
-#### Save selected objects: path, overwrite {: #save-all }
+#### Save selected objects: path, overwrite
+{: #save-all }
 
 When saving multiple objects to disk, Praat offers to save them as a
 _Collection_ object: an object that represents the group of objects that are
@@ -29,7 +30,8 @@ conflicting names and automatically generating new ones. If the automatic
 generation of unique names is not successful, the user is prompted for input
 (or files are overwritten if running in a non-interactive session).
 
-#### Rename (regex): pattern, replace {: #rename-regex }
+#### Rename (regex): pattern, replace
+{: #rename-regex }
 
 The `Rename...` command in the standard Praat toolkit only works with a single
 selected object and a fully specified name. This command makes it possible to
@@ -43,7 +45,8 @@ regular expression pattern. The command uses Praat's
 
 ### `utils.proc`
 
-#### pwgen: length {: #pwgen }
+#### pwgen: length
+{: #pwgen }
 
     @pwgen: 10
     assert length(pwgen.return$) == 10
@@ -57,7 +60,8 @@ future this will hopefully change.
 The value in `length` specifies the number of characters in the resulting
 string, which is stored in `.return$`.
 
-#### rndstr: length, charset$ {: #rndstr }
+#### rndstr: length, charset$
+{: #rndstr }
 
     @rndstr: 10, "a1"
     assert length(rndstr.return$) == 10
@@ -80,7 +84,8 @@ Numeric (`1`)
 Symbols (`%`)
   : `!?@#$%&+_`
 
-#### split: separator$, string$ {: #split }
+#### split: separator$, string$
+{: #split }
 
     @split: " ", "correct horse battery staple"
     assert split.length == 4
@@ -101,7 +106,8 @@ literal.
 The split substrings are stored in the `.return$[]` indexed variable, which will
 have a length equal to the value in `.length`.
 
-#### numchar: string$, target$ {: #numchar }
+#### numchar: string$, target$
+{: #numchar }
 
     @numchar: "hello", "l"
     assert numchar.return == 2
@@ -109,7 +115,8 @@ have a length equal to the value in `.length`.
 Counts the number of occurences of `target$` in `string$`. The result is stored
 in `.return`.
 
-#### mktemp: template$ {: #mktemp }
+#### mktemp: template$
+{: #mktemp }
 
     @mktemp: "somefolderXXXXXX"
     assert fileReadable: mktemp.return$
@@ -129,7 +136,8 @@ random placeholders at the end. If the template is the empty string,
 The name of the directory is stored in `.return$`, and the directory is created
 automatically.
 
-#### zeropad: number, length {: #zeropad }
+#### zeropad: number, length
+{: #zeropad }
 
     @split: ",", "1,45,1350"
     for i to split.length
@@ -146,21 +154,24 @@ as a string in `.return$`, and will be `length` charaters long. No check is made
 to make sure that no significant digits are lost, so make sure that `length` is
 at least long enough to hold the significant digits in `number`.
 
-#### toLower: string$ {: #tolower }
+#### toLower: string$
+{: #tolower }
 
     @toLower: "WORLD"
     assert toLower.return$ == "world"
 
 Converts a string to lowercase. The converted string is stored in `.return$`.
 
-#### toUpper: string$ {: #toupper }
+#### toUpper: string$
+{: #toupper }
 
     @toUpper: "hello"
     assert toUpper.return$ == "HELLO"
 
 Converts a string to upercase. The converted string is stored in `.return$`.
 
-#### hasGUI () {: #hasgui }
+#### hasGUI ()
+{: #hasgui }
 
     @hasGUI()
     if hasGUI.return
@@ -177,7 +188,8 @@ run in "batch" mode, without a GUI, and also in "non-interactive" mode.
 This procedure can detect which of this is the case. The value stored in
 `.return` will be true ( `!= 0`) if there is a GUI, or false (`== 0`) otherwise.
 
-#### normalPrefDir () {: #normalprefdir }
+#### normalPrefDir ()
+{: #normalprefdir }
 
 Praat stores the name of its preferences directory in the
 `preferencesDirectory$` variable. However, the name of the preferences directory
@@ -192,13 +204,15 @@ The procedure replaces the contents of `preferencesDirectory$`. Use
 [`@restorePrefDir`](#restoreprefdir) to restore the original value of this
 variable.
 
-#### restorePrefDir () {: #restoreprefdir }
+#### restorePrefDir ()
+{: #restoreprefdir }
 
 Undoes the changes made by [`@normalPrefDir`](#normalprefdir).
 
 ### `require.proc`
 
-#### require: version$ {: #require }
+#### require: version$
+{: #require }
 
     @require: "5.4.22"
     assert praatVersion >= 5422
@@ -207,7 +221,8 @@ Makes sure that the current version of Praat is _at least_ equal to that
 specified by `version$`. If this requirement is not met, a useful error message
 is displayed to the user.
 
-#### comparePraatVersionStrings: a$, b$ {: #comparepraatversionstrings }
+#### comparePraatVersionStrings: a$, b$
+{: #comparepraatversionstrings }
 
 Compares two version strings like those used by Praat, with three version
 numbers separated by periods. Although all versions of Praat (so far) are
@@ -221,7 +236,8 @@ are equal, -1 if `a$` is greater, and 1 if `b$` is greater.
 
 ### `check_filename.proc`
 
-#### checkFilename: name$, label$ {: #checkfilename }
+#### checkFilename: name$, label$
+{: #checkfilename }
 
     form Test...
       sentence Read
@@ -237,7 +253,8 @@ be stored in `.name$`.
 
 This procedure calls `chooseReadFile$()` internally.
 
-#### checkWriteFile: name$, label$, file$ {: #checkwritefile }
+#### checkWriteFile: name$, label$, file$
+{: #checkwritefile }
 
     form Test...
       sentence Save
@@ -251,7 +268,8 @@ internally instead.
 
 ### `check_directory.proc`
 
-#### checkDirectory: name$, label$ {: #checkdirectory }
+#### checkDirectory: name$, label$
+{: #checkdirectory }
 
     form Test...
       sentence Directory
@@ -265,7 +283,8 @@ internally instead.
 
 ### `time.proc`
 
-#### time {: #time }
+#### time
+{: #time }
 
     @time()
     if time.year >= 2015
@@ -278,7 +297,8 @@ Praat uses the `date$()` function to return the date as a pre-formatted string.
 This procedure calls `date$()` and passes it to [`@parseTime`](#parsetime) to
 separate it into formattable chunks.
 
-#### parseTime: date$ {: #parsetime }
+#### parseTime: date$
+{: #parsetime }
 
     @time()
     @parseTime: date$()
@@ -312,7 +332,8 @@ to provide a set of easily formattable chunks. These are:
 
 ### `base_conversions.proc`
 
-#### hex2dec: num$ {: #hex2dec }
+#### hex2dec: num$
+{: #hex2dec }
 
     @hex2dec: "10"
     assert hex2dec.n == 16
@@ -320,7 +341,8 @@ to provide a set of easily formattable chunks. These are:
 Convert a hexadecimal (base 16) number (in `num$`) to decimal. The result will
 be stored in `.n` as a numeric.
 
-#### oct2dec: num$ {: #oct2dec }
+#### oct2dec: num$
+{: #oct2dec }
 
     @oct2dec: "10"
     assert oct2dec.n == 8
@@ -328,7 +350,8 @@ be stored in `.n` as a numeric.
 Convert an octal (base 8) number (in `num$`) to decimal. The result will be
 stored in `.n` as a numeric.
 
-#### bin2dec: num$ {: #bin2dec }
+#### bin2dec: num$
+{: #bin2dec }
 
     @bin2dec: "10"
     assert bin2dec.n == 2
@@ -336,7 +359,8 @@ stored in `.n` as a numeric.
 Convert a binary (base 2) number (in `num$`) to decimal. The result will be
 stored in `.n` as a numeric.
 
-#### dec2hex: num {: #dec2hex }
+#### dec2hex: num
+{: #dec2hex }
 
     @dec2hex: 16
     assert dec2hex.n$ == "10"
@@ -344,7 +368,8 @@ stored in `.n` as a numeric.
 Convert a decimal (base 10) number (in `num`) to hexadecimal (base 16). The
 result will be stored in `.n$` as a string.
 
-#### dec2oct: num {: #dec2oct }
+#### dec2oct: num
+{: #dec2oct }
 
     @dec2oct: 8
     assert dec2oct.n$ == "10"
@@ -352,7 +377,8 @@ result will be stored in `.n$` as a string.
 Convert a decimal (base 10) number (in `num`) to octal (base 8). The result will
 be stored in `.n$` as a string.
 
-#### dec2bin: num {: #dec2bin }
+#### dec2bin: num
+{: #dec2bin }
 
     @dec2bin: 2
     assert dec2bin.n$ == "10"
@@ -360,7 +386,8 @@ be stored in `.n$` as a string.
 Convert a decimal (base 10) number (in `num`) to binary (base 2). The result
 will be stored in `.n$` as a string.
 
-#### n2dec: num$, base {: #n2dec }
+#### n2dec: num$, base
+{: #n2dec }
 
     @n2dec: "10", 12
     assert n2dec.n == 12
@@ -368,7 +395,8 @@ will be stored in `.n$` as a string.
 Interpret a string (in `num$`) as a number in base-`base` and convert it to
 decimal (base 10). The result will be stored in `.n` as a numeric.
 
-#### dec2n: num, base {: #dec2n }
+#### dec2n: num, base
+{: #dec2n }
 
     @dec2n: 12, 12
     assert dec2.n$ == "10"
