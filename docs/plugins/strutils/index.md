@@ -10,7 +10,7 @@ commonly used to represent either lists of files or directories in disk (as
 returned by the [`Create Strings as file list...`][praat file list] and [`Create
 Strings as directory list...`][praat directory list] standard Praat commands),
 or the lines of a text file that was read with the [`Read Strings from raw text
-file...`][praat raw strigns] command.
+file...`][praat raw strings] command.
 
 [praat file list]: http://www.fon.hum.uva.nl/praat/manual/Create_Strings_as_file_list___.html
 [praat directory list]: http://www.fon.hum.uva.nl/praat/manual/Create_Strings_as_directory_list___.html
