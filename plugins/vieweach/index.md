@@ -9,10 +9,6 @@ description:
 ---
 {% include JB/setup %}
 
-**For more information see the [documentation][]**
-
-[documentation]: {{ BASE_PATH }}/docs/plugins/vieweach
-
 This plugin provides features for iterating through an arbitrarily complex
 sets of objects. They are provided both as procedures, to make it easier to
 write scripts that use those iterative features, and as scripts, to encapsulate

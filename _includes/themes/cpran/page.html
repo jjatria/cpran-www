@@ -1,10 +1,18 @@
 <div class="page-header">
   <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
-  {% if page.group == 'plugin' %}<a href="{{ page.project }}"><img src="https://ci.gitlab.com/projects/{{ page.pid }}/status.png?ref=master" /></a>{% endif %}
+  {% if page.group == 'plugin' %}
+  <a href="{{ page.project }}"><img src="https://ci.gitlab.com/projects/{{ page.pid }}/status.png?ref=master" /></a>
+  {% endif %}
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    {{ content }}
+  {% if page.group == 'plugin' %}
+  <ul>
+  <li><a href="{{ page.project }}">Source</a></li>
+  <li><a href="{{ BASE_PATH }}/docs/plugins/{{ page.title }}">Documentation</a></li>
+  </ul>
+  {% endif %}
+  {{ content }}
   </div>
 </div>
