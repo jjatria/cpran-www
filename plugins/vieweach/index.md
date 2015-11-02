@@ -3,7 +3,7 @@ layout: page
 group: plugin
 title: vieweach
 project: https://gitlab.com/cpran/plugin_vieweach
-pid: 3262
+pid: "3262"
 description:
   short: a set of customizable procedures to iterate through sets of objects
 ---

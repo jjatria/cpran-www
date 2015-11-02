@@ -29,9 +29,9 @@ tagline: ~
   {% if my_pid != NULL %}
     <tr>
     <td><a href="{{ BASE_PATH }}{{ my_url | remove: "/index.html" }}">{{ my_title }}</a></td>
-    <td>{{ my_description] }}</td>
-    <td><a href="{{ my_project }}"><img alt="{{ my_title }} build badge" src="https://ci.gitlab.com/projects/{{ my_pid }}/status.png?ref=master" /></a>
-    <td style="text-align: center"><a href="{{ BASE_PATH }}/docs/plugins/{{ my_title }}">View</a></td>
+    <td>{{ my_description }}</td>
+    <td><a href="{{ my_project }}"><img alt="{{ my_title }} build badge" src="https://ci.gitlab.com/projects/{{ my_pid | strip | strip_newlines }}/status.png?ref=master" /></a>
+    <td><a href="{{ BASE_PATH }}/docs/plugins/{{ my_title }}">View</a></td>
     </tr>
   {% endif %}
 {% endfor %}
