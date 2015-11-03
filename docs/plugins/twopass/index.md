@@ -5,6 +5,18 @@ title: twopass
 ---
 {% include JB/setup %}
 
-No documentation yet. Please see the [main plugin page][] instead.
+This plugin implements Hirst and De Looze's two-pass utterance-specific pitch
+threshold estimation algorithm.
 
-[main plugin page]: {{ BASE_PATH }}/plugins/{{ page.title }}
+## Scripts
+
+#### To Pitch (two-pass): floor, ceiling
+{: #to-pitch-two-pass }
+
+#### Batch to Pitch (two-pass): floor, ceiling
+{: #batch-to-pitch-two-pass }
+
+## Procedures
+
+#### pitchTwoPass: floor, ceiling
+{: #pitch-two-pass }
