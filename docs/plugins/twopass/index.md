@@ -13,7 +13,7 @@ threshold estimation algorithm.
 #### To Pitch (two-pass): floor, ceiling
 {: #to-pitch-two-pass }
 
-#### Batch to Pitch (two-pass): floor, ceiling
+#### Batch to Pitch (two-pass): floor, ceiling, input$, output$
 {: #batch-to-pitch-two-pass }
 
 ## Procedures

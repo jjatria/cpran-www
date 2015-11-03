@@ -31,3 +31,5 @@ plugin][plugins].
 
 * [`utils`](/plugins/utils)
 * [`selection`](/plugins/selection)
+* [`strutils`](/plugins/strutils)
+* [`vieweach`](/plugins/vieweach)
