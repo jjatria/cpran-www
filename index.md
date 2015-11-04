@@ -1,14 +1,16 @@
 ---
 layout: page
 title: CPrAN
-tagline: The Praat plugin manager
+tagline: The plugin manager for Praat
 ---
 {% include JB/setup %}
 
 ![CPrAN]({{ BASE_PATH }}/assets/images/text_logo-small.png)
 
-A plugin manager for Praat
---------------------------
+The plugin manager for Praat
+----------------------------
+
+> Join our [mailing list](https://groups.google.com/forum/#!forum/cpran)!
 
 CPrAN allows you to [browse][search], [install][] and [remove][] Praat plugins
 of all kinds. With it, you can also [keep up to date][upgrade] with the latest
