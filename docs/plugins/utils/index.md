@@ -54,7 +54,7 @@ regular expression pattern. The command uses Praat's
 
 This procedure aims to provide similar functionality to the [`pwgen(1)`][pwgen]
 UNIX command, which generates "pronounceable" random strings. The current
-version, however, simply acts as a simplified version of[@rndstr](#rndstr). In
+version, however, simply acts as a simplified version of [@rndstr](#rndstr). In
 the future this will hopefully change.
 
 [pwgen]: http://linux.die.net/man/1/pwgen
@@ -151,7 +151,7 @@ automatically.
     # Prints
     #   0001
     #   0045
-    #   1000
+    #   1350
 
 Pad the value in `number` with leading zeroes. The padded value will be stored
 as a string in `.return$`, and will be `length` charaters long. No check is made
