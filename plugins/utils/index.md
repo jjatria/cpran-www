@@ -14,11 +14,13 @@ This plugin defines a number of general utilities:
 * Directory and file GUI selectors for initial forms
 * A method to require specific versions of Praat
 * Procedures for format-free date manipulation
+* Rename multiple objects at once
 * `split`
 * `pwgen`
 * `mktmp`
 * `zeropad`
 * `toLower`
+* `toUpper`
 
 ## Installation
 
