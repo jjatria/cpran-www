@@ -145,7 +145,7 @@ See [here](https://gitlab.com/cpran/plugin_cpran/issues/6) for a fix.
 
 #### 403 Forbidden while running update
 
-See [here](https://gitlab.com/cpran/plugin_cpran/issues/25) for details. This has been fixed in [v0.1.7](https://gitlab.com/cpran/plugin_cpran/commits/v0.1.7) and higher. You might have to upgrade manually to the new version if your `update` is broken.
+See [here](https://gitlab.com/cpran/plugin_cpran/issues/25) for details. This has been fixed in [0.0107](https://gitlab.com/cpran/plugin_cpran/commits/v0.1.7) and higher (note: what was then called v0.1.7). You might have to upgrade manually to the new version if your `update` is broken.
 
 [gitlab]: https://gitlab.com
 [bower]: https://github.com/bower/bower
