@@ -36,7 +36,7 @@ oriented), its implementation.
         perl -v
 
     There are some good guides at the [Perl website](http://perl.org) to install
-    it on [Windows][winperl], [Mac][macperl], and [GNU/Linux]linuxperl].
+    it on [Windows][winperl], [Mac][macperl], and [GNU/Linux][linuxperl].
 
     [macperl]: http://learn.perl.org/installing/osx.html
     [winperl]: http://learn.perl.org/installing/windows.html
