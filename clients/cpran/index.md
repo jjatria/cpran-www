@@ -120,16 +120,11 @@ Now, on to the installation.
 
 3.  **Install the CPrAN plugin**. Once the client is installed, you need to
     install the Praat plugin, so that Praat can interact with it. You should be
-    able to do this using the CPrAN client itself. First make sure the client is
-    available:
-
-        cpran --version
-
-    and then run
+    able to do this using the CPrAN client itself by running
 
         cpran init
 
-    To install the plugin.
+    To install the plugin. That's it!
 
 4.  **Profit**
 
