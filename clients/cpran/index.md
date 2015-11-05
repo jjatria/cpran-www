@@ -75,7 +75,7 @@ Now, on to the installation.
 2. **Install the Perl module**. The Perl client is contained in the
     "[CPrAN][cpran module]" module. At the moment, the module is not available
     through CPAN (the Perl distribution network) but it can be installed using
-    [`cpanminus`][] with the following command:
+    [`cpanminus`][cpanminus] with the following command:
 
         cpanm https://gitlab.com/cpran/CPrAN.git
 
