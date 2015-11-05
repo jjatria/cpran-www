@@ -30,15 +30,17 @@ oriented), its implementation.
 ### Installation
 
 1.  **Install Perl**. You will need Perl to run the current version. Skip to
-    the next step if you already have Perl or if you know how to set that up.
+    the next step if you already have Perl or if you know how to set that up. If
+    you are not sure if you have Perl installed, try running
+
+        perl -v
 
     There are some good guides at the [Perl website](http://perl.org) to install
-    it on [Windows][winperl] and on [Mac][macperl]. If you are on GNU/Linux then
-    chances are you already have it. If not, check your distro's documentation
-    on how to get it.
+    it on [Windows][winperl], [Mac][macperl], and [GNU/Linux]linuxperl].
 
     [macperl]: http://learn.perl.org/installing/osx.html
     [winperl]: http://learn.perl.org/installing/windows.html
+    [linuxperl]: http://learn.perl.org/installing/unix_linux.html
 
 2. **Install the Perl module**. The Perl client is contained in the
     "[CPrAN][cpran module]" module. At the moment, the module is not available
@@ -85,7 +87,7 @@ oriented), its implementation.
 
         cpran init
 
-    To install the plugin. That's it!
+    to install the plugin. That's it!
 
 4.  **Profit**
 
