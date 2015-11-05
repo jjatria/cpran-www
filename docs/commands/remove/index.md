@@ -47,7 +47,7 @@ remove. For each named passed as argument, all contents of the directory named
 ## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)
+* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
 * [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
 * [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
 * [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)

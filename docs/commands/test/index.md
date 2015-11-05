@@ -26,7 +26,7 @@ will only report success if all tests for all given plugins were successful.
 ## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)
+* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
 * [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
 * [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
 * [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)

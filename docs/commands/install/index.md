@@ -75,7 +75,7 @@ will likely be of the form `name-1.0.0`.
     However, this is conceptually _not_ part of the name.
 
     Since user's might be tempted to include it in the name of the plugin, we remove
-    it, and issue a warning to slowly teach them to Do The Right Thing™
+    it, and issue a warning to slowly teach them to Do The Right Thing™.
 
     The method takes the reference to a list of plugin names, and returns a
     reference to the same list, without the prefix.
@@ -83,7 +83,7 @@ will likely be of the form `name-1.0.0`.
 ## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)
+* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
 * [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
 * [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
 * [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
