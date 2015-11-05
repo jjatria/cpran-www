@@ -33,9 +33,9 @@ oriented), its implementation.
     the next step if you already have Perl or if you know how to set that up.
 
     There are some good guides at the [Perl website](http://perl.org) to install
-    it on [Windows][winperl] and on Mac. If you are on GNU/Linux then chances
-    are you already have it. If not, check your distro's documentation on how to
-    get it.
+    it on [Windows][winperl] and on [Mac][macperl]. If you are on GNU/Linux then
+    chances are you already have it. If not, check your distro's documentation
+    on how to get it.
 
     [macperl]: http://learn.perl.org/installing/osx.html
     [winperl]: http://learn.perl.org/installing/windows.html
@@ -78,8 +78,6 @@ oriented), its implementation.
     [perlbrew]: https://perlbrew.pl
     [plenv]: http://weblog.bulknews.net/post/58079418600/plenv-alternative-for-perlbrew
     [berrybrew]: http://perltricks.com/article/119/2014/10/10/Hello-berrybrew--the-Strawberry-Perl-version-manager
-    [faqlibrary]: http://learn.perl.org/faq/perlfaq8.html#How-do-I-keep-my-own-module-library-directory
-    [cpanmlibrary]: https://github.com/miyagawa/cpanminus#where-does-this-install-modules-to-do-i-need-root-access
 
 3.  **Install the CPrAN plugin**. Once the client is installed, you need to
     install the Praat plugin so that Praat can interact with it. You should be
