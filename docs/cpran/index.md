@@ -7,20 +7,16 @@ description:
 ---
 {% include JB/setup %}
 
-# NAME
-
-**CPrAN** - A package manager for Praat
-
-# SYNOPSIS
+## Synopsis
 
 cpran <command> \[global options\] \[options\] \[arguments\]
 
-# DESCRIPTION
+## Description
 
 **cpran** is the main script for an [App::Cmd](https://metacpan.org/pod/App::Cmd) application to search, install,
 remove and update Praat plugins.
 
-## Commands
+### Commands
 
 - **update**
 
@@ -144,7 +140,7 @@ remove and update Praat plugins.
 
     See CPrAN::Command::remove for the full documentation.
 
-## Options
+### Options
 
 - **--praat**=PATH
 
@@ -180,7 +176,7 @@ remove and update Praat plugins.
     Enables the output of debug information. Like **--verbose**, this option can be
     used multiple times to increase the number of debug messages that are printed.
 
-# EXAMPLES
+## Examples
 
     # Update the list of known plugins
     cpran update
@@ -201,9 +197,9 @@ remove and update Praat plugins.
     # Remove a plugin by name from disk
     cpran remove name
 
-# FILES
+## Files
 
-## The preferences directory
+### The preferences directory
 
 **CPrAN** needs read and write access to _Praat_'s preferences directory. The
 exact location for this directory varies according to the platform, so **CPrAN**
@@ -225,7 +221,7 @@ Below are the default locations for the main supported platforms:
 
 Where `username` is, of course, the name of the active user.
 
-## Plugin descriptors
+### Plugin descriptors
 
 **CPrAN** plugins are identified as such by the presence of a _plugin
 descriptor_ in the plugin's root. The descriptor (named `cpran.yaml`) is a YAML
@@ -263,7 +259,7 @@ a version stripped of comments, for simplicity:
 will be treated by **CPrAN** in the same way as if the file was missing, so it's
 important to properly validate the descriptor beforehand.
 
-## The plugin list
+### The plugin list
 
 To keep track of available plugins, **CPrAN** keeps the descriptors for all the
 plugins it knows about, and queries them for information when necessary. This is
@@ -272,27 +268,15 @@ its data.
 
 The descriptors are saved in a **CPrAN** root folder whose path is stored
 internally and accessible through CPrAN::root(). By default, it will be a
-directory named `.cpran` in the root of the **CPrAN** plugin (CPrAN::praat() .
-'/plugin\_cpran'). In that directory, the descriptors are renamed with the name
-of the plugin they represent.
+directory named `.cpran` inside the preferences directory. In that directory,
+the descriptors are renamed with the name of the plugin they represent.
 
 This list is updated with the **update** command.
 
-# AUTHOR
-
-José Joaquín Atria <jjatria@gmail.com>
-
-# LICENSE
-
-Copyright 2015 José Joaquín Atria
-
-This program is free software; you may redistribute it and/or modify it under
-the same terms as Perl itself.
-
-# SEE ALSO
+## See also
 
 * [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugin)
+* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
 * [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
 * [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
 * [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
