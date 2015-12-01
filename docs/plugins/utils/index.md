@@ -134,11 +134,23 @@ The name of the directory is generated based on the contents of `template$`,
 which needs to be of the form `baseXXXXX`, in which each `X` character will be
 replaced with a random one using a single character from the `"a1"` character
 set as defined in [@rndstr](#rndstr). The template must have _at least_ three
-random placeholders at the end. If the template is the empty string,
+random placeholders at the end.
+
+If no valid template is provided, no action will be taken and the returned
+string will be `--undefined--`. If the template is the empty string,
 `"tmp.XXXXXXXXXX"` will be used as a default.
 
 The name of the directory is stored in `.return$`, and the directory is created
 automatically.
+
+#### mktempfile: template$
+{: #mktempfile }
+
+    @mktempfile: "somefileXXXXXX"
+    assert fileReadable: mktemp.return$
+
+Similar to [@mktemp](#mktemp), bu this procedure creates temporary files. The
+interface for both procedures is exactly the same.
 
 #### zeropad: number, length
 {: #zeropad }
@@ -157,6 +169,26 @@ Pad the value in `number` with leading zeroes. The padded value will be stored
 as a string in `.return$`, and will be `length` charaters long. No check is made
 to make sure that no significant digits are lost, so make sure that `length` is
 at least long enough to hold the significant digits in `number`.
+
+#### strcount: source$, target$
+{: #strcount }
+
+    @strcount: "Hello world", "l"
+    assert strcount.return == 3
+
+Counts the number of occurrences of the `target` string in the `source` string.
+The target string can be of any length, and only complete instances in the
+source string will be counted. Passing the empty string as `source` is valid,
+but will result in no `target` strings being found. The only exception is if the
+`target` is the empty string, in which case the result will always be `1`.
+
+#### strcount_regex: source$, pattern$
+{: #strcount_regex }
+
+    @strcount: "Hello world", "[rl]"
+    assert strcount.return == 4
+
+Like [`strcount`](#strcount), but using regular expressions for the matching.
 
 #### toLower: string$
 {: #tolower }
@@ -214,6 +246,52 @@ variable.
 {: #restoreprefdir }
 
 Undoes the changes made by [@normalPrefDir](#normalprefdir).
+
+### `try.proc`
+
+#### try: code$
+{: #try }
+
+    @try: "Play"
+    # or
+    call try
+      ... Copy: extractWord$(selected$(), " ") + "_copy" 'newline$'
+      ... Reverse
+
+    if try.catch
+      appendInfoLine: "An error was encountered, but we sailed past it"
+    endif
+
+Error handling in Praat is limited, and is mostly restricted exclusively to the
+use of the `nowarn` and `nocheck` directives, which swallow all warnings and
+errors respectively. However, these can only be applied under certain
+circumstances, and can only apply to a specific line.
+
+The `@try` procedure takes a single string of code (which could be a single line
+or a block of code represented by a string containing separating newlines) and
+executes that in a safe manner, such that even if execution of those lines
+crashes due to some unexpected reason, the execution of the larger script will
+not.
+
+Any changes in the selection that result from the _successful_ completion of the
+code passed as the argument to `@try` will be kept.
+
+Control variables are also provided to make it easy to check whether any errors
+were encountered. The `.return` variable will be true if the code executed
+without errors, and false otherwise. For convenience, a separate variable
+`.catch` is provided with the opposite meaning: true on error, false on success.
+
+Despite the name of the variable, it is not possible at this point to actually
+_catch_ the error. All this procedure does it to make it possible to `nocheck`
+larger blocks of code.
+
+Since the code that is passed to `@try` is executed by a separate instance of
+the interpreter, the variables in that code will exist on an entirely separate
+scope from the rest of the script.
+
+It is not possible also to pass arguments to the tried code. To bypass this
+issue, save them in an object (a Strings or a Table object might be suitable)
+and read them from there.
 
 ### `require.proc`
 

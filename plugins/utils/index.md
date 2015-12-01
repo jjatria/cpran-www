@@ -9,17 +9,28 @@ description:
 ---
 {% include JB/setup %}
 
-This plugin defines a number of general utilities:
+This plugin provides a series of procedures to facilitate some scripting tasks:
 
 * Directory and file GUI selectors for initial forms
+
 * A method to require specific versions of Praat
+
 * Procedures for format-free date manipulation
-* Rename multiple objects at once
+
+* Procedures to safely create temporary files and directories
+
+* Procedures for try/catch-style programming
+
+* Count string occurrences with or without regular expressions
+
 * `split`
+
 * `pwgen`
-* `mktmp`
+
 * `zeropad`
+
 * `toLower`
+
 * `toUpper`
 
 ## Installation
