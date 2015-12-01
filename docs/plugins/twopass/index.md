@@ -63,6 +63,10 @@ Passing zeroes as the factors uses the recommended default values.
 #### pitchTwoPass: floor, ceiling
 {: #pitch-two-pass }
 
+    sound = selected("Sound")
+    @pitchTwoPass: 0, 0
+    assert numberOfSelected("Pitch") == 1
+
 This procedure has the same effect as the [To Pitch (two-pass)...](#to-pitch)
 script described above, and works in the same way. In fact, it is used
 internally by all other scripts.
