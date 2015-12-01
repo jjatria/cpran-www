@@ -108,19 +108,10 @@ literal.
 The split substrings are stored in the `.return$[]` indexed variable, which will
 have a length equal to the value in `.length`.
 
-#### numchar: string$, target$
-{: #numchar }
-
-    @numchar: "hello", "l"
-    assert numchar.return == 2
-
-Counts the number of occurences of `target$` in `string$`. The result is stored
-in `.return`.
-
 #### mktemp: template$
 {: #mktemp }
 
-    @mktemp: "somefolderXXXXXX"
+    @mktemp: "somefolder_XXXXXX"
     assert fileReadable: mktemp.return$
 
 Similar to the UNIX [`mktemp(1)`][mktemp] command, this procedure creates a
@@ -146,7 +137,7 @@ automatically.
 #### mktempfile: template$
 {: #mktempfile }
 
-    @mktempfile: "somefileXXXXXX"
+    @mktempfile: "somefile_XXXXXX"
     assert fileReadable: mktemp.return$
 
 Similar to [@mktemp](#mktemp), bu this procedure creates temporary files. The
@@ -172,6 +163,8 @@ at least long enough to hold the significant digits in `number`.
 
 #### strcount: source$, target$
 {: #strcount }
+
+<span></span>{: #numchar }
 
     @strcount: "Hello world", "l"
     assert strcount.return == 3
@@ -255,8 +248,8 @@ Undoes the changes made by [@normalPrefDir](#normalprefdir).
     @try: "Play"
     # or
     call try
-      ... Copy: extractWord$(selected$(), " ") + "_copy" 'newline$'
-      ... Reverse
+      ... Copy: extractWord$(selected$(), " ") + "_copy" \n
+      ... Reverse                                        \n
 
     if try.catch
       appendInfoLine: "An error was encountered, but we sailed past it"
