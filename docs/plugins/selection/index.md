@@ -43,6 +43,7 @@ _selection table_, and can be processed with this plugin.
 ## Scripts
 
 #### Copy selected
+{: #copy-selected }
 
 Similar to the `Copy...` command of the standard toolkit, this command copies
 objects. But it can make copies of multiple objects at the same time. The new
@@ -51,45 +52,54 @@ objects are selected at the end.
 No new selection tables remain in the object list.
 
 #### Invert selection
+{: #invert-selection }
 
 Select all objects that were not selected when the command was called. Calling
 the command twice returns the selection back to its initial state.
 
 #### Save selection: name$
+{: #save-selection }
 
-The script version of [saveSelectionTable()](#saveselectiontable). Running this
+The script version of [saveSelectionTable()](#save-selection-table). Running this
 command will generate a new selection table containing the selection that was
 active when it was called.
 
 This command modifies the selection, since the new object is selected.
 
 #### Restore selection
+{: #restore-selection }
 
-The script version of [restoreSavedSelection()](#restoresavedselection). This
+The script version of [restoreSavedSelection()](#restore-saved-selection). This
 command requires the current selection to be a selection table. After calling
 it, the new selection will be the one that was saved in that table.
 
 This command modifies the selection.
 
-#### Select one type: type$, refine
+#### Select types: types$, refine
+{: #select-types }
 
-The script version of either [selectType(type$)](#selecttypetype) or
-[refineToType(type$)](#refinetotypetype), depending on the value of the `refine`
+<span><!-- Keep old links! --></span>
+{: #select-one-type }
+
+The script version of either [@selectTypes()](#select-types) or
+[@refineToTypes()](#refine-to-types), depending on the value of the `refine`
 boolean arcument. Calling this command will select objects of type `type$`,
 either from the entire objects list if `refine` is false, or from the current
 selection if `refine` is true.
 
 This command modifies the selection.
 
-#### Select selected type
+#### Select selected types
+{: #select-selected-types }
 
-Another script version of [selectType(type$)](#selecttypetype), with the
-difference that the value of `type$` is taken from the object that is currently
-selected.
+Another script version of [@selectTypes](#select-types), with the
+difference that the value of `types$` is taken from the objects that are
+currently selected.
 
 This command modifies the selection.
 
 #### Sort objects: fields, options
+{: #sort-objects }
 
 An experimetal command, `Sort objects...` rearranges the objects in the object
 list according to the fields specified. By default, it sorts objects by name
@@ -129,7 +139,10 @@ doesn't make sense to maintain it, a special note is made.
     # Restore original selection
     @restoreSelection()
 
+### `selection.proc`
+
 #### saveSelection()
+{: #save-selection }
 
 This procedure represents the most basic use case, and was indeed the first to
 be written. It will loop through the selected objects and save them into an
@@ -152,18 +165,39 @@ If there's any chance more than one selection will need to be saved, then prefer
 is still useful for simple scripts.
 
 #### restoreSelection()
+{: #restore-selection }
 
 The companion procedure to [saveSelection()](#saveselection), it will read the
 internal indexed variable from that procedure and restore the selection saved
 in it. Do not call this procedure before [saveSelection()](#saveselection) has
-been called!
 
 The equivalent procedure to restore a selection table is
 [restoreSavedSelection(table)](#restoresavedselection).
 
+#### plusSelection()
+{: #plus-selection }
+
+Also using [saveSelection()](#saveselection), this procedure will add the saved
+selection to the current selection. Do not call this procedure before
+[saveSelection()](#saveselection) has been called!
+
+The equivalent procedure to restore a selection table is
+[plusSavedSelection(table)](#plussavedselection).
+
+#### minusSelection()
+{: #minus-selection }
+
+Also using [saveSelection()](#saveselection), this procedure will subtract the
+saved selection from the current selection. Do not call this procedure before
+[saveSelection()](#saveselection) has been called!
+
+The equivalent procedure to restore a selection table is
+[minusSavedSelection(table)](#minussavedselection).
+
 ### Using selection tables
 
 #### saveSelectionTable()
+{: #save-selection-table }
 
 Creates a selection table representing the selection that was active when the
 procedure was called. The id of the table is stored in the internal variable
@@ -186,6 +220,7 @@ The saved selection can be restored using
     pitchs = Extract rows where column (text): "type", "is equal to", "Pitch"
 
 #### saveTypeSelection(type$)
+{: #save-type-selection }
 
 Similar to [saveSelectionTable()](#saveselectiontable), but it takes a string
 holding the name of a valid Praat object type as its only argument. It generates
@@ -199,6 +234,7 @@ the new Table will be stored in the variable `.table`.
     pitchs = saveTypeSelectionTable.table
 
 #### restoreSavedSelection(table)
+{: #restore-saved-selection }
 
 This procedure takes the id of a single selection table as its only argument,
 and selects the objects specified therein. This will, of course, modify the
@@ -209,6 +245,7 @@ list. You may want to use [selectSelectionTables()](#selectselectiontables) to
 make it easier to manage the selection tables that have been created.
 
 #### plusSavedSelection(table)
+{: #plus-saved-selection }
 
 Takes the id of a selection table, and appends that selection to the existing
 selection. It can also be thought of as an equivalent of `plus` or
@@ -219,6 +256,7 @@ The new selection will not contain the selection table with the id in `table`
 (unless the selection table contains itself).
 
 #### minusSavedSelection(table)
+{: #minus-saved-selection }
 
 Similar to [plusSavedSelection(table)](#plusSavedSelection), this substracts
 the saved selection from the current one. Only objects in the saved selection
@@ -228,6 +266,7 @@ are not selected will be ignored.
 ### Creating selections from scratch
 
 #### createEmptySelectionTable()
+{: #create-empty-selection-table }
 
 This procedure creates an empty selection table, with the proper column
 structure but no rows. This is useful for procedurally generating new
@@ -239,6 +278,7 @@ This procedure relies internally on
 The id of the generated table is stored in the `.table` variable.
 
 #### createSelectionTable(rows)
+{: #create-selection-table }
 
 This procedure takes a single number as its argument and creates an empty
 selection table, with as many empty entries as indicated in it. This is useful
@@ -247,6 +287,7 @@ for procedurally generating new collections of objects.
 The id of the generated table is stored in the `.table` variable.
 
 #### addToSelectionTable(table, id)
+{: #add-to-selection-table }
 
 Takes the id of a selection table and that of an object to add to the table. The
 object id will only be added to the table if it points to an existing object and
@@ -260,6 +301,7 @@ It is the equivalent of `plus` or `plusObject()` in the standard Praat toolkit,
 but for saved selections.
 
 #### removeFromSelectionTable(table, id)
+{: #remove-from-selection-table }
 
 Takes the id of a selection table and that of an object to remove from the
 table. The id will only be removed if it is contained in the table; otherwise,
@@ -274,18 +316,21 @@ toolkit, but for saved selections.
 ### General selection management
 
 #### clearSelection()
+{: #clear-selection }
 
 Deselects all selected objects. This is entirely equivalent to
 
     nocheck selecteObject: undefined
 
 #### getId(table, index)
+{: #get-id }
 
 Given the id of a selection table, and a valid row number, this procedure gets
 the id number of the object specified in that row.and stores it in the internal
 `.id` variable.
 
 #### selectSelectionTables()
+{: #select-selection-tables }
 
 Selects all the selection tables that exist in the Object list. This will
 include any Table object that fits the definition stated above, so use with
@@ -300,12 +345,83 @@ is accomplished in two simple lines:
     @selectSelectionTables()
     Remove
 
-#### selectType(type$)
+#### selectTypes: types$
+{: #select-types }
 
-Selects all objects of the type specified in `type$` from the Object list. This
-will modify the current selection.
+    Create SpeechSynthesizer: "English", "default"
+    To Sound: "This is some text.", "yes"
+    @saveSelection()
 
-#### refineToType(type$)
+    Extract non-empty intervals: 3, "no"
+    @restoreSelection()
+    Remove
 
-Selects all objects of the type specified in `type$` from the current selection.
+    @selectTypes: "Sound"
+    To TextGrid: "Mary John bell", "bell"
+    @selectTypes: "Sound TextGrid"
+
+Selects all objects of the type specified in `types$` in the Object list.
+Multiple object types can be passed simultaneously, separated by spaces.
+
 This will modify the current selection.
+
+#### refineToTypes: types$
+{: #refine-to-types }
+
+Selects all the objects of the type specified in `types$` in the current
+selection. Multiple object types can be passed simultaneously, separated by
+spaces.
+
+This will modify the current selection.
+
+#### plusTypes: types$
+{: #plus-types }
+
+Adds all the objects of the type specified in `types$` in the Object list to the
+current selection. Multiple object types can be passed simultaneously, separated
+by spaces.
+
+This will modify the current selection.
+
+#### minusTypes: types$
+{: #minus-types }
+
+Removes all the objects of the type specified in `types$` in the Object list
+from the current selection. Multiple object types can be passed simultaneously,
+separated by spaces.
+
+This will modify the current selection.
+
+### Object-type tables
+
+#### checkSelection ()
+{: #check-selection }
+
+Generate a table with information about the current selection.
+
+This procedure generates a table with the types of objects selected and the
+number of selected objects per type. This can then be used to check for
+parity between multiple object types (for instance, for pairing Sounds and
+TextGrids).
+
+#### checkSelectionTable: id
+{: #check-selection-table }
+
+Generate a table with information about the current selection.
+
+This procedure generates a table with the types of objects selected and the
+number of selected objects per type. This can then be used to check for
+parity between multiple object types (for instance, for pairing Sounds and
+TextGrids).
+
+#### selectObjectTables ()
+
+Selects all existing object tables.
+
+This procedure will select all existing tables that look like object tables.
+
+#### countObjects: id, type$
+
+Counts the type of objects from an object table.
+
+Provide the id of the object table and the name of the object type to count
