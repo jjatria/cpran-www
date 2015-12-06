@@ -5,37 +5,17 @@ title: tgutils
 ---
 {% include JB/setup %}
 
-No documentation yet. Please see the [main plugin page][] instead.
+This plugin provides commands and procedures to make it easier to perform
+some basic TextGrid tasks:
 
-[main plugin page]: {{ BASE_PATH }}/plugins/{{ page.title }}
-
-    This plugin provides commands and procedures to make it easier to perform
-    some basic TextGrid tasks:
-
-    * Count points in range
-    * Find labels from beginning or end
-    * Equalize tier durations
-    * Explode TextGrid intervals
-    * Move boundaries to zero-crossings
-    * Find non-overlapping intervals
-    * Save as Audacity labels
-    * Index all labels in a TextGrid
-
-A [Strings][] object in Praat is an ordered list of strings that is most
-commonly used to represent either lists of files or directories in disk (as
-returned by the [`Create Strings as file list...`][praat file list] and [`Create
-Strings as directory list...`][praat directory list] standard Praat commands),
-or the lines of a text file that was read with the [`Read Strings from raw text
-file...`][praat raw strings] command.
-
-[praat file list]: http://www.fon.hum.uva.nl/praat/manual/Create_Strings_as_file_list___.html
-[praat directory list]: http://www.fon.hum.uva.nl/praat/manual/Create_Strings_as_directory_list___.html
-[praat raw strings]: http://www.fon.hum.uva.nl/praat/manual/Read_Strings_from_raw_text_file___.html
-[strings]: http://www.fon.hum.uva.nl/praat/manual/Strings.html
-
-"strutils" provides some new ways to create Strings (including the possibility
-of creating an empty Strings object, as well as making fully-specified file and
-directory lists), and some commands to manipulate existing objects.
+* Count points in range
+* Find labels from beginning or end
+* Equalize tier durations
+* Explode TextGrid intervals
+* Move boundaries to zero-crossings
+* Find non-overlapping intervals
+* Save as Audacity labels
+* Index all labels in a TextGrid
 
 ## Scripts
 
