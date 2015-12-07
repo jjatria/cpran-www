@@ -48,10 +48,11 @@ oriented), its implementation.
     [`cpanminus`][cpanminus] with the following command:
 
         cpanm https://gitlab.com/cpran/CPrAN.git
+        # Or alternatively
+        cpanm https://gitlab.com/cpran/CPrAN/repository/archive.tar.gz?ref=master
 
-    You can also install the module manually by downloading the latest
-    [archive][module archive], extracting it, and running the following commands
-    at its root:
+    If not using `cpanminus`, you can download the [module archive][archive]
+    manually, extract it, and run the following commands at its root:
 
     [module archive]: https://gitlab.com/cpran/CPrAN/repository/archive.zip?ref=master
 
