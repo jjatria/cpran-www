@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-    cpran <command> \[global options\] \[options\] \[arguments\]
+    cpran <command> [global options] [options] [arguments]
 
 ## Description
 
@@ -30,7 +30,7 @@ remove and update Praat plugins.
 
     As its name implies, the **update** command takes care of keeping this list
     up to date, so it should probably be the first command to run. It might be
-    useful to run it with the **--verbose** option enabled, to keep track on
+    useful to run it with the **\-\-verbose** option enabled, to keep track on
     what it is doing.
 
     The list is currently implemented as individual files in the .cpran
@@ -50,7 +50,7 @@ remove and update Praat plugins.
     regular expression. Currently, it only attempts to match it in the plugin's
     name, but future versions will allow matches against other fields as well.
 
-    By using the **--installed** option you can perform this search on your
+    By using the **\-\-installed** option you can perform this search on your
     installed plugins, which will additionally show you the local and remote
     versions, so you can visually check if plugins any need upgrading.
 
@@ -69,7 +69,7 @@ remove and update Praat plugins.
     **show** allows you to read the contents of this file.
 
     By default, it will show you the descriptors downloaded by **update**, but
-    you can also use the **--installed** option to read the descriptors of
+    you can also use the **\-\-installed** option to read the descriptors of
     installed plugins.
 
     See [**show**][show] for the full documentation.
@@ -85,9 +85,9 @@ remove and update Praat plugins.
     to install these.
 
     You also use **install** to re-install a plugin that has already been
-    installed with the **--force** option. This is useful if your local version
-    somehow becomes corrupted (eg, if you've accidentally deleted files from
-    within it).
+    installed with the **\-\-force** option. This is useful if your local
+    version somehow becomes corrupted (eg, if you've accidentally deleted files
+    from within it).
 
     See [**install**][install] for the full documentation.
 
@@ -137,40 +137,40 @@ remove and update Praat plugins.
 
 ### Options
 
-- **--praat**=PATH
+- **\-\-praat**=PATH
 
     The path to use as the preferences directory for Praat. See the
     [_Files_](#files) section for information on the platform-dependant default
     values used.
 
-- **--cpran**=PATH
+- **\-\-cpran**=PATH
 
     The path to use as the CPrAN root directory. See the [_Files_](#files)
     section for information on the platform-dependant default values used.
 
-- **--api-token**=TOKEN
-- **--api-group**=GROUP\_ID
-- **--api-url**=URL
+- **\-\-api-token**=TOKEN
+- **\-\-api-group**=GROUP\_ID
+- **\-\-api-url**=URL
 
     These options set the credentials to talk to the GitLab API to obtain the
     plugin archives and descriptors. As such, it is implementation-dependant,
     and is currently tied to GitLab. These options are particularly useful if
     using CPrAN as an in-house plugin distribution system.
 
-- **--verbose**, **--v**
+- **\-\-verbose**, **\-\-v**
 
     Increase the verbosity of the output. This option can be called multiple
     times to make the program even more talkative.
 
-- **--quiet**, **--q**
+- **\-\-quiet**, **\-\-q**
 
-    Opposed to **--verbose**, this option _suppresses_ all output. If both
+    Opposed to **\-\-verbose**, this option _suppresses_ all output. If both
     options are set simultaneously, this one takes precedence.
 
-- **--debug**, **--D**
+- **\-\-debug**, **\-\-D**
 
-    Enables the output of debug information. Like **--verbose**, this option can
-    be used multiple times to increase the number of debug messages that are
+    Enables the output of debug information. Like **\-\-verbose**, this option
+    can be used multiple times to increase the number of debug messages that are
     printed.
 
 ## Examples
