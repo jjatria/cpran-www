@@ -34,7 +34,7 @@ the stream.
 
 ## Procedures
 
-### `testsimple.proc`
+### `test_simple.proc`
 
 #### plan: tests
 {: #plan }
