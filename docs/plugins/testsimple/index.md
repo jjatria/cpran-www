@@ -11,6 +11,8 @@ simple text-based interface between testing modules in a test harness". Although
 TAP has its origins tied to Perl, it has since then spread to a number of other
 programming languages and environments, the most recent of which is Praat!
 
+[tap]: http://testanything.org/
+
 This plugin is only concerned with generating a compliant TAP stream, which will
 look something like this:
 
