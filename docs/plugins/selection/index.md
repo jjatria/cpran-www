@@ -58,7 +58,7 @@ Select all objects that were not selected when the command was called. Calling
 the command twice returns the selection back to its initial state.
 
 #### Save selection: name$
-{: #save-selection }
+{: #save-selection-script }
 
 The script version of [saveSelectionTable()](#save-selection-table). Running this
 command will generate a new selection table containing the selection that was
@@ -67,7 +67,7 @@ active when it was called.
 This command modifies the selection, since the new object is selected.
 
 #### Restore selection
-{: #restore-selection }
+{: #restore-selection-script }
 
 The script version of [restoreSavedSelection()](#restore-saved-selection). This
 command requires the current selection to be a selection table. After calling
@@ -76,7 +76,7 @@ it, the new selection will be the one that was saved in that table.
 This command modifies the selection.
 
 #### Select types: types$, refine
-{: #select-types }
+{: #select-types-script }
 
 <span><!-- Keep old links! --></span>
 {: #select-one-type }
