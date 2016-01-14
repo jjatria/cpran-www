@@ -170,6 +170,7 @@ is still useful for simple scripts.
 The companion procedure to [saveSelection()](#saveselection), it will read the
 internal indexed variable from that procedure and restore the selection saved
 in it. Do not call this procedure before [saveSelection()](#saveselection) has
+been called!
 
 The equivalent procedure to restore a selection table is
 [restoreSavedSelection(table)](#restoresavedselection).
