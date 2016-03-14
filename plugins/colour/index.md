@@ -3,7 +3,7 @@ layout: page
 group: plugin
 title: colour
 project: https://gitlab.com/cpran/plugin_colour
-pid:
+pid: ~
 description:
   short: offers standard alternatives to Praat's native colour format
 ---
