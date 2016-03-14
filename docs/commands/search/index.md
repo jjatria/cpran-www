@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-cpran search \[options\] \[arguments\]
+    cpran search [options] [arguments]
 
 ## Description
 
@@ -32,28 +32,28 @@ installed plugins, both the local and the remote versions will be displayed.
 
 ## Options
 
-- **--installed**
+`--installed`
 
-    Search the local (installed) CPrAN catalog.
+  : Search the local (installed) CPrAN catalog.
 
-- **--debug**
+`--debug`
 
-    Print debug messages.
+  : Print debug messages.
 
 ## Methods
 
-- **\_match()**
+`_match()`
 
-    Performs the search agains the specified fields of the plugin.
+  : Performs the search agains the specified fields of the plugin.
 
-- **\_add\_output\_row()**
+`_add_output_row()`
 
-    Generates and adds a line for the output table. This subroutine internally calls
-    `_make_output_row()` and attaches it to the table.
+  : Generates and adds a line for the output table. This subroutine internally calls
+    `make_output_row()` and attaches it to the table.
 
-- **\_make\_output\_row()**
+`_make_output_row()`
 
-    Generates the appropriate line for a single plugin specified by name. Takes the
+  : Generates the appropriate line for a single plugin specified by name. Takes the
     name as an argument, and returns a list suitable to be plugged into a
     Text::Table object.
 
@@ -62,11 +62,21 @@ installed plugins, both the local and the remote versions will be displayed.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
-* [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::update]({{ BASE_PATH }}/docs/commands/update)
-* [CPrAN::Command::upgrade]({{ BASE_PATH }}/docs/commands/upgrade)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::install][install]
+* [CPrAN::Command::remove][remove]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::update][update]
+* [CPrAN::Command::upgrade][upgrade]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade

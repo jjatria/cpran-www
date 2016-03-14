@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-cpran update \[options\] \[arguments\]
+    cpran update [options] [arguments]
 
 ## Description
 
@@ -29,32 +29,42 @@ will be downloaded. This second case is the recommended use.
 
 ## Methods
 
-- **fetch\_descriptor()**
+`fetch_descriptor()`
 
-    Fetches the descriptor of a plugin and writes it into an appropriately named
+  : Fetches the descriptor of a plugin and writes it into an appropriately named
     file in the specified directory.
 
     Returns the serialised downloaded descriptor.
 
-- **list\_projects()**
+`list_projects()`
 
-    Provided with a list of plugin search terms, it returns a list of serialised
+  : Provided with a list of plugin search terms, it returns a list of serialised
     plugin objects. If the provided list is empty, it returns all the plugins it
     can find in the CPrAN group.
 
 ## Options
 
-- **--verbose**
+`--verbose`
 
-    Increase verbosity of output.
+  : Increase verbosity of output.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
-* [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
-* [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::upgrade]({{ BASE_PATH }}/docs/commands/upgrade)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::install][install]
+* [CPrAN::Command::remove][remove]
+* [CPrAN::Command::search][search]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::upgrade][upgrade]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade

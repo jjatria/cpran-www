@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-cpran install \[options\] \[arguments\]
+    cpran install [options] [arguments]
 
 ## Description
 
@@ -38,40 +38,40 @@ will likely be of the form `name-1.0.0`.
 
 ## Options
 
-- **--yes, -y**
+`--yes` `-y`
 
-    Assumes yes for all questions.
+  : Assumes yes for all questions.
 
-- **--force**
+`--force`
 
-    Tries to work around problems. For example, if an installed plugin is requested
+  : Tries to work around problems. For example, if an installed plugin is requested
     for installation, it re-installs it instead of refusing. When tests are enabled,
     **--force** should allow for installation regardless of test outcomes.
 
-- **--debug**
+`--debug`
 
-    Print debug messages.
+  : Print debug messages.
 
 ## Methods
 
-- **rebuild\_list()**
+`rebuild_list()`
 
-    Rebuild the plugin list. This method is just a wrapper around **update**, used
+  : Rebuild the plugin list. This method is just a wrapper around **update**, used
     for re-creating the list when CPrAN is used to install itself.
 
-- **get\_archive()**
+`get_archive()`
 
-    Downloads a plugin's tarball from the server. Returns the name of the tarball on
+  : Downloads a plugin's tarball from the server. Returns the name of the tarball on
     disk.
 
-- **install()**
+`install()`
 
-    Extract the downloaded tarball.
+  : Extract the downloaded tarball.
 
-- **strip\_prefix()**
+`strip_prefix()`
 
-    Praat uses a rather clumsy method to identify plugins: it looks for directories
-    in the preferences directory whose name begins with the strnig "plugin\_".
+  : Praat uses a rather clumsy method to identify plugins: it looks for directories
+    in the preferences directory whose name begins with the strnig `plugin_`.
     However, this is conceptually _not_ part of the name.
 
     Since user's might be tempted to include it in the name of the plugin, we remove
@@ -82,11 +82,21 @@ will likely be of the form `name-1.0.0`.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
-* [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::update]({{ BASE_PATH }}/docs/commands/update)
-* [CPrAN::Command::upgrade]({{ BASE_PATH }}/docs/commands/upgrade)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::remove][remove]
+* [CPrAN::Command::search][search]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::update][update]
+* [CPrAN::Command::upgrade][upgrade]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade

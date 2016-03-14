@@ -22,13 +22,16 @@ There is currently only one experimental client written in Perl. While the
 client is still under development and more testing is welcome, the entire
 interface is implemented and the client is considered stable enough for using.
 Until [a full spec][spec] is written, the implementation of the interface in
-[the Perl client][perl] can serve to disambiguate details of the protocol.
-
-[perl]: {{BASE_PATH}}/docs/cpran
-[spec]: {{BASE_PATH}}/docs/clients/cpran
+[the Perl client][client] can serve to disambiguate details of the protocol.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN Plugins]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN Commands]({{ BASE_PATH }}/docs/commands)
+* [CPrAN][spec]
+* [CPrAN Plugins][plugins]
+* [CPrAN Commands][commands]
+
+
+[client]:   {{BASE_PATH}}/docs/clients/cpran
+[spec]:     {{BASE_PATH}}/docs/cpran
+[plugins]:  {{ BASE_PATH }}/docs/plugins
+[commands]: {{ BASE_PATH }}/docs

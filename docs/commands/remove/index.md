@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-cpran remove \[options\] \[arguments\]
+    cpran remove [options] [arguments]
 
 ## Description
 
@@ -17,7 +17,7 @@ Deletes a cpran plugin that has been installed.
 
 Arguments to **remove** must be at least one and optionally more plugin names to
 remove. For each named passed as argument, all contents of the directory named
-"plugin\_<name>" will be removed from disk.
+`plugin_<name>` will be removed from disk.
 
 ## Examples
 
@@ -28,29 +28,39 @@ remove. For each named passed as argument, all contents of the directory named
 
 ## Options
 
-- **--yes, -y**
+`--yes` `-y`
 
-    Assumes yes for all questions.
+  : Assumes yes for all questions.
 
-- **--force**
+`--force`
 
-    Tries to work around problems.
+  : Tries to work around problems.
 
-- **--debug**
+`--debug`
 
-    Print debug messages.
+  : Print debug messages.
 
-- **--verbose**
-- **--quiet**
-- **--cautious**
+`--verbose`
+`--quiet`
+`--cautious`
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
-* [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::update]({{ BASE_PATH }}/docs/commands/update)
-* [CPrAN::Command::upgrade]({{ BASE_PATH }}/docs/commands/upgrade)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::install][install]
+* [CPrAN::Command::search][search]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::update][update]
+* [CPrAN::Command::upgrade][upgrade]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade

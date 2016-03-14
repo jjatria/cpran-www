@@ -9,7 +9,7 @@ description:
 
 ## Synopsis
 
-cpran upgrade \[options\] \[arguments\]
+    cpran upgrade [options] [arguments]
 
 ## Description
 
@@ -29,11 +29,21 @@ is not currently implemented.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
-* [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
-* [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::update]({{ BASE_PATH }}/docs/commands/update)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::install][install]
+* [CPrAN::Command::remove][remove]
+* [CPrAN::Command::search][search]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::update][update]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade

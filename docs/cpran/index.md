@@ -9,16 +9,20 @@ description:
 
 ## Synopsis
 
-cpran <command> \[global options\] \[options\] \[arguments\]
+    cpran <command> [global options] [options] [arguments]
 
 ## Description
 
-**cpran** is the main script for an [App::Cmd](https://metacpan.org/pod/App::Cmd) application to search, install,
-remove and update Praat plugins.
+**cpran** is the main script for an [App::Cmd][appcmd] application to search,
+install, remove and update Praat plugins.
+
+[appcmd]: https://metacpan.org/pod/App::Cmd
 
 ### Commands
 
-- **update**
+`update`
+
+  : <!-- -->
 
         cpran update [options]
         cpran update [options] [names]
@@ -30,10 +34,12 @@ remove and update Praat plugins.
     date, and as such it should probably be the first command to run.
 
     The list is currently implemented as individual files in the .cpran directory,
-    which is under the CPrAN root. See [CPrAN::Command::update](update) for the full
+    which is under the CPrAN root. See [CPrAN::Command::update][update] for the full
     documentation.
 
-- **search**
+`search`
+
+  : <!-- -->
 
         cpran search [options] [regex [regex...]]
 
@@ -51,13 +57,15 @@ remove and update Praat plugins.
     case, results from the search will include those plugins for which all queries
     apply. If you want to use a query that contains a space, you'll have to quote it.
 
-    **search .\*** will show the entire list of plugins (beware that this might be a
+    `search .*` will show the entire list of plugins (beware that this might be a
     long list!). Alternatively, you can use the **list** command, which is simply an
     alias for this query.
 
-    See [CPrAN::Command::search](search) for the full documentation.
+    See [CPrAN::Command::search][search] for the full documentation.
 
-- **show**
+`show`
+
+  : <!-- -->
 
         cpran show [options] [names]
 
@@ -66,12 +74,14 @@ remove and update Praat plugins.
     allows you to read the contents of this file.
 
     By default, it will show you the descriptors downloaded by **update**, but you
-    can also use the **--installed** option to read the descriptors of installed
+    can also use the `--installed` option to read the descriptors of installed
     plugins.
 
-    See [CPrAN::Command::show](show) for the full documentation.
+    See [CPrAN::Command::show][show] for the full documentation.
 
-- **install**
+`install`
+
+  : <!-- -->
 
         cpran install [options] [names]
 
@@ -82,12 +92,14 @@ remove and update Praat plugins.
     these.
 
     You also use **install** to re-install a plugin that has already been installed
-    with the **--force** option. This is useful if your local version somehow becomes
+    with the `--force` option. This is useful if your local version somehow becomes
     corrupted (eg, if you've accidentally deleted files from within it).
 
-    See [CPrAN::Command::install](install) for the full documentation.
+    See [CPrAN::Command::install][install] for the full documentation.
 
-- **upgrade**
+`upgrade`
+
+  : <!-- -->
 
         cpran upgrade
         cpran upgrade [options] [names]
@@ -97,18 +109,22 @@ remove and update Praat plugins.
     to upgrade that individual plugin, or you can call it with no arguments, to
     upgrade all plugins that are out of date.
 
-    See [CPrAN::Command::upgrade](upgrade) for the full documentation.
+    See [CPrAN::Command::upgrade][upgrade] for the full documentation.
 
-- **remove**
+`remove`
+
+  : <!-- -->
 
         cpran remove [options] [names]
 
     If you are not going to be using a plugin anymore, you can remove it with
     **remove**.
 
-    See CPrAN::Command::remove for the full documentation.
+    See [CPrAN::Command::remove][remove] for the full documentation.
 
-- **test**
+`test`
+
+  : <!-- -->
 
         cpran test [options] [names]
 
@@ -125,55 +141,45 @@ remove and update Praat plugins.
     root of the plugin. Within this directory, all files that have a `.t` extension
     will be regarded as tests. Tests are all run by Praat, and they are expected to
     conform to the [Test Anything Protocol](http://testanything.org/) for correct
-    evaluation. You might want to look at the
-    [testsimple](https://gitlab.com/cpran/plugin_testsimple) plugin to make it
+    evaluation. You might want to look at the [testsimple][] plugin to make it
     easier to write tests.
 
-    See [CPrAN::Command::test](test) for the full documentation.
-
-- **remove**
-
-        cpran remove [options] [names]
-
-    If you are not going to be using a plugin anymore, you can remove it with
-    **remove**.
-
-    See CPrAN::Command::remove for the full documentation.
+    See [CPrAN::Command::test][test] for the full documentation.
 
 ### Options
 
-- **--praat**=PATH
+`--praat=PATH`
 
-    The path to use as the preferences directory for Praat. See the FILES section
+  : The path to use as the preferences directory for Praat. See the FILES section
     for information on the platform-dependant default values used.
 
-- **--cpran**=PATH
+`--cpran=PATH`
 
-    The path to use as the CPrAN root directory. See the FILES section
+  : The path to use as the CPrAN root directory. See the FILES section
     for information on the platform-dependant default values used.
 
-- **--api-token**=TOKEN
-- **--api-group**=GROUP\_ID
-- **--api-url**=URL
+`--api-token=TOKEN`
+`--api-group=GROUP_ID`
+`--api-url=URL`
 
-    These options set the credentials to talk to the GitLab API to obtain the
+  : These options set the credentials to talk to the GitLab API to obtain the
     plugin archives and descriptors. As such, it is implementation-dependant, and is
     currently tied to GitLab. These options are particularly useful if using CPrAN
     as an in-house plugin distribution system.
 
-- **--verbose**, **--v**
+`--verbose` `--v`
 
-    Increase the verbosity of the output. This option can be called multiple times
+  : Increase the verbosity of the output. This option can be called multiple times
     to make the program even more talkative.
 
-- **--quiet**, **--q**
+`--quiet` `--q`
 
-    Opposed to **--verbose**, this option _suppresses_ all output. If both options
+  : Opposed to `--verbose`, this option _suppresses_ all output. If both options
     are set simultaneously, this one takes precedence.
 
-- **--debug**, **--D**
+`--debug` `--D`
 
-    Enables the output of debug information. Like **--verbose**, this option can be
+  : Enables the output of debug information. Like `--verbose`, this option can be
     used multiple times to increase the number of debug messages that are printed.
 
 ## Examples
@@ -207,17 +213,17 @@ will keep the path to it, accessible through CPrAN::praat().
 
 Below are the default locations for the main supported platforms:
 
-- _UNIX_
+UNIX
 
-    `~/.praat-dir`
+  : `~/.praat-dir`
 
-- _Macintosh_
+Macintosh
 
-    `/Users/username/Library/Preferences/Praat/Prefs`
+  : `/Users/username/Library/Preferences/Praat/Prefs`
 
-- _Windows_
+Windows
 
-    `C:\Documents and Settings\username\Praat`
+  : `C:\Documents and Settings\username\Praat`
 
 Where `username` is, of course, the name of the active user.
 
@@ -275,12 +281,25 @@ This list is updated with the **update** command.
 
 ## See also
 
-* [CPrAN]({{ BASE_PATH }}/docs/cpran)
-* [CPrAN::Plugin]({{ BASE_PATH }}/docs/plugins)
-* [CPrAN::Command::install]({{ BASE_PATH }}/docs/commands/install)
-* [CPrAN::Command::remove]({{ BASE_PATH }}/docs/commands/remove)
-* [CPrAN::Command::search]({{ BASE_PATH }}/docs/commands/search)
-* [CPrAN::Command::show]({{ BASE_PATH }}/docs/commands/show)
-* [CPrAN::Command::test]({{ BASE_PATH }}/docs/commands/test)
-* [CPrAN::Command::update]({{ BASE_PATH }}/docs/commands/update)
-* [CPrAN::Command::upgrade]({{ BASE_PATH }}/docs/commands/upgrade)
+* [CPrAN][cprandoc]
+* [CPrAN::Plugin][plugin]
+* [CPrAN::Command::install][install]
+* [CPrAN::Command::remove][remove]
+* [CPrAN::Command::search][search]
+* [CPrAN::Command::show][show]
+* [CPrAN::Command::test][test]
+* [CPrAN::Command::update][update]
+* [CPrAN::Command::upgrade][upgrade]
+
+[cprandoc]: {{ BASE_PATH }}/docs/cpran
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[install]:  {{ BASE_PATH }}/docs/commands/install
+[remove]:   {{ BASE_PATH }}/docs/commands/remove
+[search]:   {{ BASE_PATH }}/docs/commands/search
+[show]:     {{ BASE_PATH }}/docs/commands/show
+[test]:     {{ BASE_PATH }}/docs/commands/test
+[update]:   {{ BASE_PATH }}/docs/commands/update
+[upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade
+
+[testsimple]: {{ BASE_PATH }}/plugins/testsimple
+
