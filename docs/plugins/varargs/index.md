@@ -13,7 +13,7 @@ to register all valid signatures, and then implement _every one_ of them.
 See an example below.
 
 {% highlight praat linenos %}
-include ../procedures/varargs.proc
+include varargs.proc
 
 # Write the calls with `call` instead of `@`
 # but pass arguments separated with commas
@@ -106,3 +106,35 @@ following variables:
   : The signature of the argument list, as a string of `n` and `s` characters
     representing strings and numerics respectively. An empty argument list will
     generate the explicitly empty `nil` signature.
+
+The reason this procedure is _mostly_ for internal use, is that it can be
+conveniently used to create procedures that take an indeterminate number of
+arguments. If in the previous examples a number of different combinations were 
+possible, the set of possible combinations was strictly defined. This is not
+necessary.
+
+The following example implements a `@mean` procedure that calculates the 
+mean of however many numeric arguments are passed, similar to how the `min()`
+standard Praat function operates:
+
+{% highlight praat linenos %}
+include varargs.proc
+
+call mean: 1, 23, 5, 23, 6, 7
+appendInfoLine: mean.return
+
+procedure mean: .args$
+  @arg: .args$
+  .x = 0
+  for .i to arg.n
+    .x += number(arg.v$[.i])
+  endfor
+  .return = .x / arg.n
+endproc
+{% endhighlight %}
+
+Be advised, however, that every call to `@arg` will overwrite the previous
+list of parsed arguments. If there is any chance `@arg` will be called while 
+you still need to process a previous list of arguments, make sure to make a
+local copy first.
+
