@@ -125,19 +125,21 @@ doesn't make sense to maintain it, a special note is made.
 
 ### Basic usage
 
-    clearinfo
+{% highlight praat linenos %}
+clearinfo
 
-    # Save the selection to an internal indexed variable
-    @saveSelection()
+# Save the selection to an internal indexed variable
+@saveSelection()
 
-    # Loop through selection
-    for i to saveSelection.n
-      selectObject: saveSelection.id[i]
-      appendInfoLine: selected$()
-    endfor
+# Loop through selection
+for i to saveSelection.n
+  selectObject: saveSelection.id[i]
+  appendInfoLine: selected$()
+endfor
 
-    # Restore original selection
-    @restoreSelection()
+# Restore original selection
+@restoreSelection()
+{% endhighlight %}
 
 ### `selection.proc`
 
@@ -151,9 +153,11 @@ objects.
 
 In that sense, this procedure is entirely equivalent to the idiomatic
 
-    for i to numberOfSelected()
-      my_object[i] = selected(i)
-    endfor
+{% highlight praat %}
+for i to numberOfSelected()
+  my_object[i] = selected(i)
+endfor
+{% endhighlight %}
 
 which means that this procedure **does not** save the selection anywhere but in
 the so-called _local_ indexed variable of the procedure. This makes it
@@ -214,11 +218,15 @@ Table can, as long as it still contains the fields specified [above](#overview).
 The saved selection can be restored using
 [restoreSavedSelection(table)](#restoresavedselection).
 
-    @saveSelectionTable()
-    selectObject: saveSelectionTable.table
-    sounds = Extract rows where column (text): "type", "is equal to", "Sound"
-    selectObject: table
-    pitchs = Extract rows where column (text): "type", "is equal to", "Pitch"
+{% highlight praat %}
+@saveSelectionTable()
+selectObject: saveSelectionTable.table
+sounds = Extract rows where column (text):
+  ... "type", "is equal to", "Sound"
+selectObject: table
+pitchs = Extract rows where column (text):
+  ... "type", "is equal to", "Pitch"
+{% endhighlight %}
 
 #### saveTypeSelection(type$)
 {: #save-type-selection }
@@ -229,10 +237,12 @@ a selection table containing only the objects of type `type$` that are in the
 current selection. As in [saveSelectionTable()](#saveselectiontable), the id of
 the new Table will be stored in the variable `.table`.
 
-    @saveTypeSelectionTable("Sound")
-    sounds = saveTypeSelectionTable.table
-    @saveTypeSelectionTable("Pitch")
-    pitchs = saveTypeSelectionTable.table
+{% highlight praat %}
+@saveTypeSelectionTable("Sound")
+sounds = saveTypeSelectionTable.table
+@saveTypeSelectionTable("Pitch")
+pitchs = saveTypeSelectionTable.table
+{% endhighlight %}
 
 #### restoreSavedSelection(table)
 {: #restore-saved-selection }
@@ -321,7 +331,9 @@ toolkit, but for saved selections.
 
 Deselects all selected objects. This is entirely equivalent to
 
-    nocheck selecteObject: undefined
+{% highlight praat %}
+nocheck selecteObject: undefined
+{% endhighlight %}
 
 #### getId(table, index)
 {: #get-id }
@@ -343,23 +355,27 @@ The main use of this procedure is to facilitate clean up after many selection
 tables have been generated. Thanks to it, getting rid of the tables themselves
 is accomplished in two simple lines:
 
-    @selectSelectionTables()
-    Remove
+{% highlight praat %}
+@selectSelectionTables()
+Remove
+{% endhighlight %}
 
 #### selectTypes: types$
 {: #select-types }
 
-    Create SpeechSynthesizer: "English", "default"
-    To Sound: "This is some text.", "yes"
-    @saveSelection()
+{% highlight praat %}
+Create SpeechSynthesizer: "English", "default"
+To Sound: "This is some text.", "yes"
+@saveSelection()
 
-    Extract non-empty intervals: 3, "no"
-    @restoreSelection()
-    Remove
+Extract non-empty intervals: 3, "no"
+@restoreSelection()
+Remove
 
-    @selectTypes: "Sound"
-    To TextGrid: "Mary John bell", "bell"
-    @selectTypes: "Sound TextGrid"
+@selectTypes: "Sound"
+To TextGrid: "Mary John bell", "bell"
+@selectTypes: "Sound TextGrid"
+{% endhighlight %}
 
 Selects all objects of the type specified in `types$` in the Object list.
 Multiple object types can be passed simultaneously, separated by spaces.

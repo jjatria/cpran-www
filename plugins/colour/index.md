@@ -43,11 +43,10 @@ plugin][plugins].
 
 ## Usage
 
-~~~~
+{% highlight praat linenos %}
 include ../../plugin_colour/procedures/rainbow.proc
-
 @rainbow: 10, 50, 50
-~~~~
+{% endhighlight %}
 
 ## Requirements:
 

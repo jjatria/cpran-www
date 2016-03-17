@@ -113,7 +113,9 @@ This command can be accessed at any time from the Read menu.
 #### saveOutputPreferences()
 {: #save-output-preferences }
 
-    @saveOutputPreferences()
+{% highlight praat %}
+@saveOutputPreferences()
+{% endhighlight %}
 
 This procedure tries to save the existing text-output preferences. Their value
 is stored in the `.output$` variable.
@@ -121,7 +123,9 @@ is stored in the `.output$` variable.
 #### restoreOutputPreferences()
 {: #restore-output-preferences }
 
-    @restoreOutputPreferences()
+{% highlight praat %}
+@restoreOutputPreferences()
+{% endhighlight %}
 
 This procedure tries to restore the text-writing preferences to what they were
 when the serialisation scripts were first run, if they were not `"UTF-8"`.
@@ -129,7 +133,9 @@ when the serialisation scripts were first run, if they were not `"UTF-8"`.
 #### checkOutputPreferences()
 {: #check-output-preferences }
 
-    @checkOutputPreferences()
+{% highlight praat %}
+@checkOutputPreferences()
+{% endhighlight %}
 
 This procedure provides an interface for the user to correct their text output
 preferences if they are found not to be set to `"UTF-8"`. The user is given the

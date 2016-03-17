@@ -41,10 +41,12 @@ the stream.
 #### plan: tests
 {: #plan }
 
-    # Plan 10 tests
-    @plan: 10
-    # Prints out
-    #   1..10
+{% highlight praat %}
+# Plan 10 tests
+@plan: 10
+# Prints out
+#   1..10
+{% endhighlight %}
 
 Every TAP stream must either begin or end with a plan line, which specifies how
 may tests will run, or have run. This is a safeguard in case your test file dies
@@ -58,8 +60,10 @@ not know how many tests will be run, this must be stated explicitly with
 #### no_plan
 {: #no-plan }
 
-    # If you do not know how many tests you'll run
-    @no_plan()
+{% highlight praat %}
+# If you do not know how many tests you'll run
+@no_plan()
+{% endhighlight %}
 
 Sometimes a test suite will have an undetermined number of tests. In this case,
 **testsimple** requires this to be explicitly stated before the first test takes
@@ -69,7 +73,9 @@ begin with a call to this procedure or to [`@plan`](#plan).
 #### done_testing
 {: #done-testing }
 
-    @done_testing()
+{% highlight praat %}
+@done_testing()
+{% endhighlight %}
 
 This procedure marks the end of the testing suite. It generates no output if a
 plan line has already been printed (with [`@plan`](#plan)), but is necessary
@@ -81,10 +87,12 @@ either of the planning procedures has been called.
 #### ok: test, description$
 {: #ok }
 
-    Create TextGrid: "test", 0, 1, "tiers", ""
-    @ok: selected("TextGrid"), "TextGrid is selected"
-    # Prints
-    #   ok 1 - TextGrid is selected
+{% highlight praat %}
+Create TextGrid: "test", 0, 1, "tiers", ""
+@ok: selected("TextGrid"), "TextGrid is selected"
+# Prints
+#   ok 1 - TextGrid is selected
+{% endhighlight %}
 
 The core of TAP is the test line. Test lines begin with either `ok` or `not ok`
 depending on the result of the test. A number is expected to follow the result
@@ -99,8 +107,10 @@ be the empty string.
 #### ok_formula: formula$, description$
 {: #ok-formula }
 
-    Create TextGrid: "test", 0, 1, "tiers", ""
-    @ok_formula: "selected(""TextGrid"")", "TextGrid is selected"
+{% highlight praat %}
+Create TextGrid: "test", 0, 1, "tiers", ""
+@ok_formula: "selected(""TextGrid"")", "TextGrid is selected"
+{% endhighlight %}
 
 Similar to [`@ok`](#ok), this procedure also generates a test line, but the
 value of the first argument is not interpreted as a boolean, but executed as a
@@ -114,17 +124,19 @@ true value (i.e., non-zero).
 #### skip: number, why$
 {: #skip }
 
-    @skip: 2, "show test skipping"
-    @ok: 0, "counted as passing"
-    @ok: 0, "also counted as passing"
-    @ok: 0, "not counted as passing!"
+{% highlight praat %}
+@skip: 2, "show test skipping"
+@ok: 0, "counted as passing"
+@ok: 0, "also counted as passing"
+@ok: 0, "not counted as passing!"
 
-    @skip: undefined, "start a SKIP block"
-    for i to randomInteger(5, 10)
-      @ok: 0, "counted as passing"
-    endfor
-    @end_skip()
-    @ok: 0, "not counted as passing!"
+@skip: undefined, "start a SKIP block"
+for i to randomInteger(5, 10)
+  @ok: 0, "counted as passing"
+endfor
+@end_skip()
+@ok: 0, "not counted as passing!"
+{% endhighlight %}
 
 A test can be skipped if the test suite decides it does not make sense to run
 it. A skipped test will be marked as passing regardless of their output, and the
@@ -144,12 +156,14 @@ number of tests to skip is `undefined`, all tests until the next call of
 #### end_skip
 {: #end-skip }
 
-    @skip: undefined, "start a SKIP block"
-    for i to randomInteger(5, 10)
-      @ok: 0, "counted as passing"
-    endfor
-    @end_skip()
-    @ok: 0, "not counted as passing!"
+{% highlight praat %}
+@skip: undefined, "start a SKIP block"
+for i to randomInteger(5, 10)
+  @ok: 0, "counted as passing"
+endfor
+@end_skip()
+@ok: 0, "not counted as passing!"
+{% endhighlight %}
 
 This procedure ends a SKIP block. If a previous call to [`@skip`](#skip) has
 been made with an `undefined` number of tests to skip, tests following the call
@@ -159,12 +173,14 @@ effect.
 #### skip_all: why$
 {: #skip-all }
 
-    @skip_all: "skip all the tests!"
-    for i to randomInteger(5, 10)
-      @ok: 0, "counted as passing"
-    endfor
-    @end_skip() ; Ignored in this case!
-    @ok: 0, "ALSO counted as passing"
+{% highlight praat %}
+@skip_all: "skip all the tests!"
+for i to randomInteger(5, 10)
+  @ok: 0, "counted as passing"
+endfor
+@end_skip() ; Ignored in this case!
+@ok: 0, "ALSO counted as passing"
+{% endhighlight %}
 
 Similar to calling [`@skip`](#skip) with an undefined number of tests to skip,
 calling this procedure will mark following tests as skipped. However, unlike
@@ -175,17 +191,19 @@ skipped.
 #### todo: number, why$
 {: #todo }
 
-    @todo: 2, "show to-do tests"
-    @ok: 1, "passing a TODO test is good!"
-    @ok: 0, "failing one is OK too"
-    @ok: 0, "no longer OK!"
+{% highlight praat %}
+@todo: 2, "show to-do tests"
+@ok: 1, "passing a TODO test is good!"
+@ok: 0, "failing one is OK too"
+@ok: 0, "no longer OK!"
 
-    @todo: undefined, "start a TODO block"
-    for i to randomInteger(5, 10)
-      @ok: randomInteger(0, 1), "All these are OK"
-    endfor
-    @end_todo()
-    @ok: 0, "no longer OK!"
+@todo: undefined, "start a TODO block"
+for i to randomInteger(5, 10)
+  @ok: randomInteger(0, 1), "All these are OK"
+endfor
+@end_todo()
+@ok: 0, "no longer OK!"
+{% endhighlight %}
 
 An alternative to skipping tests is to mark them as to-do, which is useful for
 example when the test is testing code that has not been written yet. Tests
@@ -206,12 +224,14 @@ call to [`@end_todo`](#end-todo).
 #### end_todo
 {: #end-todo }
 
-    @todo: undefined, "start a TODO block"
-    for i to randomInteger(5, 10)
-      @ok: randomInteger(0, 1), "All these are OK"
-    endfor
-    @end_todo()
-    @ok: 0, "no longer OK!"
+{% highlight praat %}
+@todo: undefined, "start a TODO block"
+for i to randomInteger(5, 10)
+  @ok: randomInteger(0, 1), "All these are OK"
+endfor
+@end_todo()
+@ok: 0, "no longer OK!"
+{% endhighlight %}
 
 Similar to [`@end_skip`](#end-skip), this procedure finishes a TODO block. If
 there has been a prior call to [`@todo`](#todo) with an `undefined` number of
