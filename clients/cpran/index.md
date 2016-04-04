@@ -51,6 +51,9 @@ oriented), its implementation.
         # Or alternatively
         cpanm https://gitlab.com/cpran/CPrAN/repository/archive.tar.gz?ref=master
 
+    (If this doesn't work, try first updating cpanminus iself with
+    `cpanm App::cpanminus`).
+
     If not using `cpanminus`, you can download the [module archive][archive]
     manually, extract it, and run the following commands at its root:
 
