@@ -119,6 +119,6 @@ manually to the new version if your `update` is broken.
 
 [gitlab]: https://gitlab.com
 [bower]: https://github.com/bower/bower
-[zip]: https://gitlab.com/cpran/plugin_cpran/repository/archive.zip?ref=master
+[archive]: https://gitlab.com/cpran/plugin_cpran/repository/archive.zip?ref=master
 [semver]: http://semver.org
 [issues]: https://gitlab.com/cpran/plugin_cpran/issues
