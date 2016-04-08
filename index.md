@@ -23,12 +23,6 @@ releases of those plugins, and make sure that the plugins you install are
 [upgrade]: /docs/commands/upgrade
 [test]:    /docs/commands/test
 
-To use CPrAN, you'll have to install it as you would normally with any other
-Praat plugin. The current version is [written in Perl][perl client], so you'll
-probably also need to install some other modules before you can use it.
-
-[perl client]: /clients/cpran
-
 All you need to get up and running is explained in the [installation
 instructions][install client].
 
