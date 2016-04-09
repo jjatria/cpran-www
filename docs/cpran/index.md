@@ -3,9 +3,12 @@ layout: page
 group: pod
 title: CPrAN
 description:
-  short: A package manager for Praat
+  short: The spec of the interface
 ---
 {% include JB/setup %}
+
+> While the general spec is being written, the documentation of the reference
+> client will serve that purpose. That documentaion is copied below.
 
 ## Synopsis
 
@@ -19,6 +22,18 @@ install, remove and update Praat plugins.
 [appcmd]: https://metacpan.org/pod/App::Cmd
 
 ### Commands
+
+`init`
+
+  : <!-- -->
+
+        cpran init [options]
+
+    Initialise a CPrAN installation, by generating the root directory and installing
+    the [cpran plugin][], which serves as a bridge between the actions of the client
+    and Praat.
+
+    See [CPrAN::Command::init][init] for the full documentation.
 
 `update`
 
@@ -36,6 +51,18 @@ install, remove and update Praat plugins.
     The list is currently implemented as individual files in the .cpran directory,
     which is under the CPrAN root. See [CPrAN::Command::update][update] for the full
     documentation.
+
+    See [CPrAN::Command::update][update] for the full documentation.
+
+`list`
+
+  : <!-- -->
+
+        cpran list [options]
+
+    Show a list of _all_ known plugins. This command is an alias for `search .*`.
+
+    See [CPrAN::Command::list][list] for the full documentation.
 
 `search`
 
@@ -78,6 +105,22 @@ install, remove and update Praat plugins.
     plugins.
 
     See [CPrAN::Command::show][show] for the full documentation.
+
+`deps`
+
+  : <!-- -->
+
+        cpran deps [options] [names]
+        cpran deps [names] | cpran install --reinstall
+
+    Show a list of the aggregated dependencies of the specified plugins, printed
+    in an ordered list. The output of this command is useful for simply checking
+    what those dependencies are, but can also be piped to `install`.
+
+    The names of the specified plugins themselves will not be printed unless
+    other nodes in the dependency tree depend on them.
+
+    See [CPrAN::Command::deps][deps] for the full documentation.
 
 `install`
 
@@ -283,7 +326,10 @@ This list is updated with the **update** command.
 
 * [CPrAN][cprandoc]
 * [CPrAN::Plugin][plugin]
+* [CPrAN::Command::deps][deps]
+* [CPrAN::Command::init][init]
 * [CPrAN::Command::install][install]
+* [CPrAN::Command::list][list]
 * [CPrAN::Command::remove][remove]
 * [CPrAN::Command::search][search]
 * [CPrAN::Command::show][show]
@@ -291,9 +337,13 @@ This list is updated with the **update** command.
 * [CPrAN::Command::update][update]
 * [CPrAN::Command::upgrade][upgrade]
 
+[cpran plugin]: {{ BASE_PATH }}/docs/plugins/cpran
 [cprandoc]: {{ BASE_PATH }}/docs/cpran
 [plugin]:   {{ BASE_PATH }}/docs/plugins
+[deps]:     {{ BASE_PATH }}/docs/commands/dep
+[init]:     {{ BASE_PATH }}/docs/commands/init
 [install]:  {{ BASE_PATH }}/docs/commands/install
+[list]:     {{ BASE_PATH }}/docs/commands/list
 [remove]:   {{ BASE_PATH }}/docs/commands/remove
 [search]:   {{ BASE_PATH }}/docs/commands/search
 [show]:     {{ BASE_PATH }}/docs/commands/show
