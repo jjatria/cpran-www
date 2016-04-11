@@ -84,6 +84,7 @@ will likely be of the form `name-1.0.0`.
 
 * [CPrAN][cprandoc]
 * [CPrAN::Plugin][plugin]
+* [CPrAN::Command::create][create]
 * [CPrAN::Command::deps][deps]
 * [CPrAN::Command::init][init]
 * [CPrAN::Command::list][list]
@@ -97,8 +98,9 @@ will likely be of the form `name-1.0.0`.
 [cpran plugin]: {{ BASE_PATH }}/docs/plugins/cpran
 [cprandoc]: {{ BASE_PATH }}/docs/cpran
 [plugin]:   {{ BASE_PATH }}/docs/plugins
+[create]:   {{ BASE_PATH }}/docs/commands/create
+[deps]:     {{ BASE_PATH }}/docs/commands/deps
 [init]:     {{ BASE_PATH }}/docs/commands/init
-[deps]:     {{ BASE_PATH }}/docs/commands/dep
 [install]:  {{ BASE_PATH }}/docs/commands/install
 [list]:     {{ BASE_PATH }}/docs/commands/list
 [remove]:   {{ BASE_PATH }}/docs/commands/remove

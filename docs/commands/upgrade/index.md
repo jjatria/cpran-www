@@ -31,16 +31,25 @@ is not currently implemented.
 
 * [CPrAN][cprandoc]
 * [CPrAN::Plugin][plugin]
+* [CPrAN::Command::create][create]
+* [CPrAN::Command::deps][deps]
+* [CPrAN::Command::init][init]
 * [CPrAN::Command::install][install]
+* [CPrAN::Command::list][list]
 * [CPrAN::Command::remove][remove]
 * [CPrAN::Command::search][search]
 * [CPrAN::Command::show][show]
 * [CPrAN::Command::test][test]
 * [CPrAN::Command::update][update]
 
+[cpran plugin]: {{ BASE_PATH }}/docs/plugins/cpran
 [cprandoc]: {{ BASE_PATH }}/docs/cpran
 [plugin]:   {{ BASE_PATH }}/docs/plugins
+[create]:   {{ BASE_PATH }}/docs/commands/create
+[deps]:     {{ BASE_PATH }}/docs/commands/deps
+[init]:     {{ BASE_PATH }}/docs/commands/init
 [install]:  {{ BASE_PATH }}/docs/commands/install
+[list]:     {{ BASE_PATH }}/docs/commands/list
 [remove]:   {{ BASE_PATH }}/docs/commands/remove
 [search]:   {{ BASE_PATH }}/docs/commands/search
 [show]:     {{ BASE_PATH }}/docs/commands/show

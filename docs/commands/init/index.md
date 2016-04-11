@@ -33,6 +33,7 @@ This command installs the [cpran plugin][] on an otherwise empty system.
 
 * [CPrAN][cprandoc]
 * [CPrAN::Plugin][plugin]
+* [CPrAN::Command::create][create]
 * [CPrAN::Command::deps][deps]
 * [CPrAN::Command::install][install]
 * [CPrAN::Command::list][list]
@@ -45,9 +46,10 @@ This command installs the [cpran plugin][] on an otherwise empty system.
 
 [cpran plugin]: {{ BASE_PATH }}/docs/plugins/cpran
 [cprandoc]: {{ BASE_PATH }}/docs/cpran
-[plugin]:   {{ BASE_PATH }}/docs/plugin
+[plugin]:   {{ BASE_PATH }}/docs/plugins
+[create]:   {{ BASE_PATH }}/docs/commands/create
+[deps]:     {{ BASE_PATH }}/docs/commands/deps
 [init]:     {{ BASE_PATH }}/docs/commands/init
-[deps]:     {{ BASE_PATH }}/docs/commands/dep
 [install]:  {{ BASE_PATH }}/docs/commands/install
 [list]:     {{ BASE_PATH }}/docs/commands/list
 [remove]:   {{ BASE_PATH }}/docs/commands/remove
@@ -56,4 +58,3 @@ This command installs the [cpran plugin][] on an otherwise empty system.
 [test]:     {{ BASE_PATH }}/docs/commands/test
 [update]:   {{ BASE_PATH }}/docs/commands/update
 [upgrade]:  {{ BASE_PATH }}/docs/commands/upgrade
-
