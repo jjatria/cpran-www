@@ -7,7 +7,7 @@ description:
 ---
 {% include JB/setup %}
 
-## Synopsi
+## Synopsis
 
     cpran init [options] [arguments]
 

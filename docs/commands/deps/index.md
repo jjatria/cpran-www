@@ -1,7 +1,7 @@
 ---
 layout: page
 group: command
-title: dep
+title: deps
 description:
   short: List the dependencies of CPrAN plugin
 ---
