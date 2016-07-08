@@ -255,36 +255,84 @@ Undoes the changes made by [@normalPrefDir](#normalprefdir).
       appendInfoLine: "An error was encountered, but we sailed past it"
     endif
 
-Error handling in Praat is limited, and is mostly restricted exclusively to the
-use of the `nowarn` and `nocheck` directives, which swallow all warnings and
-errors respectively. However, these can only be applied under certain
+Error handling in Praat is limited, and is mostly restricted exclusively to
+the use of the `nowarn` and `nocheck` directives, which swallow all warnings
+and errors respectively. However, these can only be applied under certain
 circumstances, and can only apply to a specific line.
 
-The `@try` procedure takes a single string of code (which could be a single line
-or a block of code represented by a string containing separating newlines) and
-executes that in a safe manner, such that even if execution of those lines
-crashes due to some unexpected reason, the execution of the larger script will
-not.
+The `@try` procedure takes a single string of code (which could be a single
+line or a block of code represented by a string containing separating
+newlines) and executes that in a safe manner, such that even if execution of
+those lines crashes due to some unexpected reason, the execution of the
+larger script will not.
 
-Any changes in the selection that result from the _successful_ completion of the
-code passed as the argument to `@try` will be kept.
+Any changes in the selection that result from the _successful_ completion of
+the code passed as the argument to `@try` will be kept. Otherwise, the
+selection active at the time `@try` was called will be restored.
 
-Control variables are also provided to make it easy to check whether any errors
-were encountered. The `.return` variable will be true if the code executed
-without errors, and false otherwise. For convenience, a separate variable
-`.catch` is provided with the opposite meaning: true on error, false on success.
+Objects created during execution of failing code will be removed
+automatically. If this is not desirable, this behaviour can be modified by
+setting the `try.remove_on_fail` variable to a false value.
 
-Despite the name of the variable, it is not possible at this point to actually
-_catch_ the error. All this procedure does it to make it possible to `nocheck`
-larger blocks of code.
+Control variables are also provided to make it easy to check whether any
+errors were encountered. The `.return` variable will be true if the code
+executed without errors, and false otherwise. For convenience, a separate
+variable `.catch` is provided with the opposite meaning: true on error,
+false on success.
 
-Since the code that is passed to `@try` is executed by a separate instance of
-the interpreter, the variables in that code will exist on an entirely separate
-scope from the rest of the script.
+Despite the name of the variable, it is not possible at this point to
+actually _catch_ the error. All this procedure does it to make it possible
+to `nocheck` larger blocks of code.
+
+Since the code that is passed to `@try` is executed by a separate instance
+of the interpreter, the variables in that code will exist on an entirely
+separate scope from the rest of the script, and will not be available in the
+calling script. Likewise, the script that is "tried" will not have access
+to the variables in the calling script.
 
 It is not possible also to pass arguments to the tried code. To bypass this
-issue, save them in an object (a Strings or a Table object might be suitable)
-and read them from there.
+issue, save them in an object (a Strings or a Table object might be
+suitable) and read them from there.
+
+### `trace.proc`
+
+#### trace: message$
+{: #trace }
+
+    include path/to/trace.proc
+    @trace: "Not printed"
+
+    trace.enable = 1
+    @trace: "Printed to STDOUT"
+
+    trace.output$ = preferencesDirectory$ + "/praat.log"
+    @trace: "Append " + string$(number) + " to a file"
+
+Prints a trace message, either to STDOUT or to a file. Because of the way
+procedures parse their arguments, the message passed to `@trace` must be a
+single string, which means that any number-to-string conversion must be done
+manually.
+
+The behaviour of this procedure is controlled at runtime by a number of
+different global flags:
+
+`trace.enable`
+  : If true, the procedure prints the message. Otherwise, this procedure
+    does nothing. False by default.
+`trace.output$`
+  : The filename of an external trace file. If empty, the trace is printed
+    to the Info window (or STDOUT) instead. Empty by default.
+`trace.cleared`
+  : If false, the device (file or Info window) will be cleared before
+    printing the next message. Otherwise, messages will be appended. By
+    default, it is set to true when priting to a file, and false otherwise.
+`trace.level`
+  : In addition to `trace.enable`, the procedure will only print when this
+    variable has a value greater than 1. This is useful for dynamically
+    increasing or decreasing the verbosity of a script. Set to 1 by default.
+
+The default values of these flags mean that, unless action is taken, this
+procedure will produce no output.
 
 ### `require.proc`
 
@@ -294,24 +342,50 @@ and read them from there.
     @require: "5.4.22"
     assert praatVersion >= 5422
 
-Makes sure that the current version of Praat is _at least_ equal to that
-specified by `version$`. If this requirement is not met, a useful error message
-is displayed to the user.
+Makes sure the current version is at least a certain version. If the current
+Praat version is lower than the one specified, the procedure will halt the
+calling script with a useful error message.
 
-#### comparePraatVersionStrings: a$, b$
-{: #comparepraatversionstrings }
+Praat version strings are parsed by [`@semver`](#semver), and compared with
+the [`@semver_compare`](#semver_compare) procedure.
+
+#### semver_compare: a$, b$
+{: #semver-compare }
+
+<span></span>{: #comparesemver }
+<span></span>{: #comparepraatversionstrings }
 
 Compares two version strings like those used by Praat, with three version
-numbers separated by periods. Although all versions of Praat (so far) are
-directly comparable using the numeric versions (stored in `praatVersion`), this
-procedure will work with any [_semantic versioning_][semver] version string
-(eg `10.4` is greater than `10.3.192`).
+numbers separated by periods, or more generally, compatible with the
+[_semantic versioning_][semver] standard. In this case, to accommodate
+Praat's version numbers, fewer than three components are acceptable
+(eg `10.4` is acceptable, and greater than `10.3.192`).
+
+The labels are compared last, and a version without labels is greater than
+one with a label. Version metadata is not taken into consideration.
+
+The result of the comparison is stored in `.return`, which will be 0 if the
+strings are equal, -1 if the first is greater, and 1 if the second is.
 
 [semver]: http://semver.org/
 
-The comparison is made between the two versions identified by `a$` and `b$`. The
-result of the comparison is stored in `.return`, which will be 0 if the strings
-are equal, -1 if `a$` is greater, and 1 if `b$` is greater.
+#### semver: a$
+{: #semver }
+
+Parses a version string as a semantic versioning string. These have three
+integer components separated by periods (eg. 3.2.38). In this case,
+providing fewer than three is acceptable, in which case missing numbers
+will be assigned 0 by default.
+
+A label can be attached at the end separated from the numeric components
+with a hyphen. Acceptable characters in the label are those matching
+[a-zA-Z0-9-] (eg. 8.0.2-Label-with-hyphens)
+
+Build metadata can be appended separated from the rest of the components
+with a plus sign (+). Acceptable metadata characters are those matching
+[a-zA-Z0-9.-] (eg. 1.2.3+za.sd-65AF4D87B2, 1.3.4-label+metadata)
+
+If given a non-parseable string, this procedure will stop execution.
 
 ### `check_filename.proc`
 
@@ -390,7 +464,7 @@ to provide a set of easily formattable chunks. These are:
   : day of the week (1-7)
 
 `.dw$`
-  : day of the week as string (`"Mon"`, ...)
+  : day of the week as string (`"Monday"`, ...)
 
 `.dm`
   : day of the month (1-31)
@@ -399,7 +473,7 @@ to provide a set of easily formattable chunks. These are:
   : month (1-12)
 
 `.mo$`
-  : month as string (`"Jan"`, ...)
+  : month as string (`"January"`, ...)
 
 `.yr`
   : year (Gregorian)
