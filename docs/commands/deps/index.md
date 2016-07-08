@@ -3,7 +3,7 @@ layout: page
 group: command
 title: deps
 description:
-  short: List the dependencies of CPrAN plugin
+  short: List the dependencies of CPrAN plugins
 ---
 {% include JB/setup %}
 
