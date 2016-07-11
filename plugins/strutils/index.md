@@ -9,17 +9,11 @@ description:
 ---
 {% include JB/setup %}
 
-This plugin defines a set of Strings utilities:
+A Strings object in Praat is an ordered list of strings that is most commonly
+used to represent either lists of files or directories in disk (as returned
+by the `Create Strings as file list...` and `Create Strings as directory list...` standard Praat commands), or the lines of a text file that was read with the `Read Strings from raw text file...` command.
 
-* Create empty Strings
-* Extract strings
-* Create Strings as file list (full path)
-* Create Strings as file list (recursive)
-* Create Strings as directory list (full path)
-* Create Strings as directory list (recursive)
-* Replace strings
-* Find in Strings
-* Generic sort for Strings
+“strutils” provides some new ways to create Strings (including the possibility of creating an empty Strings object, as well as making fully-specified file and directory lists), and some commands to manipulate existing objects.
 
 ## Installation
 
