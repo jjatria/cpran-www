@@ -54,7 +54,7 @@ oriented), its implementation.
     (If this doesn't work, try first updating cpanminus iself with
     `cpanm App::cpanminus`).
 
-    If not using `cpanminus`, you can download the [module archive][archive]
+    If not using `cpanminus`, you can download the [module archive][]
     manually, extract it, and run the following commands at its root:
 
     [module archive]: https://gitlab.com/cpran/CPrAN/repository/archive.zip?ref=master
@@ -119,6 +119,5 @@ manually to the new version if your `update` is broken.
 
 [gitlab]: https://gitlab.com
 [bower]: https://github.com/bower/bower
-[archive]: https://gitlab.com/cpran/plugin_cpran/repository/archive.zip?ref=master
 [semver]: http://semver.org
-[issues]: https://gitlab.com/cpran/plugin_cpran/issues
+[issues]: https://gitlab.com/cpran/CPrAN/issues
