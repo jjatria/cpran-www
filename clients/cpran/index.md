@@ -76,14 +76,14 @@ oriented), its implementation.
     [cpran module]: https://gitlab.com/cpran/CPrAN
 
     > Note: to avoid having to install packages at the system level (ie, with
-    > administrator rights), consider using [plenv][] or [perlbrew][] (or
+    > administrator rights), consider using [perlbrew][] (or [DWIM Perl][dwim] or
     > [berrybrew][] if you are on Windows). These are perl version managers that
     > allow you to have multiple user-specific Perl installations.
 
     [cpanminus]: https://github.com/miyagawa/cpanminus
     [perlbrew]: https://perlbrew.pl
-    [plenv]: http://weblog.bulknews.net/post/58079418600/plenv-alternative-for-perlbrew
     [berrybrew]: http://perltricks.com/article/119/2014/10/10/Hello-berrybrew--the-Strawberry-Perl-version-manager
+    [dwim]: http://dwimperl.com/
 
 3.  **Install the CPrAN plugin**. Once the client is installed, you need to
     install the Praat plugin so that Praat can interact with it. You should be
