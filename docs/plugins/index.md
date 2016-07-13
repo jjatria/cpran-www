@@ -48,7 +48,7 @@ commented example][example descriptor] of a properly formatted descriptor.
 
 [example descriptor]: https://gitlab.com/cpran/plugin_cpran/blob/master/doc/example.yaml
 
-Additionally, there are two extra CPrAN features that you can make use of to
+Additionally, there are three extra CPrAN features that you can make use of to
 improve the functionality of your plugin, and its interoperability with other
 plugins.
 
@@ -126,8 +126,15 @@ problems (fingers crossed!).
 ## Registering a plugin
 
 There is currently no streamlined process for registering a plugin with CPrAN,
-but this does not mean that your plugin cannot be registered! Please
-[contact us](mailto:jjatria@gmail.com) and we can take it from there.
+but this does not mean that your plugin cannot be registered!
+
+There are only two requirements for registration: the URL to a publicly
+accessible git repository, and that the repository uses semantic version tags
+(of the format `v1.2.3` or `1.2.3`).
+
+If you don't already have a repository for the data, then we can assist in its
+creation and registration. Either way, [get in touch](mailto:jjatria@gmail.com)
+and we can take it from there.
 
 ## See also
 
