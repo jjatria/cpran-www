@@ -10,7 +10,7 @@ description:
 
 This plugin offers a more complete implementation of the [Test Anything
 Protocol][tap] than the one previously made available by its predecessor,
-the [testsimple][] plugin. In this case, the main inspiration was the 
+the [testsimple][] plugin. In this case, the main inspiration was the
 [Test::More](https://metacpan.org/pod/Test::More) CPAN module.
 
 This plugin should be installed automatically by running `cpran init` in
@@ -38,7 +38,7 @@ You can download an [archive][] of the latest version for manual installation.
 You can manually install the plugin just like any other [Praat plugin][plugins].
 
 [plugins]: http://www.fon.hum.uva.nl/praat/manual/plug-ins.html
-[archive]: https://gitlab.com/cpran/plugin_testsimple/repository/archive.zip
+[archive]: https://gitlab.com/cpran/plugin_tap/repository/archive.zip
 [cpran]:   http://cpran.net
 
 ## Synopsis
