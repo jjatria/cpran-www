@@ -5,12 +5,88 @@ title: varargs
 ---
 {% include JB/setup %}
 
-"varargs" makes it possible to write variadic procedures in Praat.
+"varargs" makes it possible to write variadic procedures in Praat, and provides
+an alternative method for calling procedures with enhanced support for
+recursive calls.
 
-In order to declare procedures supporting this feature, they need
-to register all valid signatures, and then implement _every one_ of them.
+This is done through two main procedures: [`varargs`](#varargs), which uses
+procedures that take arguments in the normal way and identifies the appropriate
+one to call by using a signature map; and [`@`](#at), which altogether replaces
+the standard method of calling procedures, taking full control of the argument
+parsing.
 
-See an example below.
+## Procedures
+
+### `varargs.proc`
+
+#### @
+{: #at }
+
+{% highlight praat linenos %}
+include varargs.proc
+
+call @:fibonacci: 7
+assert fibonacci.return == 13
+
+procedure fibonacci ()
+  if number(.argv$[1]) == 0
+    .return = 0
+  elsif number(.argv$[1]) == 1
+    .return = 1
+  else
+    call @:fibonacci: number(fibonacci.argv$[1]) - 1
+    .a['@.level'] = fibonacci.return
+
+    call @:fibonacci: number(fibonacci.argv$[1]) - 2
+    .b['@.level'] = fibonacci.return
+
+    .return = .a['@.level'] + .b['@.level']
+  endif
+endproc
+{% endhighlight %}
+
+This procedure takes a string that looks exactly like one to be used after a
+normal procedure call using the standard `@`, which is why it is significantly
+easier to call it using `call` (to avoid having to escape all the quotations).
+
+Internally, it parses that string to identify the name of the procedure to call
+and the argument list to write into that procedures internal variables, and
+calls that procedure.
+
+For this to work, the procedure needs to be declared as having no arguments,
+since we are bypassing the Praat parser entirely for this. Instead, the
+arguments will be made available using a set of variables:
+
+`.argv$`
+  : a space-separated list of parameters (with the last string unquoted)
+
+`.args$`
+  : a comma-separated list of parameters
+
+`.argn`
+  : the number of passed parameters
+
+`.argt$`
+  : the type (string or numeric) of each parameter, as a sequence of single
+    characters (`s` and `n` respectively)
+
+`.argv$[]`
+  : an indexed variable holding each argument as a string
+
+`.argt$[]`
+  : an indexed variable holding the type of each argument as a single character
+
+These variables do not use the `@` namespace, but the namespace of the
+procedure that was called using the `@` procedure (eg. in the synopsis, these
+would be `fibonacci.argn`, `fibonacci.args$`, etc)
+
+The procedure also internally keeps track of recursive calls, making sure that
+subsequent calls do not overwrite the existing arguments, and keeping a counter
+of the current execution level. In the synopsis, this is used to store the
+"return" value of the lower calls (using the `@.level` variable).
+
+#### varargs: args
+{: #varargs }
 
 {% highlight praat linenos %}
 include varargs.proc
@@ -48,22 +124,14 @@ procedure greet.ss: .greet$, .name$
 endproc
 {% endhighlight %}
 
-## Procedures
-
-### `varargs.proc`
-
-#### varargs: args
-{: #varargs }
-
-{% highlight praat %}
-call varargs myproc: 10, "a", "say ""hello!"""
-{% endhighlight %}
-
 This procedure is to be used as if it were a keyword. Once you've defined
 your procedures supporting a variable number of arguments, you call them
 as in the example, using `call varargs` and then the rest of a normal
 procedure call using colons (without parentheses, and using a comma-separated
 list of arguments).
+
+In order to declare procedures supporting this feature, they need
+to register all valid signatures, and then implement _every one_ of them.
 
 If the procedure is to take no arguments, simply write
 
@@ -109,11 +177,11 @@ following variables:
 
 The reason this procedure is _mostly_ for internal use, is that it can be
 conveniently used to create procedures that take an indeterminate number of
-arguments. If in the previous examples a number of different combinations were 
+arguments. If in the previous examples a number of different combinations were
 possible, the set of possible combinations was strictly defined. This is not
 necessary.
 
-The following example implements a `@mean` procedure that calculates the 
+The following example implements a `@mean` procedure that calculates the
 mean of however many numeric arguments are passed, similar to how the `min()`
 standard Praat function operates:
 
@@ -134,7 +202,7 @@ endproc
 {% endhighlight %}
 
 Be advised, however, that every call to `@arg` will overwrite the previous
-list of parsed arguments. If there is any chance `@arg` will be called while 
+list of parsed arguments. If there is any chance `@arg` will be called while
 you still need to process a previous list of arguments, make sure to make a
 local copy first.
 
