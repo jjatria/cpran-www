@@ -31,7 +31,8 @@ which can only be created as listings of file contents or entries in the
 file structure. To make use of the full benefit of Strings, this command
 makes it possible to create Strings that are guarranteed to be empty.
 
-All the processing done by this command is handled internally by the [`@createEmptyStrings`](#create-empty-strings-procedure) procedure.
+All the processing done by this command is handled internally by the
+[`@createEmptyStrings`](#create-empty-strings-procedure) procedure.
 
 #### Extract strings: search$, match$, use_regex
 {: #extract-strings }
@@ -235,3 +236,81 @@ pattern. For matching with literal strings, use
 [`@extractStrings`](#extract-strings).
 
 The new Strings object will be selected after execution.
+
+### `array.proc`
+
+#### array
+{: #array-procedure }
+
+Creates a representation of an array using a Strings object. After calling this
+procedure, a new, empty Strings object will be selected.
+
+#### push: .val
+{: #push-numeric }
+
+Append the provided numeric value to the end of the array
+
+#### push$: .val$
+{: #push-string }
+
+Append the provided string value to the end of the array
+
+#### pop
+{: #pop-procedure }
+
+Remove the last item in the array
+
+#### unshift: .val
+{: #unshift-numeric }
+
+Append the provided numeric value to the beginning of the array
+
+#### unshift$: .val$
+{: #unshift-string }
+
+Append the provided string value to the beginning of the array
+
+#### shift
+{: #shift-procedure }
+
+Remove the first item in the array
+
+#### slice: .from, .to
+{: #slice-procedure }
+
+Creates a Strings object as a subset of the selected Strings, with the
+strings between the first and last provided. The original Strings object
+is not modified in the process.
+
+#### excise: .from, .to
+{: #splice-procedure }
+
+Similar to [`@slice`](#slice-procedure), but this procedure also removes the
+extracted strings from the original.
+
+#### splice: .at, .strings
+{: #splice-procedure }
+
+Insert the contents of an existing array into the selected array
+
+#### join: .glue$
+{: #join-procedure }
+
+Joins all elements of the array into a single string, using the string in
+`.glue$` as a separator between them.
+
+#### split: .sep$, .str$
+{: #split-procedure }
+
+Takes the contents of `.str$` and separates it into a number of smaller
+strings using the string in `.sep$` as the separator string. The
+separator can be longer than one character. The match is made using it
+as a string literal.
+
+For compatibility with the version of this procedure in the "utils" plugin,
+split substrings are stored in the `.return$[]` indexed variable,
+which will have a length equal to the value in `.length`. Additionally,
+they are pushed to a Strings-array whose ID is stored in `.id`.
+
+Including this file modifies the behaviour of the procedure from the `utils`
+plugin of the same name.
