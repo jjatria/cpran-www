@@ -3,7 +3,7 @@ layout: page
 group: plugin
 title: htklabel
 project: https://gitlab.com/cpran/plugin_htklabel
-pid: ~
+pid: 3546336
 description:
   short: Read and write HTK/HTS label files
 ---
