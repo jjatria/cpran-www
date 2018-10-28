@@ -1,0 +1,531 @@
+---
+Plugin: colour
+Homepage: http://cpran/plugins/colour
+Version: 0.0.2
+Maintainer: Mauricio Figueroa <mauriciofigueroac@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.6+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: offers standard alternatives to Praat's native colour format
+  Long: >
+    Praat uses a rather unorthodox approach to define colours: red, green and
+    blue components have to be provided in a scale from 0 to 1, in which 0
+    equals to absense of a component.
+
+    This plugin offers conversions from standard colour formatting to Praat's
+    idiosyncratic format. In particular, this plugin parses hexadecimal, RGB
+    and HSV formats. To do so, it uses a series of procedures to convert
+    hexadecimal and HSV formats into RGB, and then from RGB to Praat's format.
+
+    When the plugin is installed, several new commands become available in the
+    Picture window, under the World and Pen menu. These commands can be used
+    manually or they can be intergrated directly into scripts by the means of
+    runScript.
+
+    Besides the colour formatting, these new commands receive the same
+    arguments than the original commands it aims to emulate.
+---
+Plugin: config
+Homepage: http://cpran.net/plugins/config
+Version: 0.0.4
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.4.00+
+  Plugins: ~
+Recommends:
+  praat: 6.0.16+
+License: GPL3
+Readme: readme.md
+Description:
+  Short: Read a config file
+  Long: >
+    Standard procedures to read data from a configuration file.
+---
+Plugin: cpran
+Homepage: https://gitlab.com/cpran/plugin_cpran
+Version: 0.2.2
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    testsimple: 0.0.1+
+    tap: 0.0.9+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a package manager for Praat
+  Long: >
+    CPrAN is a project manager for Praat, inspired by centralised package
+    repositories like CPAN, CTAN, CRAN and the like, but also by more recent
+    solutions like yum and bower.
+
+    Most of the functionality in CPrAN is provided by a series of clients
+    that connect to the CPrAN servers and manage the local plugins. This
+    particular plugin offers an interface between the client and Praat, and
+    therefore should not be installed manually, since in itself it does not
+    provide any functionality.
+
+    To install the CPrAN client (and with it, this plugin) please follow the
+    instructions on the CPrAN website at cpran.net.
+---
+Plugin: htklabel
+Homepage: http://cpran.net/plugins/htklabel
+Version: 0.0.1
+Maintainer:
+  - Cristopher Shulby <chrisshulby@gmail.com>
+  - José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.4.16+
+  Plugins:
+    utils: 0.0.23+
+    strutils: 0.0.0+
+    printf: 0.0.3+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: Read and write HTK/HTS label files
+  Long: >
+    Label files used by HTK/HTS and related software packages represent a similar
+    data structure as a Praat TextGrid object. The scripts in this plugin allow
+    conversions to and from label files and TextGrid objects.
+
+    Multiple levels within a label file are mapped to multiple interval tiers
+    within a TextGrid object; while multiple alternatives result in the creation
+    of as many different TextGrid objects.
+
+    In the conversion from TextGrid to label files, only non-empty labels are
+    taken into account. Label files need a specified start and end time in each
+    line in order to be properly converted.
+---
+Plugin: json
+Homepage: http://cpran.net/plugins/json
+Version: 0.0.1
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.0+
+    strutils: 0.0.11+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: read and write valid JSON using Praat
+  Long: >
+    JSON is a standard for data serialisation that has seen
+    widespread use in the exchange of arbitrarily complex data
+    structures across all sorts of software tools. It allows you to
+    write these data in a format that is not application-dependant,
+    and share them with whatever you choose.
+
+    The JSON plugin provides Praat with a much needed interface to
+    produce JSON output from internal data structures. It uses Table
+    objects as dictionaries and Strings objects as lists, and provides
+    procedures to easily print the contents of these as JSON-compliant
+    output.
+
+    The methods included allow for objects to reference other
+    objects, making it possible to represent arbitrarily
+    complex data structures.
+
+    Additionally, this plugin includes procedures to interact with
+    Table objects as if they were a dictionary, in a way that
+    complements the methods offered by the `array.proc` file in the
+    "strutils" plugin.
+---
+Plugin: printf
+Homepage: http://cpran.net/plugins/printf
+Version: 0.0.3
+Maintainer: José Joaquín Atria
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    varargs: 0.0.6+
+Recommends:
+License: GPL3
+Readme: 
+Description:
+  Short: use printf-style commands for string formatting
+  Long: use printf-style commands for string formatting
+---
+Plugin: selection
+Homepage: https://gitlab.com/cpran/plugin_selection
+Version: 0.0.12
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.17+
+    tap: 0.0.10+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: procedures to manage Praat selections
+  Long: >
+    This plugin defines a set of procedures to try to make it easier to manage
+    the selection of objects in Praat. It is an attempt at providing some sort
+    of informal API of sorts to save various selections, restore them at will,
+    modify them, etc.
+
+    Praat does not allow for the creation of custom object types, so it was
+    necessary to generate some abstraction of a selection that could be
+    represented using the existing object types. A **selection table** is a
+    object of type `Table` that represents a given selection. The procedures
+    provide ways to generate them based on the existing selection, to create
+    new ones procedurally, and to make them either from subsets, or as
+    combinations of existing tables.
+
+    A **selection table** is simply a `Table` that contains the following
+    fields:
+
+    * `type`, holding the type of a given object as a string
+    * `name`, holding the name of a given object as a string
+    * `n`, a placeholder variable holding the value `1`
+    * `id`, holding the id number of the corresponding object
+
+    **Any** `Table` that contains _at least_ these columns will be considered
+    a **selection table**, and can be used with these procedures.
+---
+Plugin: serialise
+Homepage: http://cpran/plugins/serialise
+Version: 0.0.13
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  perl: 5.10+
+  Plugins:
+    utils: 0.0.16+
+    selection: 0.0.1+
+    testsimple: 0.0.5+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: read/write JSON or YAML Praat objects
+  Long: >
+    Working with Praat normally means interacting with several different types
+    of objects, representing different abstractions within the program.
+    However, the way in which Praat saves these to disk is highly
+    idiosyncratic, and although there are some non-Praat parsers written for
+    the most common object types, they have limitations.
+
+    This plugin attempts to solve this by allowing the serialisation and
+    deserialisation of most Praat object types into either YAML or JSON. The
+    benefit of using these serialisation standards is that their use is
+    widespread, and parsers and validators are everywhere.
+
+    Included in the plugin are Perl scripts to handle the heavy-lifting of the
+    conversion, and Praat wrappers to facilitate the reading and writing of
+    serialised files from within the Praat GUI.
+---
+Plugin: sndutils
+Homepage: https://gitlab.com/cpran/plugin_sndutils
+Version: 0.0.8
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.1+
+    strutils: 0.0.3+
+    selection: 0.0.7+
+    vieweach: 0.0.6+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a collection of basic Sound utilities
+  Long: >
+    Some scripts to modify Sound objects in Praat, including smart RMS
+    normalisation of large numbers of files without fear of clipping.
+---
+Plugin: speechrate
+Homepage: https://gitlab.com/jjatria/plugin_speechrate
+Version: 0.3.2
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    selection: 0.0.10+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a CPrAN version of de Jonge and Wempe's script
+  Long: >
+    This plugin is a CPrAN-compatible version of de Jonge
+    and Wempe's _speechrate_ script. It detects intensity
+    peaks as a means to estimate syllable nuclei, and uses
+    these to make some speech rate calculations.
+    
+    This approach is reasonably accurate over long stretches
+    of speech, but there are large numbers of false positives
+    and undetected syllables, so individual estimated positions
+    should be directly used only with care.
+---
+Plugin: strutils
+Homepage: https://gitlab.com/cpran/plugin_strutils
+Version: 0.0.16
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.22+
+    selection: 0.0.1+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a collection of basic Strings utilities
+  Long: >
+    Pending the eventual release of arrays, Strings are the preferred way to
+    work with lists of strings in Praat, including lines in text files,
+    directory and file listings, and many other uses.
+
+    However, some tasks are difficult because of the lack of some arguably
+    basic features. This plugin attempts to solve this by providing commands
+    and procedures to, among others, the following tasks:
+
+    * Create empty strings
+    * Sort strings generically
+    * Replace strings
+    * Search in strings
+    * Make subsets of Strings
+    * Make file listings with full paths
+---
+Plugin: tap
+Homepage: https://gitlab.com/cpran/plugin_tap
+Version: 0.0.14
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: an implementation of the Test Anything Protocol
+  Long: >
+    The Test Anything Protocol (TAP) offers a unified format for a stream of
+    test results that can be used for all sorts of testing.
+
+    This plugin implements an interface based in that of the Test::Simple and
+    the Test::More modules available for CPAN.
+
+    It allows a safe interface to run planned and unplanned tests, as well
+    as to conditionally skip or mark them as incomplete tests. This is
+    possible both for a specified number of tests, and as a test block. Mass
+    skipping, and test-suite interruption are also possible, as is the printing
+    of messages without disrupting the TAP stream.
+---
+Plugin: template
+Homepage: http://cpran.net/plugins/template
+Version: 0.0.2
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins: []
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a blank plugin template, for you to modify.
+  Long: >
+    Use this plugin template to make your own.
+
+    This is a new paragraph.
+---
+Plugin: testsimple
+Homepage: https://gitlab.com/cpran/plugin_testsimple
+Version: 0.0.9
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: (deprecated) simple implementation of the Test Anything Protocol
+  Long: >
+    This plugin originally implemented an interface for testing using the 
+    Test Anything Protocol (TAP).
+
+    This plugin has been superseded by the "tap" plugin, which offers a 
+    better interface for testing, with additional optional features.
+    Development in this plugin has moved to the "tap" plugin. This will
+    remain available for backwards compatibility only.
+---
+Plugin: tgutils
+Homepage: https://gitlab.com/cpran/plugin_tgutils
+Version: 0.0.15
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.1+
+    selection: 0.0.1+
+    tap: 0.0.9+
+Recommends:
+  vieweach: 0.0.1+
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a collection of basic TextGrid utilities
+  Long: >
+    This plugin provides commands and procedures to make it easier to perform
+    some basic TextGrid tasks:
+
+    * Count points in range
+    * Find labels from beginning or end
+    * Equalize tier durations
+    * Explode TextGrid intervals
+    * Move boundaries to zero-crossings
+    * Find non-overlapping intervals
+    * Save as Audacity labels
+    * Index all labels in a TextGrid
+---
+Plugin: twopass
+Homepage: http://cpran.net/plugins/twopass
+Version: 0.0.6
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils:      0.0.1+
+    selection:  0.0.1+
+    strutils:   0.0.1+
+    vieweach:   0.0.1+
+    tap:        0.0.10+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a method for utterance-specific Pitch threshold estimation
+  Long: >
+    This plugin provides an implementation of Hirst and De Looze's two-pass
+    pitch threshold estimation, as described in Hirst (2011) and De Looze and
+    Hirst (2008).
+
+    References:
+    Hirst, 2011. "The analysis by synthesis [...]", JoSS 1(1): 55-83
+    De Looze and Hirst, 2008. "Detecting changes in key [...]" @ Speech Prosody
+    Based on scripts available at
+    http://uk.groups.yahoo.com/neo/groups/praat-users/conversations/topics/6199
+    http://celinedelooze.com/MyHomePage/Praat.html (defunct)
+---
+Plugin: utils
+Homepage: https://gitlab.com/cpran/plugin_utils
+Version: 0.0.25
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins: []
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a collection of basic utilities to facilitate scripting
+  Long: >
+    This plugin provides a series of procedures to facilitate some scripting
+    tasks, including some basic features that are inexplicably missing from
+    the scripting API (toLower, toUpper, split, ...).
+
+    The plugin also includes methods for:
+    * batch renaming of objects in the Objects list
+    * safely creating temporary files and directories
+    * free manipulation of date strings
+    * safely running dubious code (as in a try/catch block)
+    * smart and customisable tracing and logging of a script's progress
+---
+Plugin: varargs
+Homepage: https://gitlab.com/cpran/plugin_varargs
+Version: 0.0.6
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    utils: 0.0.14+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: write variadic procedures in Praat
+  Long: >
+    This plugin provides an interface to write procedures that take
+    a variable number of arguments, and can specify default values.
+    
+    It also provides an alternative method for procedure calls with
+    improved support for recursive procedures.
+---
+Plugin: vieweach
+Homepage: http://cpran.net/plugins/vieweach
+Version: 0.0.18
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.4.16+
+  Plugins:
+    selection: 0.0.1+
+    strutils: 0.0.1+
+    utils: 0.0.6+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: a set of customizable procedures to iterate through sets of objects
+  Long: >
+    One recurrent task in Praat is to iterate through a number of objects of
+    different types to examine them in detail, make manual editions, etc.
+
+    This plugin provides commands to iterate through sets of objects opening
+    an editor to _view each_ object in turn. Hence the name. Thanks to the
+    selection management procedures provided by cpran/selection, the
+    iteration is unaffected by changes in the selection and even by the
+    removal of previously selected objects.
+
+    The commands provided rely on a set of procedures that also expose a large
+    number of hooks to make it easier to customize the behaviour of the
+    iteration. This effectively gives a proficient programmer complete control
+    over what happens at every step of the iteration in a reliable and robust
+    way.
+
+    Note: the "View each" commands do not work properly on Praat versions
+    earlier than 5.4.16 for Mac.
+---
+Plugin: warnings
+Homepage: https://gitlab.com/cpran/plugin_warnings
+Version: 0.0.1
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins:
+    selection: 0.0.1+
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: procedures to enable smart warnings in Praat
+  Long: >
+    The procedures in this plugin make it possible to define and set (or
+    unset) warning flags. After that, the user can, at will, act upon those
+    flags and print the issued warnings without issuing the same warning more
+    than once.
+---
+Plugin: window
+Homepage: http://cpran.net/plugins/window
+Version: 0.0.2
+Maintainer: José Joaquín Atria <jjatria@gmail.com>
+Depends:
+  praat: 5.0.0+
+  Plugins: []
+Recommends:
+License: GPL3
+Readme: readme.md
+Description:
+  Short: Implement windowing algorithms with minimal effort
+  Long: Implement windowing algorithms with minimal effort
